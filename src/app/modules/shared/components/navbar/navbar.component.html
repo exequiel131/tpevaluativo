@@ -1,0 +1,38 @@
+                                
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span></span>
+    <!--botonm para la vista inicio-->
+    <button mat-button routerLink="/inicio">Inicio</button>
+
+    <!--menu desplegable-->
+    <button mat-button [matMenuTriggerFor]="producto"><mat-icon>shopping_bag</mat-icon></button>
+    <mat-menu #producto="matMenu">
+        <button mat-menu-item routerLink="/producto"> General</button>
+      
+    </mat-menu>
+
+    <span class="example-spacer"></span>
+
+    <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+
+<!--inicio de sesion y el registro de nuevo ususario
+    <button mat-button [matMenuTriggerFor]="usuario">--> <button mat-button><mat-icon>person</mat-icon></button>
+    <mat-menu #usuario="matMenu">
+        <button mat-menu-item routerLink="/registro"> Registrarse </button>
+        <button mat-menu-item routerLink="/Iniciar Sesion">Iniciar Sesion</button>
+      
+    </mat-menu>
+    |
+
+<!--carrito-->
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>shopping_cart</mat-icon>
+    </button>
+    
+</mat-toolbar>

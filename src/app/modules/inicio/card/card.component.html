@@ -1,7 +1,6 @@
 
 <div class="container">
     <div class="row">
-      <h1>inicio y tarjetas</h1>
       <div class="col"></div>
       <div *ngFor="let i of info" class="contenido">
         <mat-card class="example-card">
@@ -9,7 +8,6 @@
             <div mat-card-avatar class="example-header-image"></div>
             
             <mat-card-title>{{i.nombre}}</mat-card-title>
-            <mat-card-subtitle>{{i.edad}}</mat-card-subtitle>
           </mat-card-header>
           <img mat-card-image src="{{i.imagen}}" alt="{{i.alt}}">
            
