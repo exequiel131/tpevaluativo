@@ -4,7 +4,7 @@
  
   .mat-toolbar{
     background-color: rgb(255, 0, 0);
-    font-size: 50px;
+    font-size: 10px;
 }
 @media (min-width: 300px) and (max-width: 700px) {
   mat-toolbar {
@@ -38,4 +38,8 @@
 
 
 
+}
+
+#menuinicio {
+  font-size: 30px;
 }

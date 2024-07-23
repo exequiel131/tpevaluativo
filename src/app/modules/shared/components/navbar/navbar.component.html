@@ -1,28 +1,20 @@
 <mat-toolbar>
-    <button id="menusecciones" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-    </button>
+   
     <span></span>
     <!--botonm para la vista inicio-->
-    <button id="menuinicio" mat-button routerLink="/inicio">Inicio</button>
+    <button id="menuinicio" mat-button routerLink="/inicio"> <b>はTOKYOた</b> </button>
 
-    <!--menu desplegable-->
-    <button id="menuproducto"  mat-button [matMenuTriggerFor]="producto"><mat-icon>shopping_bag</mat-icon></button>
-    <mat-menu #producto="matMenu">
-        <button mat-menu-item routerLink="/producto"> General</button>
-
-    </mat-menu>
 
     <span class="example-spacer"></span>
 
-    <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" >
-     
-    </form>
+    <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+       
+      </form>
     
 
 
-    <button mat-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
+    <button mat-button [matMenuTriggerFor]="usuario"> <mat-icon  >person</mat-icon></button>
         <mat-menu #usuario="matMenu">
             <button mat-menu-item routerLink="/registro"> Registrarse </button>
             <button mat-menu-item routerLink="/iniciosesion">Iniciar Sesion</button>
@@ -33,6 +25,17 @@
         <!--carrito-->
         <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
             <mat-icon>shopping_cart</mat-icon>
+        </button>
+
+            <!--menu desplegable-->
+    <button id="menuproducto"  mat-button [matMenuTriggerFor]="producto"><mat-icon>shopping_bag</mat-icon></button>
+    <mat-menu #producto="matMenu">
+        <button mat-menu-item routerLink="/producto"> General</button>
+
+    </mat-menu>
+ 
+        <button id="menusecciones" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
         </button>
 
 </mat-toolbar>
