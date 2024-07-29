@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar id="navbar">
    
     <span></span>
     <!--botonm para la vista inicio-->
@@ -8,17 +8,17 @@
     <span class="example-spacer"></span>
 
     <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control me-2" type="search" placeholder="¿Qué estas buscando?" aria-label="Search">
        
       </form>
     
 
 
-    <button mat-button [matMenuTriggerFor]="usuario"> <mat-icon  >person</mat-icon></button>
+    <button mat-button [matMenuTriggerFor]="usuario"> <mat-icon >person</mat-icon></button>
         <mat-menu #usuario="matMenu">
             <button mat-menu-item routerLink="/registro"> Registrarse </button>
             <button mat-menu-item routerLink="/iniciosesion">Iniciar Sesion</button>
-
+            <button mat-menu-item > </button>
         </mat-menu>
         
 

@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './modules/inicio/pages/inicio/inicio.component';
 
-//ruta padre
+//rutas perezosas
+
 const routes: Routes = [
 
   { path: "", component: InicioComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
 
   { path: "", loadChildren: () => import('./modules/autentificacion/autentificacion.module').then(m =>m.AutentificacionModule) },
 
+  { path: "", loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) },
 ];
 
 @NgModule({
