@@ -17,7 +17,8 @@ import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -26,7 +27,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    
   ],
   
    //metadato
@@ -36,8 +38,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    MatMenuModule
-
+    MatMenuModule,
   ]
 })
 export class SharedModule { }
