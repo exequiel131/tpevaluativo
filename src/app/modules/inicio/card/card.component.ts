@@ -7,29 +7,6 @@ import { Articulos } from 'src/app/models/articulos';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  public info:Articulos[];
-
-  //
-  constructor(){
-  this.info = [
-  {
-    id:"",
-    nombre:"",
-    imagen:"https://arbghprod.vtexassets.com/arquivos/ids/163073-1600-1600?v=638319588618470000&width=1600&height=1600&aspect=true",
-    alt:""
-  },
-  {
-    id:"",
-    nombre:"",
-    imagen:"https://arbghprod.vtexassets.com/arquivos/ids/163073-1600-1600?v=638319588618470000&width=1600&height=1600&aspect=true",
-    alt:""
-  },
-  {
-    id:"",
-    nombre:"",
-    imagen:"https://arbghprod.vtexassets.com/arquivos/ids/163073-1600-1600?v=638319588618470000&width=1600&height=1600&aspect=true",
-    alt:""
-  },
-  ]
-  }
+  
+  
 }

@@ -1,46 +1,118 @@
+<!---->
+
 <table class="table">
 
-<thead>
-<tr>
-    <th scope="col">#</th>
-    <th scope="col" >imagen</th>
-    <th scope="col" >nombre</th>
-    <th scope="col" >precio</th>
-    <th scope="col" >descripcion</th>
-    <th scope="col" >categoria</th>
-    <th scope="col">acciones</th>
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">imagen</th>
+            <th scope="col">nombre</th>
+            <th scope="col">precio</th>
+            <th scope="col">descripcion</th>
+            <th scope="col">categoria</th>
+            <th scope="col">acciones</th>
 
-    
-</tr>
-</thead>
-<tbody>
-<tr *ngFor="let articulo  of collectionarticulo">
-    <th scope="row">1</th>
 
-    <td>
-        <img src="{{articulo.imagen}}" alt="{{articulo.alt}}">
-    </td>
-    <td>{{articulo.nombre}}</td>
-    <td>{{articulo.precio}}</td>
-    <td>{{articulo.descripcion}}</td>
-    <td>{{articulo.categoria}}</td>
-    <td>{{articulo.alt}}</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let articulo  of collectionarticulo">
+            <th scope="row">1</th>
 
-    <!--acciones-->
-    <td>
-        <button id="btn-edit" title="edit" type="button" class="btn btn-outline-succes">
-            <mat-icon>edit</mat-icon>
-        </button>
-    </td>
-    <td>
-        <button id="btn-delete" title="borrar" type="button" class="btn btn-outline-danger">
-            <mat-icon>delete</mat-icon>
-        </button>
-    </td>
-</tr>
-</tbody>
+            <td>
+                <img src="{{articulo.imagen}}" alt="{{articulo.alt}}">
+            </td>
+            <td>{{articulo.nombre}}</td>
+            <td>{{articulo.precio}}</td>
+            <td>{{articulo.descripcion}}</td>
+            <td>{{articulo.categoria}}</td>
+            <td>{{articulo.alt}}</td>
+
+            <!--acciones-->
+            <td>
+                <button id="btn-edit" title="edit" type="button" class="btn btn-outline-succes">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </td>
+            <td>
+                <button id="btn-delete" title="borrar" type="button" class="btn btn-outline-danger">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </tr>
+    </tbody>
 
 
 </table>
 
 
+<!-- Button trigger modal agregar nuevos producto-->
+<button type="button" class="btn btn-outline-primary" data-bs-t oggle="modal" data-bs-target="#agregarproducto">
+    agregar un nuevo producto
+</button>
+
+<!-- Modal  para agregar nuevo producto-->
+<div class="modal fade" id="agregarproducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <!--titulo del modal-->
+                <h1 class="modal-title" id="exampleModalLabel">ingrese un nuevo producto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!--cuerpo del modal-->
+            <div [formGroup]="articulo" class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">ingrese el nombre del producto</label>
+                    <input class="form-control" type="text" formControlName="nombre" placeholder="Ej.:televisor 32">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">ingrese el precio del producto</label>
+                    <input class="form-control" type="number" formControlName="precio" placeholder="">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">ingrese la descripcion del producto</label>
+                    <input class="form-control" type="text" formControlName="descripcion" placeholder="">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">seleccionar una categoria</label>
+                    <select class="form-control" formControlName="categoria" class="form-select">
+                        <option selected>elija una opcion</option>
+                        <option value="televisores">televisores</option>
+                        <option value="celulares">celulares</option>
+                        <option value="notebooks">notebooks</option>
+                        <option value="auriculares">auriculares</option>
+                        <option value=""></option>
+                    </select>
+
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">ingrese la imagen del producto</label>
+                    <input class="form-control" type="text" formControlName="nombre" placeholder="Ej.:televisor 32">
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">ingrese el alt del producto</label>
+                    <input class="form-control" type="text" formControlName="nombre" placeholder="Ej.:televisor 32">
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+              
+                <button type="button" class="btn btn-outline-succes" (click)="agregarproducto()" data-bs-dismiss="modal">Guardar</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+
+            </div>
+        </div>
+    </div>
+</div>

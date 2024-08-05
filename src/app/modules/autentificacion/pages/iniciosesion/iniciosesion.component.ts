@@ -115,8 +115,6 @@ export class IniciosesionComponent {
 
       const res = await this.servicioAuth.iniciarSesion(credenciales.email, credenciales.password)
         .then(res => {
-          alert('Se pudo ingresar con exito !!!! :)');
-
           Swal.fire({
             title: "Buen trabajo!",
             text: "Se pudo ingresar con exito !!",
@@ -126,7 +124,6 @@ export class IniciosesionComponent {
           this.servicioRutas.navigate(['/inicio']);
         })
         .catch(err => {
-          alert('hubo un error al iniciar sesión:(' + err);
           Swal.fire({
             title: "oh no!",
             text: " hubo un error al iniciar sesión:( ",

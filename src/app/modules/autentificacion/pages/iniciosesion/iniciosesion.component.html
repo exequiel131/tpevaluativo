@@ -20,7 +20,6 @@
     <!-- Contraseña de usuario -->
     <mat-form-field>
       <mat-label>Ingrese su contraseña:</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'" #input minlength="6" required>
       <input [(ngModel)]="inicio.password" matInput [type]="hide ? 'password' : 'text'" #input minlength="6" required>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide">
@@ -31,7 +30,7 @@
 
   
 <!--boton para enviar informacion a la base de datos-->
-  <button class="button" mat-raised-button> Iniciar Sesion</button>
+  <button class="button" mat-raised-button (click)="iniciarsesion()"> Iniciar Sesion</button>
     </div>
 </div>
  

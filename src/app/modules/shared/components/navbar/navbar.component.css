@@ -1,48 +1,73 @@
 .example-spacer {
-    flex: 1 1 auto;
+    flex: 25 auto;
   }
  
-  .mat-toolbar{
-    background-color: rgb(255, 0, 0);
-    font-size: 20px;
-}
+
+
+
+/*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
 @media (min-width: 300px) and (max-width: 700px) {
   mat-toolbar {
-    background-color: rgb(255, 0, 0);
-    ;
+    background-color: rgb(8, 123, 255);
+    
   }
 
+  /*
   #menuinicio {
 
     display: none;
   }
-
+  
   #menuproducto {
 
     display: none;
   }
 
+
+  */
 }
+/*FIN DE MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS CELULARES ETC*/
 
-@media (max-width: 700px) {
+
+
+/*MEDIA RESPONSIVO PARA PC  */
+
+@media (min-width: 701px) {
+
+  /*hace referencia a todo el navbar */ 
   mat-toolbar {
-    background-color: rgb(255, 0, 0);
-    ;
-  }
+    /*color de fondo de la barra */
+    background-color: rgb(255, 255, 255);
+    /* tamaño de la barra*/
+    height: 75px;
+    /*color iconos*/
+    color: black;
 
+  }
+  .buscador{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background-color:rgb(255, 255, 255) ;
+    padding: 5px;
+    border: 1px solid black;
+    height: 50px;
+    border-radius: 5px;
+  }
+  .buscador input{
+    border: 0;
+    width: 250px;
+    font-size:small;
+    outline: none;
+   
+  }
+/* 
   #menusecciones {
 
     display: none;
   }
-
+*/
 
 
 }
 
-/* controla el tamaño de la barra de ancho */
-#navbar{
-  height: 100px;
-}
-.bi bi-person{
-  color: black;
-}

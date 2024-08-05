@@ -4,6 +4,7 @@ import { Articulos } from 'src/app/models/articulos';
 import { CrudService } from '../../services/crud.service';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { __await } from 'tslib';
 
 
 
@@ -22,7 +23,7 @@ export class TableComponent {
   //atributos numericos (number) se inicializan con cero 
   articulo = new FormGroup({
     nombre: new FormControl('', Validators.required),
-    precio: new FormControl('', Validators.required),
+    precio: new FormControl(0, Validators.required),
     descripcion: new FormControl('', Validators.required),
     categoria: new FormControl('', Validators.required),
     imagen: new FormControl('', Validators.required),
@@ -33,5 +34,28 @@ export class TableComponent {
   constructor(public servicioCrud: CrudService) {
 
   }
+  ngOnInit(): void { }
+  async agregarproducto() {
+    if (this.articulo.valid) {
+      let nuevoarticulo: Articulos = {
+        idarticulo: '',
+        nombre: this.articulo.value.nombre!,
+        precio: this.articulo.value.precio!,
+        descripcion: this.articulo.value.descripcion!,
+        categoria: this.articulo.value.categoria!,
+        imagen: this.articulo.value.imagen!,
+        alt: this.articulo.value.alt!,
+      }
+      await this.servicioCrud.creararticulo(nuevoarticulo)
+        .then(producto => {
+          alert("ha agregado un nuevo producto con exito");
+        })
+        .catch(error => {
+          alert("ha ocurrido un error al cargar un nuevoproducto");
+        })
 
+    }
+
+
+  }
 }
