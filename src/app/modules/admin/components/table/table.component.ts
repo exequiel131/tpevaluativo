@@ -6,6 +6,7 @@ import { CrudService } from '../../services/crud.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { __await } from 'tslib';
 
+import Swal from 'sweetalert2';
 
 
 
@@ -34,7 +35,16 @@ export class TableComponent {
   constructor(public servicioCrud: CrudService) {
 
   }
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+    // 6/8/24 
+this.servicioCrud.obtenerarticulo().subscribe(articulo => {
+  this.collectionarticulo = articulo; 
+})
+
+
+
+   }
   async agregarproducto() {
     if (this.articulo.valid) {
       let nuevoarticulo: Articulos = {
@@ -48,10 +58,19 @@ export class TableComponent {
       }
       await this.servicioCrud.creararticulo(nuevoarticulo)
         .then(producto => {
-          alert("ha agregado un nuevo producto con exito");
+          alert("");
+          Swal.fire({
+            title: "bien!",
+            text: "ha agregado un nuevo producto con exito",
+            icon: "success"
+          });    
         })
         .catch(error => {
-          alert("ha ocurrido un error al cargar un nuevoproducto");
+          Swal.fire({
+            title: "oh no!",
+            text: "ha ocurrido un error al cargar un nuevoproducto",
+            icon: "error"
+          });    
         })
 
     }

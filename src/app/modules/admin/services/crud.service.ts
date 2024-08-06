@@ -3,6 +3,8 @@ import { Articulos } from 'src/app/models/articulos'; //importamos la intefaz
 
 //importaciones de la base de datos
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { map } from 'rxjs';
+import { Action } from 'rxjs/internal/scheduler/Action';
 @Injectable({
   providedIn: 'root'
 })
@@ -34,4 +36,13 @@ export class CrudService {
     })
   }
 
+//snapshotchanges toma una captura del estado de los datos 
+//pipe son tuberias que retornan un nuevo arreglo 
+//map mapea o recorre esa nueva informacion 
+//a resguarda la nueva informacion y la envia como un documento
+
+//accedemos a la collecion con punto concadenamnos la acion 
+   obtenerarticulo(){
+    return this.ArticulosCollection.snapshotChanges().pipe(map(Action =>Action.map ( a => a.payload.doc.data())))
+   }
 }

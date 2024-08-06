@@ -12,6 +12,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 //componentes de material
 import { MatIconModule } from '@angular/material/icon';
 
+
+
 @NgModule({
   declarations: [
     AdminComponent,
