@@ -17,7 +17,7 @@ export class CrudService {
 
   }
 
-  
+  //CREAR ARTICULO 
   creararticulo(articulo: Articulos) {
     //promise es una funcion que devuelve un valor sea verdadero o rechazado
     return new Promise(async (resolve, reject) => {
@@ -36,13 +36,41 @@ export class CrudService {
     })
   }
 
-//snapshotchanges toma una captura del estado de los datos 
-//pipe son tuberias que retornan un nuevo arreglo 
-//map mapea o recorre esa nueva informacion 
-//a resguarda la nueva informacion y la envia como un documento
+  //OBTENER PRODUCTO
+  //tenemos nuestra coleccion
+  //snapshotchanges toma una captura del estado de los datos 
+  //pipe son tuberias que retornan un nuevo arreglo 
+  //transformarla en un nuevo valor
+  //map mapea o recorre esa nueva informacion 
+  //a resguarda la nueva informacion y la envia como un documento
 
-//accedemos a la collecion con punto concadenamnos la acion 
-   obtenerarticulo(){
-    return this.ArticulosCollection.snapshotChanges().pipe(map(Action =>Action.map ( a => a.payload.doc.data())))
-   }
+  //accedemos a la collecion con punto concadenamnos la acion 
+  obtenerarticulo() {
+    return this.ArticulosCollection.snapshotChanges().pipe(map(Action => Action.map(a => a.payload.doc.data())))
+  }
+ 
+  //EDITAR PRODUCTO
+modificarrticulo(idArticulo : string, nuevadata : Articulos){
+return this.database.collection('articulos').doc(idArticulo).update(nuevadata);
+
 }
+ 
+  //ELIMINAR PRODUCTOS
+  eliminar(idArticulo: string) {
+    return new Promise((resolve, reject) => {
+      try {
+        const respuesta = this.ArticulosCollection.doc(idArticulo).delete();
+        resolve(respuesta);
+      }
+      catch (error) {
+        reject(error);
+      }
+    })
+
+
+
+  }
+
+}
+
+

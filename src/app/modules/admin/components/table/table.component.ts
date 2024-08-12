@@ -4,7 +4,6 @@ import { Articulos } from 'src/app/models/articulos';
 import { CrudService } from '../../services/crud.service';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { __await } from 'tslib';
 
 import Swal from 'sweetalert2';
 
@@ -18,6 +17,13 @@ import Swal from 'sweetalert2';
 export class TableComponent {
   //creamos coleccion local de productos --> la definimos como array
   collectionarticulo: Articulos[] = [];
+  //creacion de variables
+  //signo de exclamacion para recibir valores vacios 
+  //esta variable es para 
+  articuloSeleccionado!: Articulos;
+
+  ModalVisiblearticulo: boolean = false;
+
 
   //definimos formulario para los productos
   //atributos alfanumericos (string) se inicializan como comillas simples 
@@ -32,19 +38,18 @@ export class TableComponent {
   })
 
 
-  constructor(public servicioCrud: CrudService) {
+  constructor(public servicioCrud: CrudService) { }
 
-  }
   ngOnInit(): void {
 
     // 6/8/24 
-this.servicioCrud.obtenerarticulo().subscribe(articulo => {
-  this.collectionarticulo = articulo; 
-})
+    this.servicioCrud.obtenerarticulo().subscribe(articulo => {
+      this.collectionarticulo = articulo;
+    })
 
 
 
-   }
+  }
   async agregarproducto() {
     if (this.articulo.valid) {
       let nuevoarticulo: Articulos = {
@@ -58,23 +63,47 @@ this.servicioCrud.obtenerarticulo().subscribe(articulo => {
       }
       await this.servicioCrud.creararticulo(nuevoarticulo)
         .then(producto => {
-          alert("");
           Swal.fire({
             title: "bien!",
             text: "ha agregado un nuevo producto con exito",
             icon: "success"
-          });    
+          });
         })
         .catch(error => {
           Swal.fire({
             title: "oh no!",
             text: "ha ocurrido un error al cargar un nuevoproducto",
             icon: "error"
-          });    
+          });
         })
 
     }
 
 
+  }
+
+  mostrarBorrar(articuloSeleccionado: Articulos) {
+    this.ModalVisiblearticulo = true
+
+    this.articuloSeleccionado = articuloSeleccionado;
+  }
+
+  BorrarProductos() {
+    this.servicioCrud.eliminar(this.articuloSeleccionado.idarticulo).then(respuesta => {
+      Swal.fire({
+        title: "bien!",
+        text: "ha agregado un nuevo producto con exito",
+        icon: "success"
+      });
+    })
+      .catch(error => {
+        Swal.fire({
+          title: "bien!",
+          text: "ha agregado un nuevo producto con exito",
+          icon: "success"
+        });
+      }
+
+      )
   }
 }
