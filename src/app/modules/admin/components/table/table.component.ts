@@ -88,19 +88,19 @@ export class TableComponent {
     this.articuloSeleccionado = articuloSeleccionado;
   }
 
-  BorrarProductos() {
+  Borrararticulo() {
     this.servicioCrud.eliminar(this.articuloSeleccionado.idarticulo).then(respuesta => {
       Swal.fire({
         title: "bien!",
-        text: "ha agregado un nuevo producto con exito",
+        text: "se elimino el producto con exito",
         icon: "success"
       });
     })
       .catch(error => {
         Swal.fire({
-          title: "bien!",
-          text: "ha agregado un nuevo producto con exito",
-          icon: "success"
+          title: "error!",
+          text: "ha ocurrido un error al eliminar el producto",
+          icon: "error"
         });
       }
 

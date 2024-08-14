@@ -3,7 +3,7 @@
     <span></span>
     <!--botonm para la vista inicio-->
     <button id="menuinicio" mat-button routerLink="/inicio">
-        <img>
+        <img src="../../../../../assets/img/Diseño sin título (3)-Photoroom.png">
 
     </button>
 
@@ -39,9 +39,9 @@
     </button>
 
     <mat-menu #usuario="matMenu">
-        <button mat-menu-item routerLink="/registro"> Registrarse </button>
-        <button mat-menu-item routerLink="/iniciosesion">Iniciar Sesion</button>
-        <button mat-menu-item routerLink="cerrarSesion"> </button>
+        <button mat-menu-item (click)="ingresar()" *ngIf="logueado" routerLink="/registro"> Registrarse </button>
+        <button mat-menu-item (click)="ingresar()" *ngIf="logueado" routerLink="/iniciosesion">Iniciar Sesion</button>
+        <button mat-menu-item  (click)="cerrarsesion()" *ngIf="deslogueado">Cerrar sesion</button>
     </mat-menu>
 
 

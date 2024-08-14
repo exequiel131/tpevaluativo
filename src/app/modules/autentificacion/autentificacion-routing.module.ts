@@ -4,6 +4,7 @@ import { RegistroComponent } from './pages/registrarse/registrarse.component';
 import { IniciosesionComponent } from './pages/iniciosesion/iniciosesion.component';
 
 const routes: Routes = [
+  //rutas de las vistas que se ven
   {
     path:"registro",component:RegistroComponent
   },
