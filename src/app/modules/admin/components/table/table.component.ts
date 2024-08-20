@@ -106,4 +106,47 @@ export class TableComponent {
 
       )
   }
+  /*toma los valores del producto seleccionado y los vas 
+  autoxcompletar en el formulario del modal menos el id*/
+  mostrareditar(articuloSeleccionado: Articulos) {
+    this.articulo.setValue({
+      nombre: articuloSeleccionado.nombre,
+      precio: articuloSeleccionado.precio,
+      descripcion: articuloSeleccionado.descripcion,
+      categoria: articuloSeleccionado.categoria,
+      imagen: articuloSeleccionado.imagen,
+      alt: articuloSeleccionado.alt
+    })
+  }
+
+  editarproducto() {
+    let datos: Articulos = {
+      //solo id producto no se modifica por el usuario 
+      idarticulo: this.articuloSeleccionado.idarticulo,
+      //los demas atributos reciben nueva informacion desde el usuario
+      nombre: this.articulo.value.nombre!,
+      precio: this.articulo.value.precio!,
+      descripcion: this.articulo.value.descripcion!,
+      categoria: this.articulo.value.categoria!,
+      imagen: this.articulo.value.imagen!,
+      alt: this.articulo.value.alt!,
+    }
+    this.servicioCrud.modificarrticulo(this.articuloSeleccionado.idarticulo, datos)
+      .then(articulo => {
+        Swal.fire({
+          title: "bien!",
+          text: "se edito el producto con exito",
+          icon: "success",
+        });
+        this.articulo.reset();
+      })
+      .catch(error => {
+        Swal.fire({
+          title: "error!",
+          text: "error añ editar el producto",
+          icon: "error"
+        });
+        this.articulo.reset();
+      })
+  }
 }
