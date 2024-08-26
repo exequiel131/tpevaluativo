@@ -121,7 +121,7 @@
 
   <!--mdoal para editar producto-->
 
-<div class="modal fade" *ngForm="let Articulos of collectionarticulo" id="editarproductos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" *ngFor="let Articulos of collectionarticulo" id="editarproducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -184,6 +184,8 @@
         </div>
     </div>
 </div>
+
+
   <!-- Modal para eliminar -->
   <div class="modal fade" id="eliminar" *ngIf="ModalVisiblearticulo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
