@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
+
 import { Articulos } from 'src/app/models/articulos';
 
 import { CrudService } from 'src/app/modules/admin/services/crud.service';
+
+//importamos input y output para usarlas
+import { Input , Output , EventEmitter} from '@angular/core'; 
+
 
 @Component({
   selector: 'app-card',
@@ -15,6 +20,14 @@ coleccionarticulo : Articulos[]=[];
 articuloseleccionado! : Articulos;
 //variable local para manejar estado de un modal 
 modalvisible : boolean = false;
+
+
+
+//declaramos las directivas para comunicar padre y hijo
+@Input( )articuloreciente : string = '';
+@Output () articuloagregado = new EventEmitter <Articulos>();
+
+
 
 //inicializamos el servicio llamandolo  
 constructor (public serviciocrud : CrudService){}
@@ -32,5 +45,23 @@ mostrarver (info : Articulos ){
   //guardo en varible seleciionado kla informacion de producto elegico 
   this.articuloseleccionado = info ;
 }
+
+
+
+agregararticulo (info : Articulos){
+this.articuloagregado.emit(info);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 }
 

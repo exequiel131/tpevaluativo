@@ -1,7 +1,30 @@
 <div class="container">
     <div class="row">
         <h1>productos</h1>
+
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../../../../../assets/img/Ropa/D_NQ_NP_762450-MLA50259924974_062022-O.webp" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" *ngFor="let articulo of articulocarrousel">
+                <img src="{{articulo.imagen}}" class="d-block w-100" alt="{{articulo.alt}}">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
         <div class="col"></div>
-        <app-card></app-card>
+        <app-card (articuloagregado)="articuloanadido($event)" [articuloreciente]="articulo"></app-card>
     </div>
 </div>
