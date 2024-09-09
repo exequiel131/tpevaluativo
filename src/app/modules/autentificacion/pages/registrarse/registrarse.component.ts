@@ -5,7 +5,7 @@ import { Usuario } from 'src/app/models/usuario';
 import { AuthService } from '../../services/auth.service';
 
 //importamos el servicio de firestore
-import { FirestoreService } from 'src/app/modules/shared/firestore.service';
+import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
 //import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
 
 // importamos componente de rutas de angular 
