@@ -7,14 +7,18 @@ import { GeneralComponent } from './pages/general/general.component';
 import { CardComponent } from './components/card/card.component';
 import { CardGeneralComponent } from './components/card-general/card-general.component';
 import { ProductoComponent } from './pages/producto/producto.component';
-
+import { SuplementosComponent } from './pages/suplementos/suplementos.component';
+import { CardSuplementosComponent } from './components/card-suplementos/card-suplementos.component';
 @NgModule({
   declarations: [
     ProductoComponent,
     GeneralComponent,
     CardComponent,
     CardGeneralComponent,
-    ProductoComponent
+    ProductoComponent,
+    SuplementosComponent,
+    CardSuplementosComponent
+    
   ],
   imports: [
     CommonModule,
@@ -24,7 +28,8 @@ import { ProductoComponent } from './pages/producto/producto.component';
     ProductoComponent,
     GeneralComponent,
     CardComponent,
-    CardGeneralComponent
+    CardGeneralComponent,
+    CardSuplementosComponent
   ]
 })
 export class ProductoModule { }

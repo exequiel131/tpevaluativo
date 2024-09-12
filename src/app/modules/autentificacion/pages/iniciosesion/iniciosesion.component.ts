@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { AuthService } from '../../services/auth.service';
-import { FirestoreService } from 'src/app/modules/shared/firestore.service';
+import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
 import { Router } from '@angular/router';
 //Importamos paqueteria de cirmptacion 
 import * as CryptoJS from 'crypto-js';
