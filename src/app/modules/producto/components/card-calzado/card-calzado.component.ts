@@ -19,7 +19,7 @@ export class CardCalzadoComponent {
  articuloseleccionado!: Articulos;
  //variable local para manejar estado de un modal 
  modalvisible: boolean = false;
-
+                              
  // Patentamos de forma local el servicio para acceder en él
  constructor(public serviciocrud: CrudService) { }
  // Inicializa al momento que renderiza el componente
@@ -33,12 +33,12 @@ export class CardCalzadoComponent {
      this.ArticulosCollection = articulo;
      // Mostrará la colección de esa categoría hasta el momento
 
-     this.mostrarArticuloSuplementos();
+     this.mostrarArticuloCalzado();
    })
  }
    // Función para filtrar los productos de tipo "alimentación"
 
- mostrarArticuloSuplementos() {
+ mostrarArticuloCalzado() {
        // Iteramos colección de productos con un 'forEach'
 
    this.ArticulosCollection.forEach(articulo => {
