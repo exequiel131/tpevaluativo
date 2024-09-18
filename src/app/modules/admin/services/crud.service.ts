@@ -4,7 +4,9 @@ import { Articulos } from 'src/app/models/articulos'; //importamos la intefaz
 //importaciones de la base de datos
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { map } from 'rxjs';
-import { Action } from 'rxjs/internal/scheduler/Action';
+
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +16,7 @@ export class CrudService {
 
   constructor(private database: AngularFirestore) {
     this.ArticulosCollection = database.collection('articulos');
+   
 
   }
 
@@ -44,17 +47,20 @@ export class CrudService {
   //map mapea o recorre esa nueva informacion 
   //a resguarda la nueva informacion y la envia como un documento
 
-  //accedemos a la collecion con punto concadenamnos la acion 
+  //accedemos a la collecion
   obtenerarticulo() {
-    return this.ArticulosCollection.snapshotChanges().pipe(map(Action => Action.map(a => a.payload.doc.data())))
+    return this.ArticulosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())))
   }
- 
-  //EDITAR PRODUCTO
-modificarrticulo(idArticulo : string, nuevadata : Articulos){
-return this.database.collection('articulos').doc(idArticulo).update(nuevadata);
 
-}
- 
+  
+
+
+  //EDITAR PRODUCTO
+  modificarArticulo(idArticulo: string, nuevadata: Articulos) {
+    return this.database.collection('articulos').doc(idArticulo).update(nuevadata);
+  }
+
+  
   //ELIMINAR PRODUCTOS
   eliminar(idArticulo: string) {
     return new Promise((resolve, reject) => {
@@ -66,9 +72,6 @@ return this.database.collection('articulos').doc(idArticulo).update(nuevadata);
         reject(error);
       }
     })
-
-
-
   }
 
 }

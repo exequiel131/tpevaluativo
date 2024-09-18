@@ -34,25 +34,13 @@ cerrarsesion (){
   this.servicioRutas.navigate(['/'])
 }
 
-//funcion cambiar fondo 
-cambiarfondo(){
-  //la barra sirve como un o
-  let toggle  : HTMLInputElement | null = document.getElementById('toggle') as HTMLInputElement
-  let label_toggle : HTMLElement | null = document.getElementById('label_toggle') as HTMLInputElement
+ //Función cambiar fondo a oscuro
+ cambiarFondo(){
+  let checkbox: HTMLInputElement | null = document.getElementById("checkbox") as HTMLInputElement
 
-  if(toggle)
-    {
-    let checked : boolean = toggle.checked;
-    document.body.classList.toggle('.dark',checked);
-
-    if(checked){
-      label_toggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-        }
-        else{
-          label_toggle.innerHTML = ' <i class="fa-solid fa-moon"></i> ';
-        } 
-
-  };
-  
+  if (checkbox) {
+    let checked: boolean = checkbox.checked;
+    document.body.classList.toggle('dark',checked)
+  }
 }
 }

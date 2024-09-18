@@ -8,10 +8,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { AppRoutingModule } from 'src/app/app-routing.module';
+import {AppRoutingModule } from 'src/app/app-routing.module';
 import {MatMenuModule} from '@angular/material/menu';
 
-//import { ServicesComponent } from './services/services.component';
+
 
 
 @NgModule({

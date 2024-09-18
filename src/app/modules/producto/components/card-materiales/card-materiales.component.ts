@@ -1,29 +1,31 @@
 import { Component } from '@angular/core';
 import { Articulos } from 'src/app/models/articulos';
 import { CrudService } from 'src/app/modules/admin/services/crud.service';
+
 @Component({
-  selector: 'app-card-general',
-  templateUrl: './card-general.component.html',
-  styleUrls: ['./card-general.component.css']
+  selector: 'app-card-materiales',
+  templateUrl: './card-materiales.component.html',
+  styleUrls: ['./card-materiales.component.css']
 })
-export class CardGeneralComponent {
+export class CardMaterialesComponent {
 
   ArticulosCollection: Articulos[] = [];
 
-  coleccionGeneral: Articulos[] = [];
+  coleccionMateriales: Articulos [] = [];
   //variable local para selecionar uun producto espécioficio  
   articuloSeleccionado!: Articulos;
   //variable local para manejar estado de un modal 
   modalvisible: boolean = false;
 
-  //inicializamos el servicio llamandolo  
+  //inicializamos el servicio llamandolo 
+
   constructor(public serviciocrud: CrudService) { }
 
   ngOnInit(): void {
 
     this.serviciocrud.obtenerarticulo().subscribe(articulo => {
 
-      this.coleccionGeneral = articulo;
+      this.coleccionMateriales = articulo;
 
       this.mostrarArticuloGeneral();
     })
@@ -31,9 +33,9 @@ export class CardGeneralComponent {
   mostrarArticuloGeneral() {
     this.ArticulosCollection.forEach(articulo => {
 
-      if (articulo.categoria === "general") {
+      if (articulo.categoria === "materiales") {
 
-        this.coleccionGeneral.push(articulo);
+        this.coleccionMateriales.push(articulo);
       }
     }
     )

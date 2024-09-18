@@ -1,0 +1,9 @@
+.btn{
+    border: 2px solid #88c425; /* Define un borde sólido de 2px de grosor y color gris oscuro */
+    padding: 10px 20px; /* Espacio interno del botón para que no esté pegado al texto */
+    color: #88c425; /* Color del texto del botón */
+    border-radius: 5px; /* Opcional: Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa el ratón sobre el botón */
+    font-size: 1em; /* Tamaño de la fuente */
+}
+  

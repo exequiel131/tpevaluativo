@@ -1,25 +1,24 @@
 import { Component } from '@angular/core';
-
 import { Articulos } from 'src/app/models/articulos';
-
 import { CrudService } from 'src/app/modules/admin/services/crud.service';
 
-
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  selector: 'app-card-calzado',
+  templateUrl: './card-calzado.component.html',
+  styleUrls: ['./card-calzado.component.css']
 })
-export class CardComponent {
+export class CardCalzadoComponent {
+
   //Coleccion de todos los productos de forma local
 
   ArticulosCollection: Articulos[] = [];
   // Colección de productos de una sola categoría
 
-  calzadocolecction: Articulos[] = [];
+  calzadoColecction: Articulos[] = [];
 
   //variable local para selecionar uun producto espécioficio  
-  articuloseleccionado!: Articulos;
+  articuloSeleccionado!: Articulos;
+  
   //variable local para manejar estado de un modal 
   modalvisible: boolean = false;
 
@@ -51,7 +50,7 @@ export class CardComponent {
 
         // Lo sube/ guarda en la colección de productos de tipo "alimentación"
 
-        this.calzadocolecction.push(articulo);
+        this.calzadoColecction.push(articulo);
       }
     }
     )
@@ -61,7 +60,7 @@ export class CardComponent {
 
     this.modalvisible = true;
 
-    this.articuloseleccionado = info;
+    this.articuloSeleccionado = info;
   }
-}
 
+}

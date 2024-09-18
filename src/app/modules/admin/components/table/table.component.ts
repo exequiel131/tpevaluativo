@@ -131,7 +131,7 @@ export class TableComponent {
       imagen: this.articulo.value.imagen!,
       alt: this.articulo.value.alt!,
     }
-    this.servicioCrud.modificarrticulo(this.articuloSeleccionado.idarticulo, datos)
+    this.servicioCrud.modificarArticulo(this.articuloSeleccionado.idarticulo, datos)
       .then(articulo => {
         Swal.fire({
           title: "bien!",

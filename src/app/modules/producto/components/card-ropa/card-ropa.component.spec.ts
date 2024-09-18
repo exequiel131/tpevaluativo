@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GaleriaComponent } from './galeria.component';
+import { CardRopaComponent } from './card-ropa.component';
 
-describe('GaleriaComponent', () => {
-  let component: GaleriaComponent;
-  let fixture: ComponentFixture<GaleriaComponent>;
+describe('CardRopaComponent', () => {
+  let component: CardRopaComponent;
+  let fixture: ComponentFixture<CardRopaComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [GaleriaComponent]
+      declarations: [CardRopaComponent]
     });
-    fixture = TestBed.createComponent(GaleriaComponent);
+    fixture = TestBed.createComponent(CardRopaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

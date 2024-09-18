@@ -1,16 +1,13 @@
-<!---->
-
 <table class="table">
-
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">imagen</th>
-            <th scope="col">nombre</th>
-            <th scope="col">precio</th>
-            <th scope="col">descripcion</th>
-            <th scope="col">categoria</th>
-            <th scope="col">acciones</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Acciones</th>
 
 
         </tr>
@@ -32,26 +29,24 @@
             <td>
                 <button id="btn-edit" title="edit" type="button" class="btn btn-outline-succes" 
                 data-bs-toggle="modal" data-bs-target="#editarproducto" (click)="mostrareditar(articulo)">
-                    <mat-icon>edit</mat-icon>
+                    <mat-icon>editar</mat-icon>
                 </button>
             </td>
             
             <td>
                 <button id="btn-delete" title="eliminar" type="button" class="btn btn-outline-danger" 
                 data-bs-toggle="modal" data-bs-target="#eliminar" (click)="mostrarBorrar(articulo)">
-                    <mat-icon>delete</mat-icon>
+                    <mat-icon>borrar</mat-icon>
                 </button>
             </td>
         </tr>
     </tbody>
-
-
 </table>
 
 
 <!-- Button trigger modal agregar nuevos producto-->
-<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#agregarproducto">
-    agregar un nuevo producto
+<button type="button" class="btn btn-outline" data-bs-toggle="modal" data-bs-target="#agregarproducto">
+    Agregar un nuevo producto
 </button>
 
 <!-- Modal  para agregar nuevo producto-->
@@ -61,59 +56,53 @@
             <div class="modal-header">
 
                 <!--titulo del modal-->
-                <h1 class="modal-title fs-5" id="exampleModalLabel">ingrese un nuevo producto</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo Producto</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <!--cuerpo del modal-->
             <div [formGroup]="articulo" class="modal-body">
                 <div class="mb-3">
-                    <label class="form-label">Ingrese El Nombre Del Producto</label>
+                    <label class="form-label">Nombre del Producto</label>
                     <input class="form-control" type="text" formControlName="nombre" placeholder="Completar este campo obligatoriamente">
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Ingrese El Precio Del Producto</label>
+                    <label class="form-label">Precio del Producto</label>
                     <input class="form-control" type="number" formControlName="precio" placeholder="Completar este campo obligatoriamente">
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Ingrese La Descripcion Del Producto</label>
+                    <label class="form-label">Descripcion del Producto</label>
                     <input class="form-control" type="text" formControlName="descripcion" placeholder="Completar este campo obligatoriamente">
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Seleccionar Una Categoria</label>
+                    <label class="form-label">Seleccionar una Categoria</label>
                     <select class="form-control" formControlName="categoria" class="form-select">
-                        <option selected>elija una opcion</option>
-                        <option value="Ropa">Ropa</option>
-                        <option value="Suplementos">Suplementos</option>
-                        <option value="Calzado">Calzado</option>
-                        <option value="Materiales">Materiales</option>
+                        <option selected>Elija una opcion</option>
+                        <option value="ropa">Indumentaria</option>
+                        <option value="suplementos">Suplementos</option>
+                        <option value="calzado">Calzado</option>
+                        <option value="materiales">Materiales</option>
                     </select>
-
                 </div>
 
-
                 <div class="mb-3">
-                    <label class="form-label">Ingrese La Imagen Del Producto</label>
+                    <label class="form-label">Imagen del Producto</label>
                     <input class="form-control" type="text" formControlName="imagen" placeholder="completar este campo obligatoriamente">
                 </div>
 
 
                 <div class="mb-3">
-                    <label class="form-label">Ingrese El Alt Del Producto</label>
+                    <label class="form-label">Alt del Producto</label>
                     <input class="form-control" type="text" formControlName="alt" placeholder="completar este campo obligatoriamente">
                 </div>
-
-
-
             </div>
+
             <div class="modal-footer">
-              
                 <button type="button" class="btn btn-outline-succes" (click)="agregarproducto()" data-bs-dismiss="modal">Guardar</button>
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-
             </div>
         </div>
     </div>
@@ -125,7 +114,6 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-
                 <!--titulo del modal-->
                 <h1 class="modal-title fs-5" id="exampleModalLabel">editar el siguiente producto</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -157,29 +145,22 @@
                         <option value="notebooks">notebooks</option>
                         <option value="auriculares">auriculares</option>
                     </select>
-
                 </div>
-
 
                 <div class="mb-3">
                     <label class="form-label">ingrese la imagen del producto</label>
                     <input class="form-control" type="text" formControlName="imagen" placeholder="{{Articulos.imagen}}">
                 </div>
 
-
                 <div class="mb-3">
                     <label class="form-label">ingrese el alt del producto</label>
                     <input class="form-control" type="text" formControlName="alt" placeholder="{{Articulos.alt}}">
                 </div>
-
-
-
             </div>
+
             <div class="modal-footer">
-              
                 <button type="button" class="btn btn-outline-succes" (click)="editarproducto()" data-bs-dismiss="modal">Guardar</button>
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-
             </div>
         </div>
     </div>
@@ -191,7 +172,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">estas seguro de que quieres eliminar el articulo?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">¿Está seguro de eliminar el articulo?</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
