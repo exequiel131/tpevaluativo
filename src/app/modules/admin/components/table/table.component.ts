@@ -55,12 +55,6 @@ export class TableComponent {
 
 
   }
-
-
-
-
-
-  //
   async agregarproducto() {
     if (this.articulo.valid) {
       let nuevoarticulo: Articulos = {
@@ -104,12 +98,6 @@ export class TableComponent {
 
 
   }
-
-
-  
-
-
-
   //cargar imagenes
 
   cargarimagen(event: any) {
@@ -180,14 +168,6 @@ export class TableComponent {
       alt: articuloSeleccionado.alt
     })
   }
-
-
-
-
-
-
-
-  
 
   editarproducto() {
     let datos: Articulos = {
