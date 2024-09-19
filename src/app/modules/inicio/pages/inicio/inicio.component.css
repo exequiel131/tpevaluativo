@@ -6,4 +6,26 @@
 margin: 100px;  
 }
 
+.contenido{
+margin:  100px;
+}
+
+.card-img-top{
+    width: 200px;
+}
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Espacio entre las tarjetas */
+    margin: 60px; /* Espacio negativo para compensar el espacio entre las tarjetas */
+
+  }
+
+  .card1 {
+    flex: 0 0 calc(33.33% - 20px); /* Tamaño de cada tarjeta (33.33% - 20px de margen) */
+    margin: 10px; /* Margen entre las tarjetas en la parte superior, derecha, izquierda */
+    margin-bottom: 20px; /* Margen adicional en la parte inferior para la separación vertical */
+  }
 

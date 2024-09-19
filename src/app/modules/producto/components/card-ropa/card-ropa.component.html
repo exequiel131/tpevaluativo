@@ -1,8 +1,8 @@
 <div class="contenido" *ngFor="let articulo of ropacolecction">
     <div class="card" style="width: 18rem;">
-        <img src="{{articulo.alt}}" class="card-img-top" alt="{{articulo.alt}}">
+        <img src="{{articulo.imagen}}" class="card-img-top" alt="{{articulo.alt}}">
         <div class="card-body">
-          <h5 class="card-title">{{articulo.imagen}}</h5>
+          <h5 class="card-title">{{articulo.nombre}}</h5>
           <p class="card-text">{{articulo.precio}}</p>
     <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" 
     data-bs-target="#vermas" (click)="mostrarver(articulo)">ver mas </button>

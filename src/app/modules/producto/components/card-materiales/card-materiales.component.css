@@ -1,0 +1,19 @@
+.contenido{
+display: flex;
+justify-content: space-around;
+margin: 0;
+}
+
+.conte-card{
+display :flex;
+justify-content: center;
+flex-direction: row;
+
+
+}
+.card-img-top{
+    width: 200px;
+}
+img{
+    width: 200px;
+}

@@ -37,11 +37,11 @@
   /*hace referencia a todo el navbar */ 
   mat-toolbar {
     /*color de fondo de la barra */
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255); /*rgb(23,28,34);
     /* tamaño de la barra*/
     height: 75px;
     /*color iconos*/
-    color: black; 
+    color: rgb(0, 0, 0); 
 
   }
   .buscador{
