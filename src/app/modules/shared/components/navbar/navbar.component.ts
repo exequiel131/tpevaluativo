@@ -34,6 +34,7 @@ cerrarsesion (){
   this.servicioRutas.navigate(['/'])
 }
 
+/*
 //funcion cambiar fondo 
 cambiarfondo(){
   //la barra sirve como un o
@@ -54,5 +55,15 @@ cambiarfondo(){
 
   };
   
+}*/
+
+//Función cambiar fondo a oscuro
+cambiarFondo(){
+  let checkbox: HTMLInputElement | null = document.getElementById("checkbox") as HTMLInputElement
+
+  if (checkbox) {
+    let checked: boolean = checkbox.checked;
+    document.body.classList.toggle('dark',checked)
+  }
 }
 }
