@@ -13,9 +13,14 @@ export class CrudService {
   //nuestro crud service puede crear, editar, eliminar y obtener productos
   private ArticulosCollection: AngularFirestoreCollection<Articulos>
 
+  //COLECCION DE CARROS DE COMPRAS
+  private Carritoscoleccion: AngularFirestoreCollection<Articulos>
+
   constructor(private database: AngularFirestore) {
     this.ArticulosCollection = database.collection('articulos');
 
+//CARRO DE COMPRAS 
+    this.Carritoscoleccion = database.collection('articulos')
   }
 
   //CREAR ARTICULO 
@@ -72,4 +77,64 @@ return this.database.collection('articulos').doc(idArticulo).update(nuevadata);
 
   }
 
-}
+
+  //CARRO DE COMPRAS
+
+  carritoscoleccion: any [] = []
+
+  cantidadItemCarrito: number = 0
+
+  total: number = 0
+
+  
+  CalcularTotal() {
+    this.carritoscoleccion.forEach((Element) => {
+      Element.subtotal = Element.precio * Element.cantidad;
+      this.total += Element.subtotal
+      this.total = +this.total.toFixed(2);
+    })
+  };
+
+
+
+  //agrega bien al carritoscoleccion 
+  AgregarAlCarrito(item: any) {
+    this.total = 0
+    const index = this.carritoscoleccion.findIndex((Element) => Element.nombre === item.nombre);
+    if (index !== -1) {
+      this.carritoscoleccion[index].cantidad = item.cantidad;
+    } else {
+      const Elemento = {
+        ...item,
+      };
+      this.carritoscoleccion.push(Elemento);
+    }
+    this.cantidadItemCarrito = this.carritoscoleccion.length;
+    this.CalcularTotal();
+  };
+
+
+  //esta parte esta funcionando perfectamente
+  eliminarItem(item: any) {
+    const index = this.carritoscoleccion.indexOf(item);
+    if (index !== -1) {
+      this.carritoscoleccion.splice(index, 1);
+    }
+    this.CalcularTotal();
+  }
+
+
+
+
+
+
+
+
+  
+  }
+
+
+
+
+
+
