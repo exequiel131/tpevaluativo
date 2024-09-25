@@ -3,10 +3,10 @@
     <div class="card" style="width: 18rem;">
       <img src="{{articulo.imagen}}" class="card-img-top" alt="{{articulo.alt}}">
       <div class="card-body">
-        <h5 class="card-title">{{articulo.nombre}}</h5>
-        <p class="card-text">{{articulo.precio}}</p>
+        <h5 class="heading">{{articulo.nombre}}</h5>
+        <p class="heading">$ {{articulo.precio}}</p>
         <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#vermas"
-          (click)="mostrarver(articulo)">ver mas </button>
+          (click)="mostrarver(articulo)">Ver Más </button>
       </div>
     </div>
   </div>
@@ -34,10 +34,6 @@
       <div class="mb-3">
 
         {{articuloSeleccionado.precio}}
-      </div>
-      <div class="modal-footer">
-        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">agregar al carrito </button>-->
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar Cambios</button>
       </div>
     </div>
   </div>
