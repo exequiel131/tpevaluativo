@@ -1,15 +1,17 @@
-<!--bootstrap nos permite dividir 12 veces -->
-<div class="contenido" *ngFor="let articulo of calzadoColecction">
-  <div class="card" style="width: 18rem;">
-    <img src="{{articulo.imagen}}" class="card-img-top" alt="{{articulo.alt}}">
-    <div class="card-body">
-      <h5 class="card-title">{{articulo.nombre}}</h5>
-      <p class="card-text">{{articulo.precio}}</p>
-      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#vermas"
-        (click)="mostrarver(articulo)"> Ver Más </button>
+<div class="row">
+  <div class="col-lg-3" *ngFor="let articulo of calzadoColecction">
+    <div class="card" style="width: 18rem;">
+      <img src="{{articulo.imagen}}" class="card-img-top" alt="{{articulo.alt}}">
+      <div class="card-body">
+        <h5 class="card-title">{{articulo.nombre}}</h5>
+        <p class="card-text">{{articulo.precio}}</p>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#vermas"
+          (click)="mostrarver(articulo)"> Ver Más </button>
+      </div>
     </div>
   </div>
 </div>
+
 
 
 <!-- Modal para ver mas infomracion  -->

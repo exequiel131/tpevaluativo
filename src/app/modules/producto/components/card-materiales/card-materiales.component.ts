@@ -11,10 +11,12 @@ export class CardMaterialesComponent {
 
   ArticulosCollection: Articulos[] = [];
 
+  //variable local para selecionar uun producto específico
   coleccionMateriales: Articulos [] = [];
-  //variable local para selecionar uun producto espécioficio  
+
+//variable local para manejar estado de un modal 
   articuloSeleccionado!: Articulos;
-  //variable local para manejar estado de un modal 
+  
   modalvisible: boolean = false;
 
   //inicializamos el servicio llamandolo 
@@ -25,15 +27,15 @@ export class CardMaterialesComponent {
 
     this.serviciocrud.obtenerarticulo().subscribe(articulo => {
 
-      this.coleccionMateriales = articulo;
+      this.ArticulosCollection = articulo;
 
-      this.mostrarArticuloGeneral();
+      this.mostrarArticuloMateriales();
     })
   }
-  mostrarArticuloGeneral() {
+  mostrarArticuloMateriales() {
     this.ArticulosCollection.forEach(articulo => {
 
-      if (articulo.categoria === "materiales") {
+      if (articulo.categoria === "Materiales") {
 
         this.coleccionMateriales.push(articulo);
       }

@@ -26,7 +26,7 @@ export class CardRopaComponent {
 
     this.serviciocrud.obtenerarticulo().subscribe(articulo => {
 
-      this.coleccionRopa = articulo;
+      this.ArticulosCollection = articulo;
 
       this.mostrarArticuloGeneral();
     })
@@ -34,7 +34,7 @@ export class CardRopaComponent {
   mostrarArticuloGeneral() {
     this.ArticulosCollection.forEach(articulo => {
 
-      if (articulo.categoria === "ropa") {
+      if (articulo.categoria === "Ropa") {
 
         this.coleccionRopa.push(articulo);
       }

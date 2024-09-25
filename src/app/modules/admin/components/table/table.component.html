@@ -8,25 +8,24 @@
             <th scope="col">Descripcion</th>
             <th scope="col">Categoria</th>
             <th scope="col">Acciones</th>
-
-
         </tr>
     </thead>
+
     <tbody>
         <tr *ngFor="let articulo  of collectionarticulo">
-            <th scope="row">1</th>
+            <th  scope="row">1</th>
 
             <td>
-                <img src="{{articulo.imagen}}" alt="{{articulo.alt}}">
+                <img id="imgTabla" src="{{articulo.imagen}}" alt="{{articulo.alt}}">
             </td>
             <td>{{articulo.nombre}}</td>
             <td>{{articulo.precio}}</td>
             <td>{{articulo.descripcion}}</td>
             <td>{{articulo.categoria}}</td>
             <td>{{articulo.alt}}</td>
-
-            <!--acciones-->
+            
             <td>
+                <!--acciones-->
                 <button id="btn-edit" title="edit" type="button" class="btn btn-outline-succes" 
                 data-bs-toggle="modal" data-bs-target="#editarproducto" (click)="mostrareditar(articulo)">
                     <mat-icon>editar</mat-icon>
@@ -39,6 +38,7 @@
                     <mat-icon>borrar</mat-icon>
                 </button>
             </td>
+
         </tr>
     </tbody>
 </table>
@@ -81,10 +81,10 @@
                     <label class="form-label">Seleccionar una Categoria</label>
                     <select class="form-control" formControlName="categoria" class="form-select">
                         <option selected>Elija una opcion</option>
-                        <option value="ropa">Indumentaria</option>
-                        <option value="suplementos">Suplementos</option>
-                        <option value="calzado">Calzado</option>
-                        <option value="materiales">Materiales</option>
+                        <option value="Ropa">Indumentaria</option>
+                        <option value="Suplementos">Suplementos</option>
+                        <option value="Calzado">Calzado</option>
+                        <option value="Materiales">Materiales</option>
                     </select>
                 </div>
 

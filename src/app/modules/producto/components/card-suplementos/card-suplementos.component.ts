@@ -26,15 +26,15 @@ export class CardSuplementosComponent {
 
     this.serviciocrud.obtenerarticulo().subscribe(articulo => {
 
-      this.coleccionSuplementos = articulo;
+      this.ArticulosCollection = articulo;
 
-      this.mostrarArticuloGeneral();
+      this.mostrarArticuloSuplementos();
     })
   }
-  mostrarArticuloGeneral() {
+  mostrarArticuloSuplementos() {
     this.ArticulosCollection.forEach(articulo => {
 
-      if (articulo.categoria === "suplementos") {
+      if (articulo.categoria === "Suplementos") {
 
         this.coleccionSuplementos.push(articulo);
       }

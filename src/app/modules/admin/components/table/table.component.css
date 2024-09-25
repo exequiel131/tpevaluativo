@@ -6,4 +6,10 @@
     cursor: pointer; /* Cambia el cursor a una mano cuando se pasa el ratón sobre el botón */
     font-size: 1em; /* Tamaño de la fuente */
 }
+#imgTabla{
+    
+    max-width: 200px;
+    max-height: 200px;
+}
+
   

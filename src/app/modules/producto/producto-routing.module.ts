@@ -6,6 +6,7 @@ import { SuplementosComponent } from './pages/suplementos/suplementos.component'
 import { RopaComponent } from './pages/ropa/ropa.component';
 import { CalzadoComponent } from './pages/calzado/calzado.component';
 import { MaterialesComponent } from './pages/materiales/materiales.component';
+import { AdminComponent } from '../admin/pages/admin/admin.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,9 @@ const routes: Routes = [
   },
   {
     path:"materiales",component:MaterialesComponent
+  },
+  {
+    path:"admin",component:AdminComponent
   }
 ];
 

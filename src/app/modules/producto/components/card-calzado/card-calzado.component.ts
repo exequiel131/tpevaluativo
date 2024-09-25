@@ -44,12 +44,11 @@ export class CardCalzadoComponent {
     // Iteramos colección de productos con un 'forEach'
 
     this.ArticulosCollection.forEach(articulo => {
+      
       // Si es de tipo "alimentación" -> condicional
-
       if (articulo.categoria === "Calzado") {
 
         // Lo sube/ guarda en la colección de productos de tipo "alimentación"
-
         this.calzadoColecction.push(articulo);
       }
     }
