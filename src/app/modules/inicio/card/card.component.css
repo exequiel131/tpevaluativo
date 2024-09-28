@@ -1,12 +1,18 @@
+/* CONTENEDOR DE LAS CARDS */
+
 .container{
     display: flex;
     padding: 70px;
     justify-content: center;
-    
+
+
+  /* CSS DEL TITULO */
   }
   h1{
     text-align: center;
   }
+
+/* CONTENIDO DE LA CARD */
   .contenido{
     width: 300px;
     display: inline-block;
