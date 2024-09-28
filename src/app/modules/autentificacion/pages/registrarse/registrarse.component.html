@@ -1,3 +1,4 @@
+<!-- FORMULARIO -->
 <div class="container">
     <div class="row">
       <h1><strong>Registrarse</strong></h1>
@@ -7,6 +8,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Ingrese Un Nombre De Usuario</mat-label>
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        
         <!-- ngModel = directiva BIDIRECCIONAL utilizada para formularios -->
         <input [(ngModel)]="usuario.nombre" matInput placeholder="Ej: Pepito" required>
   
@@ -19,7 +21,7 @@
         <input [(ngModel)]="usuario.apellido" matInput placeholder="Ej: Peréz" required>
       </mat-form-field>
   
-      <!--Gmail de usuario -->
+      <!-- Gmail de usuario -->
       <mat-form-field appearance="fill">
         <mat-label>Ingrese Un Gmail</mat-label>
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
