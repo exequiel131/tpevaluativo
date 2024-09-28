@@ -58,4 +58,10 @@ mostrarver(info: Articulos) {
 
   this.articuloseleccionado = info;
 }
+cerrarver() {
+
+  this.modalvisible = false;
+
+  window.location.href = "/materiales"
+}
 }

@@ -59,5 +59,10 @@ export class CardCalzadoComponent {
 
    this.articuloseleccionado = info;
  }
+ cerrarver() {
 
+  this.modalvisible = false;
+
+  window.location.href = "/calzado"
+}
 }

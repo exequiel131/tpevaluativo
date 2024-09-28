@@ -7,7 +7,21 @@ margin: 100px;
 .card-img-top{
     width: 200px;
 }
-
+.card-title {
+  color: #88c425;
+}
+.btn {
+  color: #ffffff;
+  background-color: #88c425;
+  cursor: pointer;
+  
+}
+.card-img-top {
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .card-container {
     display: flex;
@@ -18,8 +32,46 @@ margin: 100px;
   }
 
   .card1 {
-    flex: 0 0 calc(33.33% - 20px); /* Tamaño de cada tarjeta (33.33% - 20px de margen) */
-    margin: 10px; /* Margen entre las tarjetas en la parte superior, derecha, izquierda */
-    margin-bottom: 20px; /* Margen adicional en la parte inferior para la separación vertical */
+    justify-content:space-around;
+    display: flex;
+    margin: 10px;
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+  /* CSS DEL MODAL */
+
+.text {
+  padding: 20px;
+  text-align: justify;
+}
+
+.title {
+  color: #88c425;
+}
+
+.img {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 2%;
+}
+
+.close {
+  position: absolute;
+  color: #ffffff;
+  background-color: #88c425;
+  cursor: pointer;
+} 

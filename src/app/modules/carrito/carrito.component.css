@@ -1,0 +1,15 @@
+.Carrito-resumen{
+    margin: 50px;
+    text-align: center;
+}
+#ed1{
+    margin: 20px;
+    text-align: center;
+}
+#total{
+margin: 20px;
+}
+.btn{
+    background-color: #88c425;
+    color: black;
+}

@@ -1,8 +1,6 @@
-<p>carrito works!</p>
-
 <div class="Carrito-resumen">
-    <h2>Resumen de Compra</h2>
-    
+    <h1><strong>Carrito de compras</strong></h1>
+
     <mat-table [dataSource]="crudservice.carritoscoleccion" class="mat-elevation-z8">
 
         <ng-container matColumnDef="nombre">
@@ -19,32 +17,30 @@
 
         <ng-container matColumnDef="preciounitario">
             <mat-header-cell *matHeaderCellDef>preciounitario</mat-header-cell>
-            <mat-cell *matCellDef="let item"> ${{ (item.precio).toFixed(2)}}</mat-cell>
+            <mat-cell *matCellDef="let item"> Ud ${{ (item.precio).toFixed(2)}}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="subtotal">
-            <mat-header-cell *matHeaderCellDef>subtotal</mat-header-cell>
-            <mat-cell *matCellDef="let item"></mat-cell>
-        </ng-container>
+   
 
         <ng-container matColumnDef="eliminar">
             <mat-header-cell *matHeaderCellDef=>eliminar</mat-header-cell>
             <mat-cell *matCellDef="let item">
-                
+
                 <button mat-icon-button color="warn" (click)="eliminarItem(item)">
                     <mat-icon>delete</mat-icon>
                 </button>
             </mat-cell>
         </ng-container>
 
-        <mat-header-row  mat-header-row * matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-header-row mat-header-row * matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-header-row mat-row *matRowDef="let row;columns:displayedColumns"></mat-header-row>
-        
-    
-        
 
-    </mat-table> 
-    <p class="total">total: ${{crudservice.total}}</p> 
 
-    <button mat-raised-button color="" (click)="realizarCompra()">realizar compra</button>
+
+
+    </mat-table>
+
+        <h1 id="total"> <strong>Total: ${{crudservice.total}}</strong></h1>
+
+    <button id="ed1" type="button" class="btn" (click)="realizarCompra()">  <b>Continuar compra</b></button>
 </div>

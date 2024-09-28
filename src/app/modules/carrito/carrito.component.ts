@@ -9,7 +9,7 @@ import { CrudService } from '../admin/services/crud.service';
 export class CarritoComponent {
   constructor(public crudservice : CrudService){} 
 
-  displayedColumns:string[]=['nombre','cantidad','preciounitario','subtotal','eliminar']
+  displayedColumns:string[]=['nombre','cantidad','preciounitario','eliminar']
 
   actualizarSubtotal(item:any){
     this.crudservice.AgregarAlCarrito(item)
