@@ -1,11 +1,13 @@
+// importacion de dependencias y herramientas
+
 import { Component } from '@angular/core';
-import { Articulos } from 'src/app/models/articulos';
+import { Articulos } from 'src/app/models/articulos'; // importa la interfaz que contiene la estructura de los articulos
 
-import { CrudService } from '../../services/crud.service';
+import { CrudService } from '../../services/crud.service'; // importa el servicio que maneja las operaciones de creación, lectura, actualización y eliminación (CRUD) de datos en la aplicación.
 
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms'; // importa herramientas de angular material. Estos en particular son para la estructura de un formulario.
 
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2'; // Alerta importada de una libreria.
 
 
 
@@ -14,6 +16,7 @@ import Swal from 'sweetalert2';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
+  
 export class TableComponent {
   //creamos coleccion local de productos --> la definimos como array
   collectionarticulo: Articulos[] = [];
@@ -36,7 +39,6 @@ export class TableComponent {
     precio: new FormControl(0, Validators.required),
     descripcion: new FormControl('', Validators.required),
     categoria: new FormControl('', Validators.required),
-  //  imagen: new FormControl('', Validators.required),
     alt: new FormControl('', Validators.required),
   })
 
