@@ -1,15 +1,16 @@
-<!---->
-
-<!-- Button trigger modal agregar nuevos producto-->
+<!-- BUTTON TRIGGER MODAL PARA AGREGAR NUEVO PRODUCTO -->
 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#agregarproducto">
    <div class="boton">
     Agregar un nuevo producto
 </div>
 </button>
+<!-- FINAL BUTTON TRIGGER MODAL PARA AGREGAR NUEVO PRODUCTO -->
 
+<!-- TABLA PRODUCTOS -->
 <div class="tabla">
     <table class="table">
 
+      <!-- cabeza de la tabla -->
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -19,10 +20,10 @@
                 <th scope="col">descripcion</th>
                 <th scope="col">categoria</th>
                 <th scope="col">acciones</th>
-
-
             </tr>
         </thead>
+
+      <!-- cuerpo de la tabla -->
         <tbody>
             <tr *ngFor="let articulo  of collectionarticulo">
                 <th scope="row">1</th>
@@ -36,7 +37,7 @@
                 <td>{{articulo.categoria}}</td>
                 <td>{{articulo.alt}}</td>
 
-                <!--acciones-->
+                <!-- BOTON EDITAR PRODUCTO -->
                 <td>
                     <button id="btn-edit" title="edit" type="button" class="btn btn-outline-succes"
                         data-bs-toggle="modal" data-bs-target="#editarproducto" (click)="mostrareditar(articulo)">
@@ -44,6 +45,7 @@
                     </button>
                 </td>
 
+                <!-- BOTON BORRAR PRODUCTO -->
                 <td>
                     <button id="btn-delete" title="eliminar" type="button" class="btn"
                         data-bs-toggle="modal" data-bs-target="#eliminar" (click)="mostrarBorrar(articulo)">
@@ -52,26 +54,25 @@
                 </td>
             </tr>
         </tbody>
-
-
     </table>
 </div>
 
 
 
-<!-- Modal  para agregar nuevo producto-->
+<!-- MODAL PARA AGREGAR NUEVO PRODUCTO -->
 <div class="modal fade" id="agregarproducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
 
-                <!--titulo del modal-->
+            <!-- titulo del modal -->
+            <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">ingrese un nuevo producto</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <!--cuerpo del modal-->
+            <!-- cuerpo del modal -->
             <div [formGroup]="articulo" class="modal-body">
+              
                 <div class="mb-3">
                     <label class="form-label">Ingrese El Nombre Del Producto</label>
                     <input class="form-control" type="text" formControlName="nombre"
@@ -99,7 +100,6 @@
                         <option value="Calzado">Calzado</option>
                         <option value="Materiales">Materiales</option>
                     </select>
-
                 </div>
 
 
@@ -118,6 +118,8 @@
 
 
             </div>
+
+          <!-- footer del modal -->
             <div class="modal-footer">
 
                 <button type="button" class="btn btn-outline-succes" (click)="agregarproducto()"
@@ -129,21 +131,22 @@
     </div>
 </div>
 
-<!--mdoal para editar producto-->
+<!-- MODAL PARA EDITAR PRODUCTO EXISTENTE -->
 
 <div class="modal fade" *ngFor="let Articulos of collectionarticulo" id="editarproducto" tabindex="-1"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
 
-                <!--titulo del modal-->
+          <!-- titulo del modal -->
+            <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">editar el siguiente producto</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <!--cuerpo del modal-->
+          <!-- cuerpo del modal -->
             <div [formGroup]="articulo" class="modal-body">
+              
                 <div class="mb-3">
                     <label class="form-label">ingrese el nombre del producto</label>
                     <input class="form-control" type="text" formControlName="nombre" placeholder="{{Articulos.nombre}}">
@@ -184,10 +187,10 @@
                     <label class="form-label">ingrese el alt del producto</label>
                     <input class="form-control" type="text" formControlName="alt" placeholder="{{Articulos.alt}}">
                 </div>
-
-
-
+              
             </div>
+
+          <!-- footer del modal -->
             <div class="modal-footer">
 
                 <button type="button" class="btn btn-outline-succes" (click)="editarproducto()"
@@ -200,23 +203,27 @@
 </div>
 
 
-<!-- Modal para eliminar -->
+<!-- MODAL PARA ELIMINAR PRODUCTO -->
 <div class="modal fade" id="eliminar" *ngIf="ModalVisiblearticulo" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
+
+          <!-- Cabeza del modal -->
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">estas seguro de que quieres eliminar el articulo?</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <!--cuerpo del modal-->
+          
+          <!--cuerpo del modal-->
             <div class="modal-body">
                 {{articuloSeleccionado.nombre}}
                 <img src="{{articuloSeleccionado.imagen}}" alt="{{articuloSeleccionado.alt}}">
             </div>
-            <!--acciones-->
+          
+          <!-- footer del modal -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
                     (click)="Borrararticulo()">Eliminar</button>
