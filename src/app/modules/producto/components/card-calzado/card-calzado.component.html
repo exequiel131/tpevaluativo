@@ -1,0 +1,54 @@
+
+  <div class="row">
+    <div class="col-lg-2 carta" *ngFor="let articulo of calzadoColecction">
+      <div class="card" style="width: 18rem;">
+        <img src="{{articulo.imagen}}" class="card-img-top" alt="{{articulo.alt}}">
+        <div class="card-body">
+          <h3 class="card-title"><strong> {{articulo.nombre}} </strong></h3>
+          <p class="card-text">$ {{articulo.precio}} ARS </p>
+          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#vermas"
+            (click)="mostrarver(articulo)"> Ver Más </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- MODAL -->
+<div class="modal fade" *ngIf="modalvisible" id="vermas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+
+  <div class="modal-dialog" role="document">
+
+    <div class="modal-content">
+
+      <!-- BOTON FUNCIONAL PARA CERRAR EL MODAL -->
+      <div class="modal-header">
+        <button type="button" (click)="cerrarver()" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <!-- IMAGEN DEL PRODUCTO -->
+      <div class="modal-body">
+        <img class="img" src="{{articuloSeleccionado.imagen}}" alt="{{articuloSeleccionado.alt}}">
+      </div>
+
+      <!-- DESCRIPCION Y PRECIO DEL PRODUCTO-->
+      <div class="mb-3 text">
+        <h2 class="modal-title" id="exampleModalLabel"> <strong class="title">{{articuloSeleccionado.nombre}}</strong>
+        </h2>
+        {{articuloSeleccionado.descripcion}}
+        <br>
+        <br>
+        <strong>
+          $ {{articuloSeleccionado.precio}} ARS
+        </strong>
+
+      </div>
+      <div class="modal-footer">
+        <!-- ACA VA EL BOTON DEL CARRITO-->
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+/* CSS DE LAS CARDS */
+
+.carta {
+    justify-content:space-around;
+    display: flex;
+    margin: 10px;
+}
+
+.card-title {
+    color: #88c425;
+}
+
+.btn {
+    color: #ffffff;
+    background-color: #88c425;
+    cursor: pointer;
+    
+}
+
+/* CSS DEL MODAL */
+
+.text {
+    padding: 20px;
+    text-align: justify;
+}
+
+.title {
+    color: #88c425;
+}
+
+.img {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 2%;
+}
+
+.close {
+    position: absolute;
+    color: #ffffff;
+    background-color: #88c425;
+    cursor: pointer;
+}

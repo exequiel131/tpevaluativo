@@ -1,0 +1,24 @@
+<!-- Inicio Sesion -->
+<div class="p_form">
+
+  <form class="form">
+    <br>
+    <h1 class="title">Inicio de Sesion</h1>
+    <hr>
+    <!-- email -->
+    <span class="input-span">
+      <label for="email" class="label">Email</label>
+      <input [(ngModel)]="inicio.email" type="email" name="email" class="input">
+    </span>
+    <!-- contraseña -->
+    <span class="input-span">
+      <br>
+      <label for="password" class="label">Password</label>
+      <input [(ngModel)]="inicio.password" [type]="hide ? 'password' : 'text'" #input minlength="6" required>
+    </span>
+    <br>
+    <!-- boton de log in -->
+    <input class="submit" (click)="iniciarsesion()" type="submit" value="Log in" />
+    <br>
+  </form>
+</div>

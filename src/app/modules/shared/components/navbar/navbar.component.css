@@ -1,0 +1,86 @@
+.example-spacer {
+    flex: 25 auto;
+  }
+ 
+
+
+
+/*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
+@media (min-width: 300px) and (max-width: 700px) {
+  mat-toolbar {
+    background-image: "../../1.png";
+    
+  }
+
+  
+
+
+
+}
+/*FIN DE MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS CELULARES ETC*/
+
+
+
+/*MEDIA RESPONSIVO PARA PC  */
+
+@media (min-width: 701px) {
+
+  /*hace referencia a todo el navbar */ 
+  mat-toolbar {
+    /*color de fondo de la barra */
+    background-color: #3e4c5e;
+    /* tamaño de la barra*/
+    height: 75px;
+    /*color iconos*/
+    color: black; 
+
+  }
+  .buscador{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background-color:rgb(255, 255, 255) ;
+    padding: 5px;
+    border: 1px solid black;
+    height: 50px;
+    border-radius: 5px;
+  }
+  .buscador input{
+    border: 0;
+    width: 250px;
+    font-size:small;
+    outline: none;
+   
+  }
+}
+
+/* CAMBIO DE FONDO */ 
+#checkbox {
+  display: none;
+}
+
+.switch {
+  position: relative;
+  width: 6%;
+  padding: 5px 10px;
+  background-color: rgb(46, 46, 46);
+  border-radius: 50px;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: white;
+  font-size: 0.7em;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.switch svg path {
+  fill: white;
+}
+#checkbox:checked + .switch {
+  background-color: #88c425;
+  box-shadow: 0px 0px 40px #588909;
+}
+
