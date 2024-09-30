@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CrudService } from '../admin/services/crud.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
@@ -24,9 +24,12 @@ export class CarritoComponent {
 
 
 
-
-
+//personalizacion de alerta proximamente modal para pagar los productos
   realizarCompra(){
-    alert('Su compra ha sido exitosa')
+    Swal.fire({
+      title: "Buen trabajo!",
+      text: "Se pudo realizar la compra con exito !!",
+      icon: "success"
+    }); 
   }
 }

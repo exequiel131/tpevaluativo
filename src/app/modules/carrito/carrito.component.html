@@ -9,7 +9,7 @@
         </ng-container>
 
         <ng-container matColumnDef="cantidad">
-            <mat-header-cell *matHeaderCellDef>cantidad</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef>Cantidad</mat-header-cell>
             <mat-cell *matCellDef="let item">
                 <input type="number" [(ngModel)]="item.cantidad" min="1" (ngModelChange)="actualizarSubtotal(item)">
             </mat-cell>

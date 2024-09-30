@@ -29,7 +29,7 @@ export class CrudService {
   private Carritoscoleccion: AngularFirestoreCollection<Articulos>
 
   constructor(private database: AngularFirestore) {
-    this.ArticulosCollection = database.collection('articulos');
+    this.ArticulosCollection = database.collection('articulos'); 
 
 //CARRO DE COMPRAS 
     this.Carritoscoleccion = database.collection('articulos')
