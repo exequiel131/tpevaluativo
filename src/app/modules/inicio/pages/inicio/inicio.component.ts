@@ -53,6 +53,9 @@ export class InicioComponent {
     this.modalvisible = true;
 
     this.articuloseleccionado = info;
+
+    console.log('Imagen clickeada:', info); // Añadir esta línea para depuración
+
   }
 
   cerrarver() {

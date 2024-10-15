@@ -1,5 +1,5 @@
 <!--esta vista contendra el carrousel de la pagina web -->
-<div id="carouselExample" class="carousel slide">
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="../../../../../assets/img/Carrousel/1.png" class="d-block w-100" alt="...">
@@ -23,24 +23,34 @@
 
 
 
-<!--productos-->
-<div class="card-container">
-  <div class=" col-lg-3 card1" *ngFor="let articulo of colecciongeneral">
-    <div class="card" style="width: 18rem;">
-      <img src="{{articulo.imagen}}" class="card-img-top">
-      <div class="card-body">
-        <h4 class="card-title"><b>{{articulo.nombre}}</b></h4>
-        <hr>
-        <b>
-          <h4>{{articulo.alt}}</h4>
-        </b>
 
+<!-- Productos -->
+<div class="card-container">
+  <div class="col-lg-3 card1" *ngFor="let articulo of colecciongeneral">
+    <div class="card" style="width: 18rem;">
+      <div class="badge">Lo nuevo</div> <!-- Texto destacado -->
+      <img src="{{articulo.imagen}}" class="card-img-top" alt="{{articulo.nombre}}" data-bs-toggle="modal" data-bs-target="#vermas" (click)="mostrarver(articulo)">
+            <div class="card-body">
+        <h4 class="card-title"><b>{{articulo.nombre}}</b></h4>
+        <p class="card-subtitle">{{articulo.alt}}</p>
         <p class="card-text"> <b>${{articulo.precio}}</b> </p>
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#vermas"
-          (click)="mostrarver(articulo)">ver más </button>
+          
+        <button type="button" class="btn" id="boton-vm"  data-bs-toggle="modal" data-bs-target="#vermas"
+          (click)="mostrarver(articulo)">Ver más</button>
+
+        <button type="button" id="car2" class="btn" data-dismiss="modal"
+          (click)="serviciocrud.AgregarAlCarrito(articulo)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+            viewBox="0 0 16 16">
+            <path
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+          </svg>
+        </button>  
       </div>
     </div>
   </div>
+</div>
+
 
   <!-- Modal para ver mas infomracion-->
   <div class="modal fade" *ngIf="modalvisible" id="vermas" tabindex="-1" role="dialog"
@@ -81,7 +91,7 @@
 
         <div class="modal-footer">
           <!-- ACA VA EL BOTON DEL CARRITO-->
-          <button type="button" class="btn" style="background-color: greenyellow;" data-dismiss="modal">Comprar
+          <button type="button" class="btn" style="background-color: #88c425;" data-dismiss="modal">Comprar
             Ahora</button>
 
           <button type="button" class="btn" data-dismiss="modal" style="background-color: rgb(0, 0, 0); color: white;"
