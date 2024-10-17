@@ -37,13 +37,14 @@
   /*hace referencia a todo el navbar */ 
   mat-toolbar {
     /*color de fondo de la barra */
-    background-color: rgb(23, 28, 34); /*rgb(23,28,34);
+    background-color: #000000; /*rgb(23,28,34);
     /* tamaño de la barra*/
-    height: 75px;
+    height: 85px;
     /*color iconos*/
     color: rgb(0, 0, 0); 
 
   }
+  /*css del buscador*/
   .buscador{
     display: flex;
     text-align: center;
@@ -100,18 +101,4 @@
 
 }
 
-/*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
-@media (min-width: 300px) and (max-width: 700px) {
-
-}
-/*FIN DE MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS CELULARES ETC*/
-
-
-
-/*MEDIA RESPONSIVO PARA PC  */
-
-@media (min-width: 701px) {
-
-  
-}
 

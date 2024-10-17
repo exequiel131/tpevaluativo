@@ -1,16 +1,30 @@
-.container {
-    display: flex;
-    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-    padding: 10px;
-    text-align: center;
-    justify-content: center;
-    align-items: center; /* Centra el formulario horizontalmente */
-    max-width: 400px; /* Ancho máximo del formulario */
-    margin: auto; /* Centra el contenedor en la página */
+
+
+/*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
+@media (min-width: 300px) and (max-width: 700px) {
+
 }
 
-.button {
-    width: 120px; /* Botón más pequeño */
-    margin: 20px auto; /* Centrar el botón y agregar espaciado */
-    background-color: greenyellow;
+
+
+/*MEDIA RESPONSIVO PARA PC  */
+
+@media (min-width: 701px) {
+    .container {
+        display: flex;
+        flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+        padding: 10px;
+        text-align: center;
+        justify-content: center;
+        align-items: center; /* Centra el formulario horizontalmente */
+        max-width: 400px; /* Ancho máximo del formulario */
+        margin: auto; /* Centra el contenedor en la página */
+    }
+    
+    .button {
+        width: 120px; /* Botón más pequeño */
+        margin: 20px auto; /* Centrar el botón y agregar espaciado */
+        background-color: greenyellow;
+    }
+  
 }

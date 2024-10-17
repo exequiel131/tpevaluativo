@@ -1,112 +1,124 @@
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; /* Centra las cards */
-  gap: 20px; /* Espacio entre las cards */
-  margin: 40px; 
-}
 
-.card1 {
-  display: flex;
-  justify-content: center;
-}
+  /*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
+@media (min-width: 300px) and (max-width: 700px) {
 
-.card {
-  position: relative;
-  border: none;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-5px); /* Efecto hover */
-}
-
-.card-img-top {
-  width: 100%; /* Ajusta la imagen al tamaño del card */
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-/*lo nuevo*/
-.badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #88c425; /* Color destacado */
-  color: white;
-  padding: 5px 10px;
-  font-size: 0.8rem;
-  border-radius: 5px;
-}
-
-.card-title {
-  color: #000;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.card-subtitle {
-  color: #666;
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-.card-text {
-  color: #000;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.btn {
-  color: #ffffff;
-  background-color: #000000;
-  cursor: pointer;
-}
-
-#car2{
-  background-color: #000000;
-  margin-left: 10px;
 }
 
 
+
+/*MEDIA RESPONSIVO PARA PC  */
+
+@media (min-width: 701px) {
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Centra las cards */
+    gap: 20px; /* Espacio entre las cards */
+    margin: 40px; 
+  }
   
+  .card1 {
+    display: flex;
+    justify-content: center;
+  }
   
+  .card {
+    position: relative;
+    border: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+  }
   
+  .card:hover {
+    transform: translateY(-5px); /* Efecto hover */
+  }
   
+  .card-img-top {
+    width: 100%; /* Ajusta la imagen al tamaño del card */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
   
+  /*lo nuevo*/
+  .badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #88c425; /* Color destacado */
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+  }
   
+  .card-title {
+    color: #000;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
   
+  .card-subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+  }
   
+  .card-text {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
   
+  .btn {
+    color: #ffffff;
+    background-color: #000000;
+    cursor: pointer;
+  }
   
+  #car2{
+    background-color: #000000;
+    margin-left: 10px;
+  }
   
   
     /* CSS DEL MODAL */
   
-  .text {
-    padding: 20px;
-    text-align: justify;
-  }
+    .text {
+      padding: 20px;
+      text-align: justify;
+    }
+    
+    .title {
+      color: #88c425;
+    }
+    
+    .img {
+      display: block;
+      margin: auto;
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 2%;
+    }
+    
+    .close {
+      position: absolute;
+      color: #ffffff;
+      background-color: #88c425;
+      cursor: pointer;
+    } 
+    
+}
   
-  .title {
-    color: #88c425;
-  }
   
-  .img {
-    display: block;
-    margin: auto;
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-    border-radius: 2%;
-  }
   
-  .close {
-    position: absolute;
-    color: #ffffff;
-    background-color: #88c425;
-    cursor: pointer;
-  } 
+  
+  
+  
+  
+  
+  
+  
   

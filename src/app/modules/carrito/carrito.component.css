@@ -1,15 +1,28 @@
-.Carrito-resumen{
-    margin: 50px;
-    text-align: center;
+
+/*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
+@media (min-width: 300px) and (max-width: 700px) {
+
 }
-#ed1{
+
+
+
+/*MEDIA RESPONSIVO PARA PC  */
+
+@media (min-width: 701px) {
+    .Carrito-resumen{
+        margin: 50px;
+        text-align: center;
+    }
+    #ed1{
+        margin: 20px;
+        text-align: center;
+    }
+    #total{
     margin: 20px;
-    text-align: center;
-}
-#total{
-margin: 20px;
-}
-.btn{
-    background-color: #88c425;
-    color: black;
+    }
+    .btn{
+        background-color: #88c425;
+        color: black;
+    }
+  
 }
