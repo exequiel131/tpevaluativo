@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 export class CarritoComponent {
   constructor(public crudservice : CrudService){} 
 
-  displayedColumns:string[]=['nombre','cantidad','preciounitario','eliminar']
+  displayedColumns:string[]=['imagen','nombre','cantidad','preciounitario','eliminar']
 
   actualizarSubtotal(item:any){
     this.crudservice.AgregarAlCarrito(item)

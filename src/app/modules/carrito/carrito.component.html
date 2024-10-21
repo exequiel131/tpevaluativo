@@ -3,6 +3,15 @@
 
     <mat-table [dataSource]="crudservice.carritoscoleccion" class="mat-elevation-z8">
 
+
+        <!-- Columna de Imagen -->
+        <ng-container matColumnDef="imagen">
+            <mat-header-cell *matHeaderCellDef> Imagen </mat-header-cell>
+            <mat-cell *matCellDef="let item">
+                <img [src]="item.imagen" alt="{{item.nombre}}" width="50" height="50" style="object-fit: cover;">
+            </mat-cell>
+        </ng-container>
+        
         <ng-container matColumnDef="nombre">
             <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
             <mat-cell *matCellDef="let item"> {{item.nombre}}</mat-cell>
