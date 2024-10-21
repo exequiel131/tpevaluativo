@@ -70,7 +70,7 @@ export class AuthService {
   }
 
 //funcion para detener el rol de usuario                                                    
-obtenerRol (uid : string ):Observable <string | null > {
+obtenerRol (uid : string ):Observable <string | null> {
   //accedemos a la coleccion de usuarios, buscando por UID, obteniendo cambios en valores al enviar info por tuberia, "mapeamos"
  //la coleccion , obtenemos un usuario especifico y buscamos su atributo "rol", aun si este es nulo. 
 
