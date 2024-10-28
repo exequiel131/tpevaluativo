@@ -12,10 +12,6 @@
     
   }
 
-  
-
-
-
 }
 /*FIN DE MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS CELULARES ETC*/
 
@@ -52,9 +48,46 @@
     outline: none;
    
   }
-}
 
-/* CAMBIO DE FONDO */ 
+  .checkbox-container {  
+    display: flex;  
+    justify-content: center; /* Centrar el contenedor si es necesario */  
+    width: 100%; /* O el ancho deseado */  
+}  
+
+.switch {  
+  text-align: center;  
+  position: relative;  
+  width: 4%;  
+  padding: 5px 10px;  
+  background-color: rgb(46, 46, 46);  
+  border-radius: 100px;  
+  z-index: 1;  
+  cursor: pointer;  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  gap: 5px;  
+  color: white;  
+  font-size: 0.7em;  
+  font-weight: 600;  
+  transition: all 0.3s;  
+}  
+
+.switch svg {  
+    width: 20px; /* Ajusta el tamaño del SVG según sea necesario */  
+    height: 20px; /* Ajusta el tamaño del SVG según sea necesario */  
+}  
+
+.switch svg path {  
+    fill: white;  
+}  
+
+#checkbox:checked + .switch {  
+    background-color: #88c425;  
+    box-shadow: 0px 0px 40px #588909;  
+}
+  /*
 #checkbox {
   display: none;
 }
@@ -81,6 +114,8 @@
 }
 #checkbox:checked + .switch {
   background-color: #88c425;
-  box-shadow: 0px 0px 40px #588909;
+  box-shadow: 0px 0px 40px #588909;
+}
+*/
 }
 

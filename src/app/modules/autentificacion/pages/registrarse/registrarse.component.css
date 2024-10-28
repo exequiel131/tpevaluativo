@@ -1,11 +1,143 @@
-.container{
+
+/*CONTENEDOR DEL FORMULARIO*/
+.form {
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 0.2em;
+    background-color: #171717;
+    border-radius: 19px;
+    transition: .4s ease-in-out;
+    max-width: 400px; 
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 35%;
+    border: 1px solid #528105 ;
+    box-shadow: 0 0 65px;
+    color: #528105; 
+  
+  }
+  
+  .form:hover {
+    transform: scale(1.05);
+    border: 1px solid #528105 ;
+  }
+
+   .form .btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2.5em;
+  }
+
+
+  #heading {
+    text-align: center;
+    margin: 2em;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+  }
+  
+  .field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 25px;
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #171717;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  }
+  
+  .input-icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: white;
+  }
+  
+  .input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #d3d3d3;
+  }
+  
+ 
+  
+  .button1 {
+    padding: 0.5em;
+    padding-left: 1.1em;
+    padding-right: 1.1em;
+    border-radius: 5px;
+    margin-right: 0.5em;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #252525;
+    color: white;
+  }
+  
+  .button1:hover {
+    background-color: #88c425;
+    color: white;
+  }
+  
+  .button2 {
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #252525;
+    color: white;
+  }
+  
+  .button2:hover {
+    background-color: #88c425;
+    color: white;
+  }
+  
+  .button3 {
+    margin-bottom: 3em;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #252525;
+    color: white;
+  }
+  
+  .button3:hover {
+    background-color: #88c425;
+    color: white;
+  }
+
+
+
+/*.container {
+    display: flex;
+    flex-direction: column; 
     padding: 10px;
     text-align: center;
     justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    margin: auto; 
 }
-.button{
-    width: 120px;
-    margin: auto;
-   
+
+
+.button {
+    width: 120px; 
+    margin: 20px auto;
+    background-color: greenyellow;
 }
+*/

@@ -25,7 +25,7 @@ export class RegistroComponent {
 
   //input de la contraseña para ver los caracteres o no 
   hide = true;
-  // ################################################################################# Importaciones de interfaz ''
+  //  Importaciones de interfaz ''
   //importar la interfaz de usuario -> inicializar
   usuario: Usuario = {
     uid: '',//-> inicializamos con comillas simples porque es string,si fuera nambuer se inicializa con 0
@@ -35,7 +35,7 @@ export class RegistroComponent {
     rol: '',
     password: ''
   }
-  //##################################################################################### fin de la importacion
+  // fin de la importación
 
   constructor(
     public servicioAuth: AuthService,
@@ -49,17 +49,7 @@ export class RegistroComponent {
   //funcion para el registro de nuevos usuarios
   async registrar() {
     //constante credencial va a reguardar la informacion que ingrese el usuario 
-    /*
-    const credenciales = {
-      password: this.usuario.password,
-      email: this.usuario.email,
-      uid: this.usuario.uid,
-      nombre: this.usuario.nombre,
-      apellido: this.usuario.apellido,
-      rol: this.usuario.rol,
-
-    }
-      */
+  
      //Registro con servicio de AUTH  
     const credenciales={
       email:this.usuario.email,
@@ -82,7 +72,7 @@ export class RegistroComponent {
     .catch(error=>{
 
       Swal.fire({
-        title: "Ph no!",
+        title: "Oh no!",
         text: "Ocurrio un error al registrar un nuevo usuario :( \n"+error,
         icon: "error"
       });

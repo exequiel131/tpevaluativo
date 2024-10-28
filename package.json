@@ -27,9 +27,11 @@
     "bootstrap-icons": "^1.11.3",
     "crypto-js": "^4.2.0",
     "firebase": "^10.12.4",
+    "qrcode-terminal": "^0.12.0",
     "rxjs": "~7.8.0",
-    "sweetalert2": "^11.12.3",
+    "sweetalert2": "^11.6.13",
     "tslib": "^2.3.0",
+    "whatsapp-web.js": "^1.26.0",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
@@ -38,11 +40,11 @@
     "@angular/compiler-cli": "^16.2.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",
-    "karma": "~6.4.0",
+    "karma": "^6.4.4",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
+    "karma-jasmine": "^4.0.2",
+    "karma-jasmine-html-reporter": "^1.7.0",
     "typescript": "~5.1.3"
   }
 }

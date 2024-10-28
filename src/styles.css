@@ -4,8 +4,7 @@
 
 body{
     transition: all 1.5s ease
-    
-  }
+}
 
 
 
@@ -13,10 +12,6 @@ body{
     display: none;
 
   }
-
-
-
-
 
 
 #label_toggle{

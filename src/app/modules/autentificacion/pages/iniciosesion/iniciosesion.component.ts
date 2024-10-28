@@ -77,13 +77,13 @@ export class IniciosesionComponent {
       const usuarioBD = await this.servicioAuth.obtenerUsuario(credenciales.email);
       //condicional verificada que ese usuario de la BD existiera o que sea igual al de nuestra coleccion
       if (!usuarioBD || usuarioBD.empty) {
-     
-//alertas personalizadas npm i sweetalert2 importamos lo primero que sale en el sitio web
+
+        //alertas personalizadas npm i sweetalert2 importamos lo primero que sale en el sitio web
         Swal.fire({
           title: "oh no!",
           text: "correo electronico no esta registrado",
           icon: "error"
-        });    
+        });
 
         this.limpiar();
         return;
@@ -106,7 +106,7 @@ export class IniciosesionComponent {
           title: "oh no!",
           text: "Contraseña incorrecta",
           icon: "error"
-        });    
+        });
 
         this.inicio.password = '';
         return
@@ -119,7 +119,7 @@ export class IniciosesionComponent {
             title: "Buen trabajo!",
             text: "Se pudo ingresar con exito !!",
             icon: "success"
-          });    
+          });
 
           this.servicioRutas.navigate(['/inicio']);
         })
@@ -128,7 +128,7 @@ export class IniciosesionComponent {
             title: "oh no!",
             text: " hubo un error al iniciar sesión:( ",
             icon: "error"
-          });    
+          });
 
           this.limpiar()
         })
@@ -145,7 +145,7 @@ export class IniciosesionComponent {
     const inputs = {
       email: this.inicio.email,
       password: this.inicio.password
-    }
-  }
+    }
+  }
 
 }
