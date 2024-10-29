@@ -2,7 +2,127 @@
   
   /*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
 @media (min-width: 300px) and (max-width: 700px) {
+  .card-container {
+    display: flex;
+    flex-direction: column; /* Coloca las cards en una sola columna */
+    align-items: center;
+    gap: 15px; /* Espacio entre las cards */
+    margin: 20px 0; /* Reduce el margen */
+  }
 
+  .card {
+    width: 90%; /* Ocupa la mayor parte del ancho de la pantalla */
+    margin: 0 auto; /* Centra las cards */
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); /* Ajusta la sombra para menor intensidad */
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: auto;
+  }
+
+  .badge {
+    top: 5px;
+    left: 5px;
+    font-size: 0.7rem; /* Reduce el tamaño de la badge */
+    padding: 4px 8px;
+  }
+
+  .card-title {
+    font-size: 0.9rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 100%; /* El botón ocupa todo el ancho de la card */
+    font-size: 0.9rem;
+  }
+  
+  #car2 {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* MEDIA QUERY PARA PC */
+@media (min-width: 701px) {
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin: 40px; 
+  }
+  
+  .card1 {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card {
+    position: relative;
+    border: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #88c425;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+  }
+
+  .card-title {
+    color: #000;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .card-text {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    color: #ffffff;
+    background-color: #000000;
+    cursor: pointer;
+  }
+
+  #car2 {
+    background-color: #000000;
+    margin-left: 10px;
+  }
 }
 
 

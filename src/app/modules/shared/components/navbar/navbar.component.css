@@ -1,15 +1,66 @@
-.example-spacer {
-    flex: 25 auto;
-  }
- 
+
 
 
 
 /*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
 @media (min-width: 300px) and (max-width: 700px) {
+   
+  .example-spacer {
+display: none;  }
+  #menuinicio{
+    width: 10px;
+  }
+  #bn1{
+    color: #88c425;
+  }
+  #carrito{
+color: #88c425;
+  }
+  #menuproducto{
+    color: #88c425;
+  }
+  /* Ajuste de la barra de herramientas */
   mat-toolbar {
-    background-color: rgb(8, 123, 255);
-    
+    background-color: rgb(0, 0, 0);
+    height: 60px; /* Reduce el tamaño para pantallas pequeñas */
+    color: white; /* Color de texto para contraste */
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  /* Oculta secciones de menú específicas si es necesario */
+ #menuproducto, #menusecciones {
+  
+  }
+
+  /* Buscador en pantallas pequeñas */
+  .buscador {
+    display: none; /* Elimina el buscador en pantallas pequeñas */
+  }
+
+  .buscador input {
+    display: none; /* Elimina el buscador en pantallas pequeñas */
+  }
+
+  /* Ajuste del switch de modo */
+  .switch {
+    width: 35px;
+    padding: 5px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 50px;
+    font-size: 0.6rem;
+    transition: all 0.3s;
+  }
+
+  /* Iconos dentro del switch */
+  .switch svg path {
+    fill: white;
+  }
+
+  /* Estado activo del switch */
+  #checkbox:checked + .switch {
+    background-color: #88c425;
   }
 
   /*
@@ -34,6 +85,22 @@
 
 @media (min-width: 701px) {
 
+  #bn1{
+    color: #88c425;
+  }
+  #menuinicio{
+  
+  }
+  #carrito{
+color: #88c425;
+  }
+  #menuproducto{
+    color: #88c425;
+  }
+  .example-spacer {
+    flex: 25 auto;
+  }
+ 
   /*hace referencia a todo el navbar */ 
   mat-toolbar {
     /*color de fondo de la barra */
