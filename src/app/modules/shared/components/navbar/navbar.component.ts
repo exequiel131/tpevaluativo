@@ -34,13 +34,5 @@ cerrarsesion (){
   this.servicioRutas.navigate(['/'])
 }
 
- //Función cambiar fondo a oscuro
- cambiarFondo(){
-  let checkbox: HTMLInputElement | null = document.getElementById("checkbox") as HTMLInputElement
 
-  if (checkbox) {
-    let checked: boolean = checkbox.checked;
-    document.body.classList.toggle('dark',checked)
-  }
-}
 }

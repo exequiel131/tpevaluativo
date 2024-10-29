@@ -19,6 +19,8 @@ export class CardSuplementosComponent {
   //variable local para manejar estado de un modal 
   modalvisible: boolean = false;
 
+  suplementoscolecction: any;
+
   //inicializamos el servicio llamandolo  
   constructor(public serviciocrud: CrudService) { }
 
