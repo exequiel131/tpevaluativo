@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CrudService } from '../admin/services/crud.service';
-
+import { Input } from '@angular/core';
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
