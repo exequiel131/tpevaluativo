@@ -36,37 +36,9 @@ export class IniciosesionComponent {
   //creamos coleccion de usuarios,tipo 'usuario'para arrays
   coleccionIniciosesion: Usuario[] = [];
 
-  //funcion para el registro de nuevos usuarios
+  //funcion para el inicio sesión de los usuarios
   async iniciarsesion() {
-    /*
-    //constante credencial va a reguardar la informacion que ingrese el usuario 
-    const credenciales = {
-      uid: this.inicio.uid,
-      nombre: this.inicio.nombre,
-      apellido: this.inicio.apellido,
-      email:this.inicio.email,
-      rol:this.inicio.rol,
-      password:this.inicio.password
-    }
-    //Enviamos la nueva informacion como un nuevo objeto a la colecion de usuario
-    this.coleccionIniciosesion.push(credenciales)
-    // llamamos a los datos locales que esatn en registro
-  const sUsuarioEncontrado = localStorage.getItem(credenciales.email)
-  
-  if(sUsuarioEncontrado){
-    const oUsuarioEncontrado = JSON.parse(sUsuarioEncontrado)
-    const contrasena = oUsuarioEncontrado.password
-    console.log('contraseña ='+ contrasena)
-    if(contrasena == credenciales.password)
-      alert("Funciona")
-      else{
-        alert("no funciona")
-      }
-  } else{
-    console.log('User date not found in local storage')
-  }
-  const compra = localStorage.getItem('contra')
-  */
+
     const credenciales = {
       email: this.inicio.email,
       password: this.inicio.password
@@ -77,13 +49,13 @@ export class IniciosesionComponent {
       const usuarioBD = await this.servicioAuth.obtenerUsuario(credenciales.email);
       //condicional verificada que ese usuario de la BD existiera o que sea igual al de nuestra coleccion
       if (!usuarioBD || usuarioBD.empty) {
-     
-//alertas personalizadas npm i sweetalert2 importamos lo primero que sale en el sitio web
+
+        //alertas personalizadas npm i sweetalert2 importamos lo primero que sale en el sitio web
         Swal.fire({
           title: "oh no!",
           text: "correo electronico no esta registrado",
           icon: "error"
-        });    
+        });
 
         this.limpiar();
         return;
@@ -106,7 +78,7 @@ export class IniciosesionComponent {
           title: "oh no!",
           text: "Contraseña incorrecta",
           icon: "error"
-        });    
+        });
 
         this.inicio.password = '';
         return
@@ -119,7 +91,7 @@ export class IniciosesionComponent {
             title: "Buen trabajo!",
             text: "Se pudo ingresar con exito !!",
             icon: "success"
-          });    
+          });
 
           this.servicioRutas.navigate(['/inicio']);
         })
@@ -128,7 +100,7 @@ export class IniciosesionComponent {
             title: "oh no!",
             text: " hubo un error al iniciar sesión:( ",
             icon: "error"
-          });    
+          });
 
           this.limpiar()
         })
@@ -145,7 +117,7 @@ export class IniciosesionComponent {
     const inputs = {
       email: this.inicio.email,
       password: this.inicio.password
-    }
-  }
+    }
+  }
 
 }
