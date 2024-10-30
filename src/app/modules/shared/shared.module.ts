@@ -11,6 +11,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import {MatMenuModule} from '@angular/material/menu';
 
+import {MatTable, MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+
 //import { ServicesComponent } from './services/services.component';
 
 
@@ -28,6 +33,10 @@ import {MatMenuModule} from '@angular/material/menu';
     MatButtonModule,
     MatToolbarModule,
     MatMenuModule,
+    MatTableModule,
+    MatInputModule,
+    MatFormFieldModule,
+   FormsModule,
     
   ],
   

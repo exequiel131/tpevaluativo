@@ -97,6 +97,22 @@
   background-color: #88c425;
   box-shadow: 0px 0px 40px #588909;
 }
+.Carrito-resumen{
+  margin: 50px;
+  text-align: center;
+}
+#ed1{
+  margin: 20px;
+  text-align: center;
+}
+#total{
+margin: 20px;
+}
+.btn{
+  background-color: #88c425;
+  color: black;
+}
+
 
 }
 

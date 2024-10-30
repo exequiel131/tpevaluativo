@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/modules/autentificacion/services/auth.service';
-
+import { CrudService } from 'src/app/modules/admin/services/crud.service';
 
 
 @Component({
@@ -16,7 +16,8 @@ deslogueado = false ;
 
 constructor (
   public servicioAuth: AuthService,
-  public servicioRutas: Router
+  public servicioRutas: Router,
+  public crudservice: CrudService
 
 
 ){}
@@ -65,5 +66,26 @@ cambiarFondo(){
     let checked: boolean = checkbox.checked;
     document.body.classList.toggle('dark',checked)
   }
+}
+
+displayedColumns:string[]=['nombre','cantidad','preciounitario','eliminar']
+
+actualizarSubtotal(item:any){
+  this.crudservice.AgregarAlCarrito(item)
+}
+
+eliminarItem(item:any){
+  this.crudservice.eliminarItem(item);
+  this.crudservice.carritoscoleccion =[...this.crudservice.carritoscoleccion]
+}
+
+
+
+
+
+
+
+realizarCompra(){
+  alert('Su compra ha sido exitosa')
 }
 }
