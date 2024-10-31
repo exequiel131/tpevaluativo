@@ -10,6 +10,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+
 //angular
 import { FormsModule } from '@angular/forms';
 import { RegistroComponent } from './pages/registrarse/registrarse.component';
@@ -28,6 +30,7 @@ import { IniciosesionComponent } from './pages/iniciosesion/iniciosesion.compone
     MatFormFieldModule,
     MatButtonModule,
     MatSelectModule,
+    MatRadioModule,
     //angular
     FormsModule
   ],
@@ -39,7 +42,8 @@ import { IniciosesionComponent } from './pages/iniciosesion/iniciosesion.compone
     MatFormFieldModule,
     MatButtonModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    MatRadioModule
   ]
 })
 export class AutentificacionModule { }

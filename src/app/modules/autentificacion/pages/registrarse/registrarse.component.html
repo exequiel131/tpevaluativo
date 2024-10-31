@@ -1,31 +1,42 @@
 <div class="container">
     <div class="row">
       <h1><strong>Registrarse</strong></h1>
-      <i class="material-icons" style="font-size: 200px;">person</i>
   
-      <!--nombre de usuario-->
-      <mat-form-field appearance="fill">
-        <mat-label>Ingrese Un Nombre De Usuario</mat-label>
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <!-- ngModel = directiva BIDIRECCIONAL utilizada para formularios -->
-        <input [(ngModel)]="usuario.nombre" matInput placeholder="Ej: Pepito" required>
-  
-      </mat-form-field>
-  
+      <mat-radio-group aria-label="Select an option">
+        <form class="example-form">
+          <mat-form-field  appearance="outline" class="example-full-width">
+            <mat-label>Ingrese su nombre</mat-label>
+            <input class="input" [(ngModel)]="usuario.nombre" matInput placeholder="Ej: pepitoperez2022@gmail.com"
+              required>
+          </mat-form-field>
+        </form>
+      &nbsp;
+  </mat-radio-group>
+
       <!-- Apellido de usuario -->
-      <mat-form-field appearance="fill">
-        <mat-label>Ingrese su apellido:</mat-label>
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <input [(ngModel)]="usuario.apellido" matInput placeholder="Ej: Peréz" required>
-      </mat-form-field>
+     
+      <mat-radio-group aria-label="Select an option">
+        <form class="example-form">
+          <mat-form-field  appearance="outline" class="example-full-width">
+            <mat-label>Ingrese su apellido</mat-label>
+            <input class="input" [(ngModel)]="usuario.apellido" matInput placeholder="Ej: pepitoperez2022@gmail.com"
+              required>
+          </mat-form-field>
+        </form>
+      &nbsp;
+  </mat-radio-group>
   
       <!--Gmail de usuario -->
-      <mat-form-field appearance="fill">
-        <mat-label>Ingrese Un Gmail</mat-label>
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <input [(ngModel)]="usuario.email" matInput placeholder="Ej: pepitoperez2022@gmail.com" required>
-  
-      </mat-form-field>
+     <mat-radio-group aria-label="Select an option">
+        <form class="example-form">
+          <mat-form-field  appearance="outline" class="example-full-width">
+            <mat-label>Ingrese un gmail</mat-label>
+            <input class="input" [(ngModel)]="usuario.email" matInput placeholder="Ej: pepitoperez2022@gmail.com"
+              required>
+          </mat-form-field>
+        </form>
+      &nbsp;
+  </mat-radio-group>
   
       <!-- Rol de usuario -->
       <mat-form-field>

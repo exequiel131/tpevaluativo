@@ -1,16 +1,55 @@
+
+
+/*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
+@media (min-width: 300px) and (max-width: 700px) {
+
+}
+
+
+
+/*MEDIA RESPONSIVO PARA PC  */
+
+@media (min-width: 701px) {
+
+  /* CSS DEL CONTENEDOR */
+
 .container {
-    display: flex;
+  border: 2px solid #000000; /* Color y grosor del borde */
+  padding: 20px; /* Espacio interno del formulario */
+  border-radius: 8px; /* Bordes redondeados opcional */    display: flex;
+    border-radius: 20px;
     flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
     padding: 10px;
     text-align: center;
-    justify-content: center;
+    justify-content: center; /* controla la distribución horizontal de los elementos */
     align-items: center; /* Centra el formulario horizontalmente */
     max-width: 400px; /* Ancho máximo del formulario */
     margin: auto; /* Centra el contenedor en la página */
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
+/* CSS DEL BOTON */
 .button {
     width: 120px; /* Botón más pequeño */
     margin: 20px auto; /* Centrar el botón y agregar espaciado */
     background-color: greenyellow;
+
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-end {
+  border-radius: 30px !important;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-start {
+  border-radius: 30px !important;
+}
 }
