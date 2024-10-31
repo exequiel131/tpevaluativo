@@ -82,7 +82,7 @@ export class RegistroComponent {
     .catch(error=>{
 
       Swal.fire({
-        title: "Ph no!",
+        title: "Oh no!",
         text: "Ocurrio un error al registrar un nuevo usuario :( \n"+error,
         icon: "error"
       });

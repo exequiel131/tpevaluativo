@@ -1,53 +1,66 @@
 .example-spacer {
-    flex: 25 auto;
-  }
- 
+  flex: 25 auto;
+}
 
 
-
-/*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
-@media (min-width: 300px) and (max-width: 700px) {
-  mat-toolbar {
-    background-color: rgb(8, 123, 255);
-    
-  }
+/*hace referencia a todo el navbar */
+mat-toolbar {
+  /*color de fondo de la barra */
+  background-color: rgb(23, 28, 34);
+  /* tamaño de la barra*/
+  height: 75px;
+  /*color iconos*/
+  color: rgb(0, 0, 0);
 
 }
-/*FIN DE MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS CELULARES ETC*/
+
+.buscador {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  border: 1px solid black;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.buscador input {
+  border: 0;
+  width: 250px;
+  font-size: small;
+  outline: none;
+
+}
 
 
+/*Responsivo para celulares*/
+@media (max-width: 480px) {
 
-/*MEDIA RESPONSIVO PARA PC  */
-
-@media (min-width: 701px) {
-
-  /*hace referencia a todo el navbar */ 
   mat-toolbar {
-    /*color de fondo de la barra */
-    background-color: rgb(23, 28, 34); /*rgb(23,28,34);
-    /* tamaño de la barra*/
-    height: 75px;
-    /*color iconos*/
-    color: rgb(0, 0, 0); 
-
+    background-color: rgb(23, 28, 34);
+    color: rgb(0, 0, 0);
+    height: 60px;
   }
-  .buscador{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    background-color:rgb(255, 255, 255) ;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .buscador {
+    background-color: rgb(255, 255, 255);
     padding: 5px;
     border: 1px solid black;
-    height: 50px;
-    border-radius: 5px;
+    height: 33px;
+    padding: 3px;
+    width: 500px;
   }
-  .buscador input{
-    border: 0;
-    width: 250px;
-    font-size:small;
-    outline: none;
-   
+
+  .buscador input {
+    width: 70%;
+    height: 30%;
+    font-size: x-small;
   }
 
 }
-

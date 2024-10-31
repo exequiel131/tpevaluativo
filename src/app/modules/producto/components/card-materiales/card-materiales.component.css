@@ -37,17 +37,7 @@
       margin: 10px;
     }
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
   
     /* CSS DEL MODAL */
   
@@ -76,3 +66,51 @@
     cursor: pointer;
   } 
   
+
+  
+/*MEDIA PARA CELULARES*/ 
+@media (max-width: 480px) {
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .card1 {
+    width: 100%;
+    margin: 10px auto;
+    justify-content: space-around;
+    display: flex;
+  }
+
+  #card {
+    margin: 100px;
+  }
+
+
+  .card-img-top {
+    width: 80%;
+  }
+
+  .card-title {
+    color: #88c425;
+  }
+
+  .btn {
+    color: #ffffff;
+    background-color: #88c425;
+    cursor: pointer;
+
+  }
+
+  .card-img-top {
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+}
