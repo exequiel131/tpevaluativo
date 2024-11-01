@@ -1,10 +1,42 @@
 
 
 /*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
+/* MEDIA QUERY PARA PANTALLAS PEQUEÑAS */
 @media (min-width: 300px) and (max-width: 700px) {
-
+  /* CSS DEL CONTENEDOR */
+  .icon {
+    display: none; /* Oculta el ícono en pantallas pequeñas */
 }
+  .container {
+      padding: 10px;
+      max-width: 90%; /* Aumenta el ancho máximo para aprovechar el espacio */
+  }
 
+  h1 {
+      font-size: 1.5em; /* Ajusta el tamaño del encabezado */
+      margin-bottom: 10px; /* Agrega un margen para separar del ícono */
+  }
+
+  /* Ícono de usuario */
+  .material-icons {
+      font-size: 100px; /* Reduce el tamaño del ícono */
+      margin-bottom: 15px; /* Espaciado inferior */
+  }
+
+  /* CSS DE LOS CAMPOS DEL FORMULARIO */
+  mat-form-field {
+      width: 100%; /* Asegura que los campos ocupen todo el ancho disponible */
+      margin-bottom: 15px; /* Agrega espaciado entre los campos */
+  }
+
+  /* CSS DEL BOTON */
+  .button {
+      width: 100%; /* Botón ocupa todo el ancho disponible */
+      padding: 10px; /* Aumenta el área del botón */
+      font-size: 1em; /* Ajusta el tamaño de la fuente */
+      background-color: greenyellow; /* Mantiene el color del botón */
+  }
+}
 
 
 /*MEDIA RESPONSIVO PARA PC  */

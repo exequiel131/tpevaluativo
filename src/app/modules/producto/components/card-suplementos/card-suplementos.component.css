@@ -2,52 +2,60 @@
   
   /*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
 @media (min-width: 300px) and (max-width: 700px) {
+  #card {
+    margin: 100px;
+  }
+  .card-img-top {
+    width: 200px;
+  }
+  .card-title {
+    color: #88c425;
+  }
+  .btn {
+    color: #ffffff;
+    background-color: #88c425;
+    cursor: pointer;
+  }
+  .card-img-top {
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .card-container {
     display: flex;
-    flex-direction: column; /* Coloca las cards en una sola columna */
-    align-items: center;
-    gap: 15px; /* Espacio entre las cards */
-    margin: 20px 0; /* Reduce el margen */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* Espacio entre las tarjetas */
+    margin: 60px;
+    /* Espacio negativo para compensar el espacio entre las tarjetas */
   }
-
-  .card {
-    width: 90%; /* Ocupa la mayor parte del ancho de la pantalla */
-    margin: 0 auto; /* Centra las cards */
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); /* Ajusta la sombra para menor intensidad */
+  .card1 {
+    justify-content: space-around;
+    display: flex;
+    margin: 10px;
   }
-
-  .card-img-top {
-    width: 100%;
-    height: auto;
+  /* CSS DEL MODAL */
+  .text {
+    padding: 20px;
+    text-align: justify;
   }
-
-  .badge {
-    top: 5px;
-    left: 5px;
-    font-size: 0.7rem; /* Reduce el tamaño de la badge */
-    padding: 4px 8px;
+  .title {
+    color: #88c425;
   }
-
-  .card-title {
-    font-size: 0.9rem;
+  .img {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 2%;
   }
-
-  .card-subtitle {
-    font-size: 0.8rem;
-  }
-
-  .card-text {
-    font-size: 1rem;
-  }
-
-  .btn {
-    width: 100%; /* El botón ocupa todo el ancho de la card */
-    font-size: 0.9rem;
-  }
-  
-  #car2 {
-    width: 100%;
-    margin: 10px 0;
+  .close {
+    position: absolute;
+    color: #ffffff;
+    background-color: #88c425;
+    cursor: pointer;
   }
 }
 

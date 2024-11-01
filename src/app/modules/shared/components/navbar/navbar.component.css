@@ -5,6 +5,10 @@
 /*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
 @media (min-width: 300px) and (max-width: 700px) {
    
+  #menuinicio img {
+    width: 200px; /* Ajusta el ancho del logo */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
   .example-spacer {
 display: none;  }
   #menuinicio{
