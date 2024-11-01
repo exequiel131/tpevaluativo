@@ -4,6 +4,7 @@ import { InicioComponent } from './modules/inicio/pages/inicio/inicio.component'
 
 //rutas perezosas
 
+
 const routes: Routes = [
 
   { path: "", component: InicioComponent },
