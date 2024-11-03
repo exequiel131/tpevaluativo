@@ -2,7 +2,6 @@
 /*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
 @media (min-width: 300px) and (max-width: 700px) {
 /*MEDIA PARA CELULARES*/ 
-@media (max-width: 480px) {
   .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -36,7 +35,7 @@
     margin-right: auto;
   }
 }
-}
+
 /*FIN DE MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS CELULARES ETC/
 
 
