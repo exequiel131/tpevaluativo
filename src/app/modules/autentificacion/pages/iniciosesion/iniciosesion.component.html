@@ -6,37 +6,36 @@
 
     <!--Gmail de usuario -->
     <mat-radio-group aria-label="Select an option">
-        <form class="example-form">
-          <mat-form-field  appearance="outline" class="example-full-width">
-            <mat-label>Ingrese su gmail</mat-label>
-            <input class="input" [(ngModel)]="inicio.email" matInput placeholder="Ej: pepitoperez2022@gmail.com"
-              required>
-          </mat-form-field>
-        </form>
+      <form class="example-form">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Ingrese su gmail</mat-label>
+          <input class="input" [(ngModel)]="inicio.email" matInput placeholder="Ej: pepitoperez2022@gmail.com" required>
+        </mat-form-field>
+      </form>
       &nbsp;
-  </mat-radio-group>
-
-
-
-
-          <!-- Contraseña de usuario -->
-          <mat-radio-group aria-label="Select an option">
-            <form class="example-form">
-          <mat-form-field appearance="outline" class="example-full-width">
-            <mat-label>Ingrese su contraseña:</mat-label>
-            <input class="input" [(ngModel)]="inicio.password" matInput [type]="hide ? 'password' : 'text'" #input
-              minlength="6" required>
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-            <mat-hint align="start">Mínimo:6/{{input.value.length}}</mat-hint>
-          </mat-form-field>
-        </form>
-        &nbsp;
     </mat-radio-group>
 
-          <!--boton para enviar informacion a la base de datos-->
-          <button class="button" mat-raised-button (click)="iniciarsesion()"> <b>Iniciar Sesion</b> </button>
+
+
+
+    <!-- Contraseña de usuario -->
+    <mat-radio-group aria-label="Select an option">
+      <form class="example-form">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Ingrese su contraseña:</mat-label>
+          <input class="input" [(ngModel)]="inicio.password" matInput [type]="hide ? 'password' : 'text'" #input
+            minlength="6" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-hint align="start">Mínimo:6/{{input.value.length}}</mat-hint>
+        </mat-form-field>
+      </form>
+      &nbsp;
+    </mat-radio-group>
+
+    <!--boton para enviar informacion a la base de datos-->
+    <button class="button" mat-raised-button (click)="iniciarsesion()"> <b>Iniciar Sesion</b> </button>
   </div>
 </div>

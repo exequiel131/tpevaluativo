@@ -50,7 +50,10 @@
   
   
       <!-- Contraseña de usuario -->
-      <mat-form-field>
+
+      <mat-radio-group aria-label="Select an option">
+        <form class="example-form">
+          <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Ingrese su contraseña:</mat-label>
         <input [(ngModel)]="usuario.password" matInput [type]="hide ? 'password' : 'text'" #input minlength="6" required>
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
@@ -59,6 +62,9 @@
         </button>
         <mat-hint align="start">Mínimo:6/{{input.value.length}}</mat-hint>
       </mat-form-field>
+    </form>
+    &nbsp;
+  </mat-radio-group>
   
   
       <!-- Botón para ENVIAR la información a la Base de Datos-->

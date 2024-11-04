@@ -74,9 +74,17 @@
           </strong>
           <br>
           <br>
-          <h3>Descripcion:</h3>
-          {{articuloseleccionado.descripcion}}
+        <!-- Botón de Collapse para la Descripción -->
+        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDescription" aria-expanded="false" aria-controls="collapseDescription">
+          Mostrar Descripción
+        </button>
 
+        <!-- Contenedor de la Descripción Oculta -->
+        <div class="collapse" id="collapseDescription">
+          <h2>Descripción:</h2>
+          {{articuloseleccionado.descripcion}}
+        </div>
+      </div>
         </div>
 
         <div class="modal-footer">
