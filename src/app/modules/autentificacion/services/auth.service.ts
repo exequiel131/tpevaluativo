@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 
 //itera coleccion leyendo informacion actual
 import { map } from 'rxjs';
+
 import { Usuario } from 'src/app/models/usuario';
 
 @Injectable({
@@ -34,7 +35,7 @@ export class AuthService {
     //validar la iformacion del usario -> saber si existe en la coleccion 
     return this.auth.signInWithEmailAndPassword(email, password)
   }
-  //FUNCIO  N PARA CERRAR SESIÓN
+  //FUNCION PARA CERRAR SESIÓN
   cerrarSesion() {
     //  devuelve una promesa vacía -> qiota token 
     return this.auth.signOut();
