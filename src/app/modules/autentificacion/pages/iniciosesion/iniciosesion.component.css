@@ -67,22 +67,18 @@
   color: #d3d3d3;
 }
 
+
 .form .btn {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  margin-top: 1.5em;
-  /* Reducido el margen superior */
+  margin-top: 0.2em; /* Espacio entre botones */
 }
 
 .button1,
-.button2,
-.button3 {
-  padding: 0.4em;
-  /* Reducido padding */
-  border-radius: 4px;
-  /* Radio de borde ajustado */
-  margin-right: 0.4em;
+.button2 {
+  width: 100%; /* Hace que los botones ocupen todo el ancho disponible */
+  padding: 0.4em; /* Reducido padding */
+  border-radius: 4px; /* Radio de borde ajustado */
   border: none;
   outline: none;
   transition: .4s ease-in-out;
@@ -103,14 +99,15 @@
 }
 
 .button3 {
-  margin-bottom: 2em;
-  /* Reducido el margen inferior */
+  text-decoration: underline; /* Subraya el texto */
+  color: white; /* Color de texto normal */
+  transition: color 0.3s ease; /* Suaviza la transición del color */
 }
 
 .button3:hover {
-  background-color: rgb(147, 214, 45);
-  color: white;
+  color: red; /* Cambia a rojo al pasar el mouse */
 }
+
 
 
 

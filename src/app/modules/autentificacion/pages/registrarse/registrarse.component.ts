@@ -14,6 +14,8 @@ import { Router } from '@angular/router';
 //Importamos paqueteria de cirmptacion 
 import * as CryptoJS from 'crypto-js';
 
+import { FormsModule } from '@angular/forms';
+
 //paqueteria de alertas personalizadas
 import Swal from 'sweetalert2';
 @Component({
@@ -32,7 +34,7 @@ export class RegistroComponent {
     nombre: '',
     apellido: '',
     email: '',
-    rol: '',
+    rol: 'vis',
     password: ''
   }
   //##################################################################################### fin de la importacion
@@ -46,74 +48,95 @@ export class RegistroComponent {
   //creamos coleccion de usuarios,tipo 'usuario'para arrays
   coleccionUsuario: Usuario[] = [];
 
+
+
   //funcion para el registro de nuevos usuarios
   async registrar() {
-    //constante credencial va a reguardar la informacion que ingrese el usuario 
-    /*
-    const credenciales = {
-      password: this.usuario.password,
-      email: this.usuario.email,
-      uid: this.usuario.uid,
-      nombre: this.usuario.nombre,
-      apellido: this.usuario.apellido,
-      rol: this.usuario.rol,
+    // Limpia espacios en blanco de los campos de email y password
+    const email = this.usuario.email.trim();
+    const password = this.usuario.password.trim();
 
-    }
-      */
-     //Registro con servicio de AUTH  
-    const credenciales={
-      email:this.usuario.email,
-      password:this.usuario.password
-    }
-    const res = await this.servicioAuth.registrar(credenciales.email,credenciales.password)
-    // el metodo then es una promesa que devuele el mismo valor si tdo sale bien 
-    .then(res=>{
-
-      Swal.fire({
-        title: "Buen Trabajo!",
-        text: "se pudo registrar con exito!",
-        icon: "success"
-      });    
-      
-      //el meotodo navigate nos redirecciona al inicio
-      this.servicioRutas.navigate(['/inicio'])
-    })
-    // el metodo catch captura una falla y lo convierte en un error cuando la promesa sale mal 
-    .catch(error=>{
-
+    // Validación de email con una expresión regular
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
       Swal.fire({
         title: "Oh no!",
-        text: "Ocurrio un error al registrar un nuevo usuario :( \n"+error,
+        text: "El formato del correo electrónico es incorrecto.",
         icon: "error"
       });
+      return; // Salimos de la función si el formato es incorrecto
+    }
 
-    })
+       // Agregamos console.log para depurar el valor de email y password
+       console.log("Email a registrar:", email);
+       console.log("Password a registrar:", password);
 
-    const uid = await this.servicioAuth.obtenerUid();
-    this.usuario.uid=uid;
-    // SHA-256 es un algortmo de hash seguro que toma una entrada (en este caso la contraseña )
-    // y produce una cadena de caracteres hexadecimal que va a representar a su hash
-    //tostrig convierte el resultado en la cadena de caracteres legibles
-    this.usuario.password = CryptoJS.SHA256(this.usuario.password).toString()
-    //llamamos a la funcion guardarusuario
-    this.guardarUsuario();
-    //llamamos la funcion limpiar 
-    this.limpiar()
 
+    /*Registro con servicio de AUTH
+    const credenciales = {
+      email: email,
+      password: password
+    };*/
+
+    try {
+        // Llamada al servicio de registro de Firebase
+        const res = await this.servicioAuth.registrar(email, password);
+
+
+      // Registro exitoso
+      Swal.fire({
+        title: "Buen Trabajo!",
+        text: "Se pudo registrar con éxito!",
+        icon: "success"
+      });
+
+      // Redirige al inicio
+      this.servicioRutas.navigate(['/inicio']);
+
+      // Almacena el UID del usuario registrado
+      const uid = await this.servicioAuth.obtenerUid();
+      this.usuario.uid = uid;
+
+      // Hash de la contraseña para seguridad antes de guardar
+      this.usuario.password = CryptoJS.SHA256(password).toString();
+
+      // Guarda el usuario en Firestore
+      await this.guardarUsuario();
+      this.servicioRutas.navigate(['/inicio']);
+      
+      // Limpia el formulario
+      this.limpiar();
+
+    } catch (error) {
+      Swal.fire({
+        title: "Oh no!",
+        text: "Ocurrió un error al registrar un nuevo usuario :( \n" + error,
+        icon: "error"
+      });
+    }
   }
 
-  async guardarUsuario(){
-    this.servicioFirestore.agregarUsuario(this.usuario,this.usuario.uid)
-    .then(res => {
-      console.log(this.usuario)
-    })
-    .catch(err=> {
-      console.log('error',err)
-    })
+  async guardarUsuario() {
+    try {
+      await this.servicioFirestore.agregarUsuario(this.usuario, this.usuario.uid);
+      console.log("Usuario guardado en Firestore:", this.usuario);
+    } catch (err) {
+      console.error("Error al guardar el usuario en Firestore:", err);
+    }
   }
+/*
+  async guardarUsuario() {
+    this.servicioFirestore.agregarUsuario(this.usuario, this.usuario.uid)
+      .then(res => {
+        console.log(this.usuario)
+      })
+      .catch(err => {
+        console.log('error', err)
+      })
+  }
+*/
 
-
- //funcion que limpia los imputs
+  //funcion que limpia los imputs
   limpiar() {
     //en constantes "imputs" llamamos a los atributos y los inicializamos como vacios (string ='',namber=0)
     const inputs = {
@@ -121,38 +144,10 @@ export class RegistroComponent {
       nombre: this.usuario.nombre = '',
       apellido: this.usuario.apellido = '',
       email: this.usuario.email = '',
-      rol: this.usuario.rol = '',
+      rol: this.usuario.rol = 'vis',
       password: this.usuario.password = '',
     }
 
 
-
-
-
-
-
-   /*
-    // mostramos credenciales por consola
-     // console.log(credenciales)
-    // mostramos la coleccion de usuarios por consola 
-    // console.log(this.coleccionUsuario)
-
-    //Enviamos la nueva informacion como un nuevo objeto a la colecion de usuario
-    this.coleccionUsuario.push(credenciales)
-
-    //le notificamos al usuario que se registro correctamente  
-    alert("Te registrate correctamente")
-
-    // hacemos que la funcion limpiar se aplique
-    this.limpiar()
-
-    // almacenamos el arreglo coleccionUsuario
-    localStorage.setItem(this.usuario.email, JSON.stringify(credenciales))
-  
-
-  
-  }
- */
-
-}
+  }
 }

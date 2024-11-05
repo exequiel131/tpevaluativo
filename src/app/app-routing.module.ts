@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './modules/inicio/pages/inicio/inicio.component';
+import { ResetPasswordComponent } from './modules/autentificacion/pages/reset-password/reset-password.component';
 
 //rutas perezosas
 
@@ -17,6 +18,12 @@ const routes: Routes = [
   { path: "", loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) },
 
   { path: "",loadChildren: ()=> import('./modules/carrito/carrito.module').then(m => m.CarritoModule)},
+
+  { path: 'inicio-sesion', component: InicioComponent },
+
+  { path: 'reset-password', component: ResetPasswordComponent },
+
+  { path: '', redirectTo: '/inicio-sesion', pathMatch: 'full' }
 ];
 
 @NgModule({

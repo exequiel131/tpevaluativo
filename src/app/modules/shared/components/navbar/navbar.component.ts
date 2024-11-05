@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/modules/autentificacion/services/auth.service';
-
+import { CrudService } from 'src/app/modules/admin/services/crud.service';
 
 
 @Component({
@@ -12,6 +12,8 @@ import { AuthService } from 'src/app/modules/autentificacion/services/auth.servi
 export class NavbarComponent {
 logueado = true;
 deslogueado = false ;
+esAutenticado: boolean= false;
+usuarioRegistrado: boolean= false;
 
 
 constructor (
@@ -34,36 +36,24 @@ cerrarsesion (){
   this.servicioRutas.navigate(['/'])
 }
 
-/*
-//funcion cambiar fondo 
-cambiarfondo(){
-  //la barra sirve como un o
-  let toggle  : HTMLInputElement | null = document.getElementById('toggle') as HTMLInputElement
-  let label_toggle : HTMLElement | null = document.getElementById('label_toggle') as HTMLInputElement
+ngOnInit(): void{
 
-  if(toggle)
-    {
-    let checked : boolean = toggle.checked;
-    document.body.classList.toggle('.dark',checked);
+  const token = this.servicioAuth.obtenerToken();
+   
+  if (token) {
+    this.esAutenticado = true;
+    this.servicioAuth.obtenerUid().then(uid => {
+      if (uid) {
+        this.servicioAuth.obtenerRol(uid).subscribe(rol => {
+          if (rol === 'usuario') {
+            this.usuarioRegistrado = true;
+            
+          }
+        });
+      }
+    });
+  }
 
-    if(checked){
-      label_toggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-        }
-        else{
-          label_toggle.innerHTML = ' <i class="fa-solid fa-moon"></i> ';
-        } 
-
-  };
-  
-}*/
-
-//Función cambiar fondo a oscuro
-cambiarFondo(){
-  let checkbox: HTMLInputElement | null = document.getElementById("checkbox") as HTMLInputElement
-
-  if (checkbox) {
-    let checked: boolean = checkbox.checked;
-    document.body.classList.toggle('dark',checked)
-  }
 }
+
 }

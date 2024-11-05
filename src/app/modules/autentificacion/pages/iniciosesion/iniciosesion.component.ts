@@ -3,121 +3,87 @@ import { Usuario } from 'src/app/models/usuario';
 import { AuthService } from '../../services/auth.service';
 import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
 import { Router } from '@angular/router';
-//Importamos paqueteria de cirmptacion 
 import * as CryptoJS from 'crypto-js';
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-iniciosesion',
   templateUrl: './iniciosesion.component.html',
   styleUrls: ['./iniciosesion.component.css']
 })
 export class IniciosesionComponent {
-  hide = true
+  hide = true;
+  resetEmail: string = ''; // Variable para el email del formulario de restablecimiento
 
   constructor(
     public servicioAuth: AuthService,
     public servicioFirestore: FirestoreService,
     public servicioRutas: Router
-
   ) { }
 
-  //importar la interfaz de usuario -> inicializar
   inicio: Usuario = {
     email: '',
     password: '',
     nombre: '',
     apellido: '',
-    uid: '',//-> inicializamos con comillas simples porque es string,si fuera nambuer se inicializa con 0
-    rol: '',
-
+    uid: '',
+    rol: ''
   }
 
-  //creamos coleccion de usuarios,tipo 'usuario'para arrays
   coleccionIniciosesion: Usuario[] = [];
 
-  //funcion para el inicio sesión de los usuarios
+  // Función para iniciar sesión de los usuarios
   async iniciarsesion() {
-
     const credenciales = {
       email: this.inicio.email,
       password: this.inicio.password
-    }
+    };
 
     try {
-      //obtenemos usuario de la BD 
       const usuarioBD = await this.servicioAuth.obtenerUsuario(credenciales.email);
-      //condicional verificada que ese usuario de la BD existiera o que sea igual al de nuestra coleccion
-      if (!usuarioBD || usuarioBD.empty) {
 
-        //alertas personalizadas npm i sweetalert2 importamos lo primero que sale en el sitio web
+      if (!usuarioBD || usuarioBD.empty) {
         Swal.fire({
           title: "oh no!",
-          text: "correo electronico no esta registrado",
+          text: "Correo electrónico no está registrado",
           icon: "error"
         });
-
         this.limpiar();
         return;
       }
-      //vinculaba al primer docuemtno de la coleccion "usuario" que se obtenia desde la BD
+
       const usuarioDoc = usuarioBD.docs[0];
-
-      //Extrae los datos del documento en forma de "objeto " y se especifica que va a ser del tipo 
-      //"Usuario" (se refiere a la interfaz Usuario de nuestros modelos)
-      const usuarioData = usuarioDoc.data() as Usuario
-
-      // Encripta la contrase;a que el usuario envia mediante "iniciar seson"
+      const usuarioData = usuarioDoc.data() as Usuario;
       const hashedPassword = CryptoJS.SHA256(credenciales.password).toString();
-      //Condicional que compara la contrase;a que acabamos de encriptar y que el usuario
-      //envio con la que recibimos del "usuarioData"
 
       if (hashedPassword !== usuarioData.password) {
-
         Swal.fire({
           title: "oh no!",
           text: "Contraseña incorrecta",
           icon: "error"
         });
-
         this.inicio.password = '';
-        return
+        return;
       }
 
-
-      const res = await this.servicioAuth.iniciarSesion(credenciales.email, credenciales.password)
-        .then(res => {
-          Swal.fire({
-            title: "Buen trabajo!",
-            text: "Se pudo ingresar con exito !!",
-            icon: "success"
-          });
-
-          this.servicioRutas.navigate(['/inicio']);
-        })
-        .catch(err => {
-          Swal.fire({
-            title: "oh no!",
-            text: " hubo un error al iniciar sesión:( ",
-            icon: "error"
-          });
-
-          this.limpiar()
-        })
+      await this.servicioAuth.iniciarSesion(credenciales.email, credenciales.password);
+      Swal.fire({
+        title: "Buen trabajo!",
+        text: "Se pudo ingresar con éxito!",
+        icon: "success"
+      });
+      this.servicioRutas.navigate(['/inicio']);
 
     } catch (error) {
       this.limpiar();
     }
-
-
-
   }
+
 
   limpiar() {
-    const inputs = {
-      email: this.inicio.email,
-      password: this.inicio.password
-    }
+    this.inicio.email = '';
+    this.inicio.password = '';
   }
-
 }

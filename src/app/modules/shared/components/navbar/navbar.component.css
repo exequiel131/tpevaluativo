@@ -48,19 +48,4 @@ mat-toolbar {
     height: auto;
   }
 
-  .buscador {
-    background-color: rgb(255, 255, 255);
-    padding: 5px;
-    border: 1px solid black;
-    height: 33px;
-    padding: 3px;
-    width: 500px;
-  }
-
-  .buscador input {
-    width: 70%;
-    height: 30%;
-    font-size: x-small;
-  }
-
 }
