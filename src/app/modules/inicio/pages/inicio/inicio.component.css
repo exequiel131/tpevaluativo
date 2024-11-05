@@ -116,7 +116,10 @@
     margin-left: 10px;
   }
   
-  
+  #boton-vm{
+    width: 150px;
+    border-radius: 30px;
+  }
   
   
   
@@ -158,9 +161,6 @@
     background-color: black;
   }
   
-  #boton-vm{
-    width: 150px;
-    border-radius: 30px;
-  }
+  
   
 }

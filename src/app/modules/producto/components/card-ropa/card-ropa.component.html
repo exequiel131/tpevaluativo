@@ -3,7 +3,6 @@
 <div class="card-container">
   <div class="col-lg-3 card1" *ngFor="let articulo of ropacolecction">
     <div class="card" style="width: 18rem;">
-      <div class="badge">Lo nuevo</div> <!-- Texto destacado -->
       <img src="{{articulo.imagen}}" class="card-img-top" alt="{{articulo.nombre}}" data-bs-toggle="modal" data-bs-target="#vermas" (click)="mostrarver(articulo)">
             <div class="card-body">
         <h4 class="card-title"><b>{{articulo.nombre}}</b></h4>
@@ -36,8 +35,8 @@
 
         <!-- BOTON FUNCIONAL PARA CERRAR EL MODAL -->
         <div class="modal-header">
-          <button type="button" (click)="cerrarver()" class="close" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
           </button>
         </div>
 

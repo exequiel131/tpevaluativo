@@ -144,6 +144,10 @@
       cursor: pointer;
     } 
     
+    #boton-vm{
+      width: 150px;
+      border-radius: 30px;
+    }
 }
   
   
