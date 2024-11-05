@@ -65,25 +65,32 @@
         </svg>
     </label> 
 -->
-    <!--menu desplegable-->
-    <button id="menuproducto" mat-button [matMenuTriggerFor]="producto">
-        
-    
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-          </svg>
-        </button>
-    <mat-menu #producto="matMenu">
-        <button mat-menu-item routerLink="/suplementos"> <b>Suplementos</b> </button> 
-        <button mat-menu-item routerLink="calzado">  <b>Calzado</b></button> 
-        <button mat-menu-item routerLink="ropa"><b>Ropa</b></button>
-        <button mat-menu-item routerLink="materiales"> <b>Materiales</b></button>
-    </mat-menu>
+   
      
     <!--  <button id="menusecciones" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
             <mat-icon>menu</mat-icon>
         </button>-->
-
+        <button class="btn "  data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#88c425" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+            </svg>
+            
+        </button>
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <h1>Productos</h1>
+        
+            <button mat-menu-item routerLink="/suplementos"> -Suplementos </button> 
+            <button mat-menu-item routerLink="calzado">  -Calzado </button> 
+            <button mat-menu-item routerLink="ropa"> -Ropa</button>
+            <button mat-menu-item routerLink="materiales"> -Materiales</button>
+            <br>
+            <h1>Quienes somos</h1>
+          </div>
+        </div>
 
 <!--modo oscuro 
 

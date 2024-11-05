@@ -14,12 +14,13 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">imagen</th>
-                <th scope="col">nombre</th>
-                <th scope="col">precio</th>
-                <th scope="col">descripcion</th>
-                <th scope="col">categoria</th>
-                <th scope="col">acciones</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Texto alternativc</th>
+                <th scope="col">Acciones</th>
             </tr>
         </thead>
 
@@ -43,10 +44,9 @@
                         data-bs-toggle="modal" data-bs-target="#editarproducto" (click)="mostrareditar(articulo)">
                         <mat-icon>edit</mat-icon>
                     </button>
-                </td>
-
+               
                 <!-- BOTON BORRAR PRODUCTO -->
-                <td>
+                
                     <button id="btn-delete" title="eliminar" type="button" class="btn"
                         data-bs-toggle="modal" data-bs-target="#eliminar" (click)="mostrarBorrar(articulo)">
                         <mat-icon>delete</mat-icon>
