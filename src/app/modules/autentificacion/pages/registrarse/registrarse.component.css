@@ -1,16 +1,189 @@
-.container {
+.form {
     display: flex;
-    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-    padding: 10px;
-    text-align: center;
-    justify-content: center;
-    align-items: center; /* Centra el formulario horizontalmente */
-    max-width: 400px; /* Ancho máximo del formulario */
-    margin: auto; /* Centra el contenedor en la página */
+    flex-direction: column;
+    gap: 9px;
+    /* Reducido el espacio entre campos */
+    padding: 3em;
+    /* Reducido el padding */
+    background-color: #171717;
+    border-radius: 15px;
+    /* Radio de borde reducido */
+    transition: .4s ease-in-out;
+    height: fit-content;
+    width: 30%;
+    margin: 0 auto;
+    /* Centra el formulario en la página */
+    margin-bottom: 60px;
+    margin-top: 60px;
 }
 
-.button {
-    width: 120px; /* Botón más pequeño */
-    margin: 20px auto; /* Centrar el botón y agregar espaciado */
-    background-color: greenyellow;
+.form:hover {
+    transform: scale(1.03);
+    /* Ajuste menor al escalar */
+    border: 1.7px solid greenyellow;
+    box-shadow: 0px 0px 15px 5px greenyellow;
+    /* Borde difuminado */
 }
+
+#heading {
+    text-align: center;
+    margin: 1em;
+    /* Reducido el margen superior */
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    /* Tamaño de fuente reducido */
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    border-radius: 15px;
+    /* Reducción del radio del borde */
+    padding: 0.4em;
+    /* Reducido el padding */
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #171717;
+    box-shadow: inset 1px 3px 6px rgb(5, 5, 5);
+    /* Reducido el sombreado */
+}
+
+.input-icon {
+    height: 1em;
+    /* Reducido tamaño de icono */
+    width: 1em;
+    fill: white;
+}
+
+.input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 90%;
+    /* Ajustado el ancho */
+    color: #d3d3d3;
+}
+
+.form .btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 1.5em;
+    /* Reducido el margen superior */
+}
+
+.button1,
+.button2 {
+    padding: 0.4em;
+    /* Reducido padding */
+    border-radius: 4px;
+    /* Radio de borde ajustado */
+    margin-right: 0.4em;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #252525;
+    color: white;
+}
+
+.button1:hover,
+.button2:hover {
+    background-color: rgb(147, 214, 45);
+    color: white;
+}
+
+.button2 {
+    padding-left: 1.5em;
+    /* Ajustado padding izquierdo */
+    padding-right: 1.5em;
+}
+
+
+
+
+/* Estilos para dispositivos móviles (pantallas pequeñas) */
+@media (max-width: 480px) {
+
+    .form {
+      width: 90%;
+      padding: 1.5em;
+      border-radius: 10px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  
+    .form:hover {
+      transform: scale(1.03);
+      border: 1.7px solid greenyellow;
+      box-shadow: 0px 0px 15px 5px greenyellow;
+    }
+  
+    #heading {
+      color: rgb(255, 255, 255);
+      font-size: 1.2em;
+      margin: 0.8em;
+    }
+  
+    .field {
+      padding: 0.3em;
+      border-radius: 10px;
+      color: white;
+      background-color: #171717;
+      box-shadow: inset 1px 3px 6px rgb(5, 5, 5);
+    }
+  
+    .input-icon {
+      height: 0.8em;
+      width: 0.8em;
+      fill: white;
+    }
+  
+    .input-field {
+      background: none;
+      border: none;
+      outline: none;
+      width: 90%;
+      color: #d3d3d3;
+    }
+  
+    .form .btn {
+      flex-direction: column;
+      margin-top: 1em;
+    }
+  
+    .button1,
+    .button2,
+    .button3 {
+      padding: 0.3em;
+      margin-right: 0;
+      margin-bottom: 0.5em;
+      border-radius: 3px;
+      transition: .4s ease-in-out;
+      background-color: #252525;
+      color: white;
+    }
+  
+    .button1:hover,
+    .button2:hover {
+      background-color: rgb(147, 214, 45);
+      color: white;
+    }
+  
+    .button2 {
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+    }
+  
+    .button3 {
+      margin-bottom: 1.5em;
+    }
+  
+    .button3:hover {
+      background-color: rgb(147, 214, 45);
+      color: white;
+    }
+  
+  }

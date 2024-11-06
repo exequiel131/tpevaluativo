@@ -1,12 +1,8 @@
-
-/* From Uiverse.io by david-mohseni */ 
-
 footer{
     background-color: black;
     height: 175px;
     background-image: url("../../../../../../src/assets/img/Diseño Logo/ec/Añadir un poquito de texto (5).png");
-}
-/* From Uiverse.io by david-mohseni */ 
+} 
 .wrapper {
     display: inline-flex;
     list-style: none;
@@ -92,4 +88,33 @@ footer{
     background: #88C425;
     color: #ffffff;
   }
+
+
+  /* Media query para pantallas pequeñas (480px o menos) */
+  @media (max-width: 480px) {
+    footer {
+      height: 150px;             
+      background-size: cover;    
   
+    .wrapper {
+      padding-top: 20px;         
+    }
+  
+    .wrapper .icon {
+      width: 40px;               
+      height: 40px;
+      font-size: 16px;           
+      margin: 5px;
+    }
+  
+    .wrapper .tooltip {
+      font-size: 12px;           
+      padding: 4px 6px;
+    }
+  
+    .wrapper .tooltip::before {
+      height: 6px;
+      width: 6px;
+    }
+  }
+}
