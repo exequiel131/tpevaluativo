@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './modules/inicio/pages/inicio/inicio.component';
+import { NosotrosComponent } from './modules/nosotros/nosotros.component';
 
 //rutas perezosas
 
@@ -17,6 +18,8 @@ const routes: Routes = [
   { path: "", loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) },
 
   { path: "",loadChildren: ()=> import('./modules/carrito/carrito.module').then(m => m.CarritoModule)},
+
+  { path: 'sobre-nosotros', component: NosotrosComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cutive+Mono&family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cutive+Mono&family=Pirata+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.sobre-nosotros {
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  /* Estilos para cada sección */
+  .seccion {
+    margin-bottom: 40px;
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(20px); /* Desplazamiento inicial */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .seccion h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #222;
+     font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 
+      0px 0px 4px #0aa01ec5,   /* Sombra difusa cerca del texto */
+      0px 0px 8px #16ce2e,   /* Sombra un poco más grande */
+      0px 0px 12px #54ff6bc5;  /* Sombra más suave y extendida */
+  }
+
+  p{
+    text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  }
+
+  /* Estilos para fundadores */
+  .fundador {
+    justify-content: center;
+    
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .fundador img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  /* Clase para aplicar el efecto de transición al hacer scroll */
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
