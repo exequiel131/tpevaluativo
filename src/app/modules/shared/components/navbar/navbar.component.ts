@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/modules/autentificacion/services/auth.service';
 import { CrudService } from 'src/app/modules/admin/services/crud.service';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 
 @Component({
   selector: 'app-navbar',
@@ -17,8 +17,8 @@ deslogueado = false ;
 constructor (
   public servicioAuth: AuthService,
   public servicioRutas: Router,
-  public crudservice: CrudService,
-  private firestore: AngularFirestore
+  public crudservice: CrudService
+
 
 ){}
 
@@ -88,27 +88,4 @@ eliminarItem(item:any){
 realizarCompra(){
   alert('Su compra ha sido exitosa')
 }
-
-
-allowedTerms: string[] = ['nike', 'pantalones', 'camiseta'];
-filteredProducts: any[] = [];
-noResults: boolean = false;
-
-
-onSearch(searchTerm: string): void {
-  const lowerCaseTerm = searchTerm.toLowerCase();
-
-  if (this.allowedTerms.includes(lowerCaseTerm)) {
-    this.firestore.collection('products', ref =>
-      ref.where('nombre', '>=', lowerCaseTerm).where('nombre', '<=', lowerCaseTerm + '\uf8ff')
-    ).valueChanges().subscribe(data => {
-      this.filteredProducts = data;
-      this.noResults = this.filteredProducts.length === 0;
-    });
-  } else {
-    this.filteredProducts = [];
-    this.noResults = true;
-  }
-}
-
 }
