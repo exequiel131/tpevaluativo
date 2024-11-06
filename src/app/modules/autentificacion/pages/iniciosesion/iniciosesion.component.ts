@@ -56,6 +56,7 @@ export class IniciosesionComponent {
 
       const usuarioDoc = usuarioBD.docs[0];
       const usuarioData = usuarioDoc.data() as Usuario;
+      /*
       const hashedPassword = CryptoJS.SHA256(credenciales.password).toString();
 
       if (hashedPassword !== usuarioData.password) {
@@ -66,7 +67,7 @@ export class IniciosesionComponent {
         });
         this.inicio.password = '';
         return;
-      }
+      }*/
 
       await this.servicioAuth.iniciarSesion(credenciales.email, credenciales.password);
       Swal.fire({

@@ -97,8 +97,8 @@ export class RegistroComponent {
       const uid = await this.servicioAuth.obtenerUid();
       this.usuario.uid = uid;
 
-      // Hash de la contraseña para seguridad antes de guardar
-      this.usuario.password = CryptoJS.SHA256(password).toString();
+      /* Hash de la contraseña para seguridad antes de guardar
+      this.usuario.password = CryptoJS.SHA256(password).toString();*/
 
       // Guarda el usuario en Firestore
       await this.guardarUsuario();
@@ -124,17 +124,7 @@ export class RegistroComponent {
       console.error("Error al guardar el usuario en Firestore:", err);
     }
   }
-/*
-  async guardarUsuario() {
-    this.servicioFirestore.agregarUsuario(this.usuario, this.usuario.uid)
-      .then(res => {
-        console.log(this.usuario)
-      })
-      .catch(err => {
-        console.log('error', err)
-      })
-  }
-*/
+
 
   //funcion que limpia los imputs
   limpiar() {

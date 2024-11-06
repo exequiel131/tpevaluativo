@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { ViewChild, ElementRef } from '@angular/core';
 import Swal from 'sweetalert2';
@@ -8,11 +9,15 @@ import Swal from 'sweetalert2';
   styleUrls: ['./reset-password.component.css']
 })
 export class ResetPasswordComponent {
-  resetEmail: string = '';
- @ViewChild('responseMessage', { static: false }) responseMessage!: ElementRef; 
 
-   async resetPassword() {
+  @ViewChild('responseMessage', { static: false }) responseMessage!: ElementRef;
+
+  resetEmail: string = '';
+
+  async resetPassword() {
+
     const auth = getAuth();
+    
     try {
       await sendPasswordResetEmail(auth, this.resetEmail);
       Swal.fire({

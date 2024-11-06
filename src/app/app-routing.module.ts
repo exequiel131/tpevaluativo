@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetPasswordComponent },
 
   { path: '', redirectTo: '/inicio-sesion', pathMatch: 'full' }
+
 ];
 
 @NgModule({
