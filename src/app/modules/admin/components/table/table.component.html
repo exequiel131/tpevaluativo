@@ -99,8 +99,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Imagen del Producto</label>
-                    <input class="form-control" type="text" formControlName="imagen"
-                        placeholder="completar este campo obligatoriamente">
+                    <input type="file" accept="imagen/*" (change)="cargarImagen($event)">
                 </div>
 
 

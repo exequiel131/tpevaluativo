@@ -55,20 +55,20 @@
 
 
 <!-- Modal para ver más información -->
-<div class="modal fade" *ngIf="modalvisible" id="vermas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade"  id="vermas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
 
   <div class="modal-dialog modal-lg" role="document">
 
     <div class="modal-content">
       <!-- Encabezado con botón para cerrar el modal -->
-      <div class="modal-header">
+      <div class="modal-header" *ngIf="modalvisible">
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
 
-      <div class="modal-body">
+      <div class="modal-body" *ngIf="modalvisible">
         <div class="container-fluid">
           <div class="row g-4">
 
