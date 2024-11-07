@@ -42,63 +42,56 @@
     </div>
   </div>
 
-  <!-- Modal para ver mas infomracion-->
-  <div class="modal fade" *ngIf="modalvisible" id="vermas" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal para ver más información -->
+<div class="modal fade" *ngIf="modalvisible" id="vermas" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-    <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
 
-      <div class="modal-content">
-
-        <!-- BOTON FUNCIONAL PARA CERRAR EL MODAL -->
-        <div class="modal-header">
-          <button type="button" (click)="cerrarver()" class="close" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-
-        <!-- IMAGEN DEL PRODUCTO -->
-        <div class="modal-body">
-          <img class="img" src="{{articuloseleccionado.imagen}}" alt="{{articuloseleccionado.alt}}">
-        </div>
-
-        <!-- DESCRIPCION Y PRECIO DEL PRODUCTO -->
-        <div class="mb-3 text">
-          <h1 class="modal-title" id="exampleModalLabel"> <strong class="title">{{articuloseleccionado.nombre}}</strong>
-          </h1>
-          <strong>
-            <h2>
-              ${{articuloseleccionado.precio}} ARS
-
-            </h2>
-          </strong>
-          <br>
-          <br>
-        <!-- Botón de Collapse para la Descripción -->
-        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDescription" aria-expanded="false" aria-controls="collapseDescription">
-          Mostrar Descripción
+    <div class="modal-content">
+      <!-- Encabezado con botón para cerrar el modal -->
+      <div class="modal-header">
+        <button type="button" (click)="cerrarver()" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
         </button>
+      </div>
 
-        <!-- Contenedor de la Descripción Oculta -->
-        <div class="collapse" id="collapseDescription">
-          <h2>Descripción:</h2>
-          {{articuloseleccionado.descripcion}}
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row g-4">
+            
+            <!-- Columna izquierda con la imagen del producto -->
+            <div class="col-md-6">
+              <img class="img-fluid" src="{{articuloseleccionado.imagen}}" alt="{{articuloseleccionado.alt}}">
+            </div>
+            
+            <!-- Columna derecha con la información del producto -->
+            <div class="col-md-6">
+              <h1 class="modal-title" id="exampleModalLabel">
+                <strong>{{articuloseleccionado.nombre}}</strong>
+              </h1>
+              <h2><strong>${{articuloseleccionado.precio}} ARS</strong></h2>
+              
+              <!-- Descripción del producto -->
+              <p>{{articuloseleccionado.descripcion}}</p>
+            </div>
+          </div>
         </div>
       </div>
-        </div>
 
-        <div class="modal-footer">
-          <!-- ACA VA EL BOTON DEL CARRITO-->
-          <button type="button" class="btn" style="background-color: greenyellow;" data-dismiss="modal">Comprar
-            Ahora</button>
-
-          <button type="button" class="btn" data-dismiss="modal" style="background-color: rgb(0, 0, 0); color: white;"
-            (click)="serviciocrud.AgregarAlCarrito(articuloseleccionado)"> Agregar al Carrito
-          </button>
-
-        </div>
+      <!-- Pie del modal con botones de acción -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Comprar Ahora</button>
+        <button type="button" class="btn btn-dark" data-dismiss="modal"
+          (click)="serviciocrud.AgregarAlCarrito(articuloseleccionado)">Agregar al Carrito</button>
       </div>
     </div>
   </div>
+</div>
+
+
+
+
+
 
   <app-card></app-card>
