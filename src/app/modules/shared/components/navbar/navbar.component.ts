@@ -2,68 +2,57 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/modules/autentificacion/services/auth.service';
 
-
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-logueado = true;
-deslogueado = false ;
+  logueado = true;
+  deslogueado = false;
+  esAutenticado: boolean = false;
+  usuarioRegistrado: boolean = false;
 
 
-constructor (
-  public servicioAuth: AuthService,
-  public servicioRutas: Router
+  constructor(
+    public servicioAuth: AuthService,
+    public servicioRutas: Router
 
 
-){}
+  ) { }
 
-ingresar(){
-  this.logueado=false;
-  this.deslogueado=true;
-}
+  ingresar() {
+    this.logueado = false;
+    this.deslogueado = true;
+  }
 
-cerrarsesion (){
-  this.deslogueado = false ;
-  this.logueado = true ;
+  cerrarsesion() {
+    this.deslogueado = false;
+    this.logueado = true;
 
-  this.servicioAuth.cerrarSesion();
-  this.servicioRutas.navigate(['/'])
-}
+    this.servicioAuth.cerrarSesion();
+    this.servicioRutas.navigate(['/'])
+  }
 
-/*
-//funcion cambiar fondo 
-cambiarfondo(){
-  //la barra sirve como un o
-  let toggle  : HTMLInputElement | null = document.getElementById('toggle') as HTMLInputElement
-  let label_toggle : HTMLElement | null = document.getElementById('label_toggle') as HTMLInputElement
+  ngOnInit(): void {
 
-  if(toggle)
-    {
-    let checked : boolean = toggle.checked;
-    document.body.classList.toggle('.dark',checked);
+    const token = this.servicioAuth.obtenerToken();
 
-    if(checked){
-      label_toggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    if (token) {
+      this.esAutenticado = true;
+      this.servicioAuth.obtenerUid().then(uid => {
+        if (uid) {
+          this.servicioAuth.obtenerRol(uid).subscribe(rol => {
+            if (rol === 'usuario') {
+              this.usuarioRegistrado = true;
+
+            }
+          });
         }
-        else{
-          label_toggle.innerHTML = ' <i class="fa-solid fa-moon"></i> ';
-        } 
+      });
+    }
 
-  };
-  
-}*/
 
-//Función cambiar fondo a oscuro
-cambiarFondo(){
-  let checkbox: HTMLInputElement | null = document.getElementById("checkbox") as HTMLInputElement
+  }
 
-  if (checkbox) {
-    let checked: boolean = checkbox.checked;
-    document.body.classList.toggle('dark',checked)
-  }
-}
 }

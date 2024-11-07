@@ -14,11 +14,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { RegistroComponent } from './pages/registrarse/registrarse.component';
 import { IniciosesionComponent } from './pages/iniciosesion/iniciosesion.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
     RegistroComponent,
-    IniciosesionComponent
+    IniciosesionComponent,
+    ResetPasswordComponent
   ],
   imports: [
     CommonModule,

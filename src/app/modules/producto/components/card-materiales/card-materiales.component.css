@@ -1,26 +1,30 @@
-
-  /*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
+/*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
 @media (min-width: 300px) and (max-width: 700px) {
   #card {
     margin: 100px;
   }
+
   .card-img-top {
     width: 200px;
   }
+
   .card-title {
     color: #88c425;
   }
+
   .btn {
     color: #ffffff;
     background-color: #88c425;
     cursor: pointer;
   }
+
   .card-img-top {
     width: 200px;
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
+
   .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -29,19 +33,23 @@
     margin: 60px;
     /* Espacio negativo para compensar el espacio entre las tarjetas */
   }
+
   .card1 {
     justify-content: space-around;
     display: flex;
     margin: 10px;
   }
+
   /* CSS DEL MODAL */
   .text {
     padding: 20px;
     text-align: justify;
   }
+
   .title {
     color: #88c425;
   }
+
   .img {
     display: block;
     margin: auto;
@@ -50,6 +58,7 @@
     object-fit: contain;
     border-radius: 2%;
   }
+
   .close {
     position: absolute;
     color: #ffffff;
@@ -67,116 +76,169 @@
   .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Centra las cards */
-    gap: 20px; /* Espacio entre las cards */
-    margin: 40px; 
+    justify-content: space-around;
+    /* Centra las cards */
+    gap: 20px;
+    /* Espacio entre las cards */
+    margin: 40px;
   }
-  
+
   .card1 {
     display: flex;
     justify-content: center;
   }
-  
+
   .card {
     position: relative;
     border: none;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s;
   }
-  
+
   .card:hover {
-    transform: translateY(-5px); /* Efecto hover */
+    transform: translateY(-5px);
+    /* Efecto hover */
   }
-  
+
   .card-img-top {
-    width: 100%; /* Ajusta la imagen al tamaño del card */
+    width: 100%;
+    /* Ajusta la imagen al tamaño del card */
     height: auto;
     display: block;
     margin: 0 auto;
   }
-  
+
   /*lo nuevo*/
   .badge {
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: #88c425; /* Color destacado */
+    background-color: #88c425;
+    /* Color destacado */
     color: white;
     padding: 5px 10px;
     font-size: 0.8rem;
     border-radius: 5px;
   }
-  
+
   .card-title {
     color: #000;
     font-size: 1rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .card-subtitle {
     color: #666;
     font-size: 0.9rem;
     margin: 0;
   }
-  
+
   .card-text {
     color: #000;
     font-weight: bold;
     font-size: 1.1rem;
   }
-  
+
   .btn {
     color: #ffffff;
     background-color: #000000;
     cursor: pointer;
   }
-  
-  #car2{
+
+  #car2 {
     background-color: #000000;
     margin-left: 10px;
   }
-  #boton-vm{
+
+  #boton-vm {
     width: 150px;
     border-radius: 30px;
   }
-  
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      /* CSS DEL MODAL */
-    
-    .text {
-      padding: 20px;
-      text-align: justify;
-    }
-    
-    .title {
-      color: #88c425;
-    }
-    
-    .img {
-      display: block;
-      margin: auto;
-      max-width: 90%;
-      max-height: 90%;
-      object-fit: contain;
-      border-radius: 2%;
-    }
-    
-    .close {
-      position: absolute;
-      color: #ffffff;
-      background-color: #88c425;
-      cursor: pointer;
-    } 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* CSS DEL MODAL */
+
+  .text {
+    padding: 20px;
+    text-align: justify;
+  }
+
+  .title {
+    color: #88c425;
+  }
+
+  .img {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 2%;
+  }
+
+  .close {
+    position: absolute;
+    color: #ffffff;
+    background-color: #88c425;
+    cursor: pointer;
+  }
+}
+
+
+/*MEDIA PARA CELULARES*/
+@media (max-width: 480px) {
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .card1 {
+    width: 100%;
+    margin: 10px auto;
+    justify-content: space-around;
+    display: flex;
+  }
+
+  #card {
+    margin: 100px;
+  }
+
+
+  .card-img-top {
+    width: 80%;
+  }
+
+  .card-title {
+    color: #88c425;
+  }
+
+  .btn {
+    color: #ffffff;
+    background-color: #88c425;
+    cursor: pointer;
+
+  }
+
+  .card-img-top {
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
 }

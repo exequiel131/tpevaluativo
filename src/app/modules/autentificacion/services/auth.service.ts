@@ -20,9 +20,9 @@ export class AuthService {
   private rolusuario : string | null = null;
   //Referenciar auth de firebase en el servicio
   constructor(
-    private auth: AngularFireAuth, 
-    private servicioFirestore :AngularFirestore,
-   ) { }
+    private auth: AngularFireAuth,
+    private servicioFirestore: AngularFirestore
+  ) { }
 
   //FUNCION PARA REGISTRO
   registrar(email: string, password: string) {
@@ -41,43 +41,48 @@ export class AuthService {
     return this.auth.signOut();
   }
 
-  //FUNCION PARA TOMAR UID
-    
-  async obtenerUid(){
+  //FUNCIÓN PARA RECUPERAR EL TOKEN
+  obtenerToken() {
+    return localStorage.getItem('token');
+  }
+
+  //MÉTODOS PARA VERIFICACIÓN DE EL ROL DE USUARIO
+  obtenerRol(uid: string): Observable <string | null> {
+
+    return this.servicioFirestore.collection("usuarios").doc(uid).valueChanges()
+    .pipe(map((usuario: any) => usuario ? usuario.rol: null));
+
+  }
+
+
+  //FUNCION PARA TOMAR UID 
+  async obtenerUid() {
     //Nos va a generar una promesa y la constante la va a capturar 
     const user = await this.auth.currentUser;
     /* 
     Si el usuario no respeta la estructura de la interfaz /
     Si tuvo problemas para el registro -> ej: mal internte
     */
-    if(user == null){
+    if (user == null) {
       return null;
-    }else{
+    } else {
       return user.uid;
     }
-  }  
+  }
 
-  obtenerUsuario(email:string){
+  obtenerUsuario(email: string) {
     /*
     retornamos del servicioFirestore la coleccion de 'usuarios', buscamos una refenrencia en los emails registrados
     y los comparamos con los que ingrese el usuairo al iniciar sesion, y lo obtiene con el '.get()'
     lo vuelve una promesa => de un resultado resuelto o rechazado 
     
-    */ 
-    return this.servicioFirestore.collection('usuarios',ref => ref.where('email','==',email)).get().toPromise();
+    */
+    return this.servicioFirestore.collection('usuarios', ref => ref.where('email', '==', email)).get().toPromise();
 
 
 
   }
 
-//funcion para detener el rol de usuario                                                    
-obtenerRol (uid : string ):Observable <string | null> {
-  //accedemos a la coleccion de usuarios, buscando por UID, obteniendo cambios en valores al enviar info por tuberia, "mapeamos"
- //la coleccion , obtenemos un usuario especifico y buscamos su atributo "rol", aun si este es nulo. 
-
-  return this.servicioFirestore.collection("usuarios").doc(uid).valueChanges()
-  .pipe(map((usuario : any) => usuario ? usuario.rol : null ) )
-}
 
 //envia el rol obtenido 
 Setusuario(rol : string){

@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { InicioComponent } from './modules/inicio/pages/inicio/inicio.component';
 
+import { NosotrosComponent } from './modules/nosotros/nosotros.component';
+
+import { ResetPasswordComponent } from './modules/autentificacion/pages/reset-password/reset-password.component';
+
 //guardian de la vista del administrador
 import { rutaprotegidaGuard } from './guards/rutaprotegida.guard';
-
-//rutas perezosas
 
 const routes: Routes = [
 
@@ -23,6 +25,17 @@ const routes: Routes = [
   canActivate: [rutaprotegidaGuard],data : {role : 'admin'} },
 
   { path: "",loadChildren: ()=> import('./modules/carrito/carrito.module').then(m => m.CarritoModule)},
+
+
+  { path: 'sobre-nosotros', component: NosotrosComponent },
+
+  { path: 'inicio-sesion', component: InicioComponent },
+
+  { path: 'reset-password', component: ResetPasswordComponent },
+
+  { path: '', redirectTo: '/inicio-sesion', pathMatch: 'full' }
+
+
 ];
 
 @NgModule({
