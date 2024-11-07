@@ -32,7 +32,7 @@ export class RegistroComponent {
     nombre: '',
     apellido: '',
     email: '',
-    rol: '',
+    rol: 'admin',
     password: ''
   }
   //##################################################################################### fin de la importacion
@@ -121,7 +121,7 @@ export class RegistroComponent {
       nombre: this.usuario.nombre = '',
       apellido: this.usuario.apellido = '',
       email: this.usuario.email = '',
-      rol: this.usuario.rol = '',
+      rol: this.usuario.rol = 'admin',
       password: this.usuario.password = '',
     }
 
