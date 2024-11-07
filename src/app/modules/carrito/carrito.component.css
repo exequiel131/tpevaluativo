@@ -52,6 +52,7 @@
 /*MEDIA RESPONSIVO PARA PC  */
 
 @media (min-width: 701px) {
+    
     .Carrito-resumen{
         margin: 50px;
         text-align: center;

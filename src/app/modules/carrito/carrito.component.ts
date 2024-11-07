@@ -32,4 +32,17 @@ export class CarritoComponent {
       icon: "success"
     }); 
   }
+  
+  // Métodos para incrementar y decrementar cantidad
+  incrementarCantidad(item: any) {
+    item.cantidad++;
+    this.actualizarSubtotal(item);
+  }
+
+  decrementarCantidad(item: any) {
+    if (item.cantidad > 0) {
+      item.cantidad--;
+      this.actualizarSubtotal(item);
+    }
+    }
 }

@@ -1,56 +1,75 @@
 <div class="Carrito-resumen">
-    <h1><strong>Carrito de compras</strong></h1>
+    <div class="container px-4 text-center body">
+        <div class="row gx-5">
+            <div class="col-8">
+                <div class="p-3">
+                    <h1><strong>Carrito de compras</strong></h1>
+                    <hr>
+                    <mat-table [dataSource]="crudservice.carritoscoleccion" class="mat-elevation-z8">
 
-    <mat-table [dataSource]="crudservice.carritoscoleccion" class="mat-elevation-z8">
+                        <!-- Columna de Imagen -->
+                        <ng-container matColumnDef="imagen">
+                            <mat-header-cell *matHeaderCellDef> Imagen </mat-header-cell>
+                            <mat-cell *matCellDef="let item">
+                                <img [src]="item.imagen" alt="{{item.nombre}}" width="50" height="50"
+                                    style="object-fit: cover;">
+                            </mat-cell>
+                        </ng-container>
 
+                        <!-- columna de Nombre -->
+                        <ng-container matColumnDef="nombre">
+                            <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
+                            <mat-cell *matCellDef="let item"> {{item.nombre}}</mat-cell>
+                        </ng-container>
 
-        <!-- Columna de Imagen -->
-        <ng-container matColumnDef="imagen">
-            <mat-header-cell *matHeaderCellDef> Imagen </mat-header-cell>
-            <mat-cell *matCellDef="let item">
-                <img [src]="item.imagen" alt="{{item.nombre}}" width="50" height="50" style="object-fit: cover;">
-            </mat-cell>
-        </ng-container>
-        
-        <ng-container matColumnDef="nombre">
-            <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
-            <mat-cell *matCellDef="let item"> {{item.nombre}}</mat-cell>
-        </ng-container>
+                        <!-- columna de cantidad -->
+                        <ng-container matColumnDef="cantidad">
+                            <div class="input-group" style="max-width: 120px;" *matCellDef="let item">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-outline-secondary"
+                                        (click)="decrementarCantidad(item)">-</button>
+                                </div>
+                                <input type="text" class="form-control text-center" [value]="item.cantidad" readonly>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary"
+                                        (click)="incrementarCantidad(item)">+</button>
+                                </div>
+                            </div>
+                        </ng-container>
 
-        <ng-container matColumnDef="cantidad">
-            <mat-header-cell *matHeaderCellDef>cantidad</mat-header-cell>
-            <mat-cell *matCellDef="let item">
-                <input type="number" [(ngModel)]="item.cantidad" min="1" (ngModelChange)="actualizarSubtotal(item)">
-            </mat-cell>
-        </ng-container>
+                        <!-- columna de precio unitario -->
+                        <ng-container matColumnDef="preciounitario">
+                            <mat-header-cell *matHeaderCellDef>preciounitario</mat-header-cell>
+                            <mat-cell *matCellDef="let item"> Ud ${{ (item.precio).toFixed(2)}}</mat-cell>
+                        </ng-container>
 
-        <ng-container matColumnDef="preciounitario">
-            <mat-header-cell *matHeaderCellDef>preciounitario</mat-header-cell>
-            <mat-cell *matCellDef="let item"> Ud ${{ (item.precio).toFixed(2)}}</mat-cell>
-        </ng-container>
+                        <!-- columna eliminar -->
+                        <ng-container matColumnDef="eliminar">
+                            <mat-header-cell *matHeaderCellDef=>eliminar</mat-header-cell>
+                            <mat-cell *matCellDef="let item">
 
-   
+                                <button mat-icon-button (click)="eliminarItem(item)"
+                                    style="background: none; border: none; padding: 0;">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
 
-        <ng-container matColumnDef="eliminar">
-            <mat-header-cell *matHeaderCellDef=>eliminar</mat-header-cell>
-            <mat-cell *matCellDef="let item">
+                            </mat-cell>
+                        </ng-container>
+                        <mat-header-row mat-header-row * matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-header-row mat-row *matRowDef="let row;columns:displayedColumns"></mat-header-row>
+                    </mat-table>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="p-3">
+                    <h1><strong>Resumen de compra</strong></h1>
+                    <hr>
+                    <h3 id="total"><strong>Total: ${{crudservice.total}} ARS</strong></h3>
 
-                <button mat-icon-button (click)="eliminarItem(item)" style="background: none; border: none; padding: 0;">
-                <mat-icon>delete</mat-icon>
-                </button>
-                
-            </mat-cell>
-        </ng-container>
-
-        <mat-header-row mat-header-row * matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-header-row mat-row *matRowDef="let row;columns:displayedColumns"></mat-header-row>
-
-
-
-
-    </mat-table>
-
-        <h1 id="total"> <strong>Total: ${{crudservice.total}}</strong></h1>
-
-    <button id="ed1" type="button" class="btn" (click)="realizarCompra()">  <b>Continuar compra</b></button>
+                    <button id="ed1" type="button" class="btn" (click)="realizarCompra()"> <b>Continuar
+                            compra</b></button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
