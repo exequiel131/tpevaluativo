@@ -5,7 +5,7 @@
       <img src="../../../../../assets/img/Carrousel/1.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="../../../../../assets/img/Carrousel/2.png" class="d-block w-100" alt="...">
+      <img src="../../../../../assets/img/Carrousel/3.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
       <img src="../../../../../assets/img/Carrousel/Diseño sin título (4).png" class="d-block w-100" alt="...">
@@ -22,20 +22,21 @@
 </div>
 
 
-<h1>20% OFF TRANSFERENCIA /// 3 CUOTAS SIN INTERES</h1>
+<h1> <strong>20% OFF TRANSFERENCIA /// 3 CUOTAS SIN INTERES</strong></h1>
 
 <!-- Productos -->
 <div class="card-container">
   <div class="col-lg-3 card1" *ngFor="let articulo of colecciongeneral">
     <div class="card" style="width: 18rem;">
       <div class="badge">Lo nuevo</div> <!-- Texto destacado -->
-      <img src="{{articulo.imagen}}" class="card-img-top" alt="{{articulo.nombre}}" data-bs-toggle="modal" data-bs-target="#vermas" (click)="mostrarver(articulo)">
-            <div class="card-body">
+      <img src="{{articulo.imagen}}" class="card-img-top" alt="{{articulo.nombre}}" data-bs-toggle="modal"
+        data-bs-target="#vermas" (click)="mostrarver(articulo)">
+      <div class="card-body">
         <h4 class="card-title"><b>{{articulo.nombre}}</b></h4>
         <p class="card-subtitle">{{articulo.alt}}</p>
         <p class="card-text"> <b>${{articulo.precio}}</b> </p>
-          
-        <button type="button" class="btn" id="boton-vm"  data-bs-toggle="modal" data-bs-target="#vermas"
+
+        <button type="button" class="btn" id="boton-vm" data-bs-toggle="modal" data-bs-target="#vermas"
           (click)="mostrarver(articulo)">Ver más</button>
 
         <button type="button" id="car2" class="btn" data-dismiss="modal"
@@ -45,69 +46,64 @@
             <path
               d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
           </svg>
-        </button>  
+        </button>
       </div>
     </div>
   </div>
 </div>
 
 
-  <!-- Modal para ver mas infomracion-->
-  <div class="modal fade" *ngIf="modalvisible" id="vermas" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-    <div class="modal-dialog" role="document">
+<!-- Modal para ver más información -->
+<div class="modal fade" *ngIf="modalvisible" id="vermas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
 
-      <div class="modal-content">
+  <div class="modal-dialog modal-lg" role="document">
 
-        <!-- BOTON FUNCIONAL PARA CERRAR EL MODAL -->
-        <div class="modal-header">
-          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-          </button>
+    <div class="modal-content">
+      <!-- Encabezado con botón para cerrar el modal -->
+      <div class="modal-header">
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row g-4">
+
+            <!-- Columna izquierda con la imagen del producto -->
+            <div class="col-md-6">
+              <img class="img-fluid" src="{{articuloseleccionado.imagen}}" alt="{{articuloseleccionado.alt}}">
+            </div>
+
+            <!-- Columna derecha con la información del producto -->
+            <div class="col-md-6">
+              <h1 class="modal-title" id="exampleModalLabel">
+                <strong>{{articuloseleccionado.nombre}}</strong>
+              </h1>
+              <h2><strong>${{articuloseleccionado.precio}} ARS</strong></h2>
+
+              <!-- Descripción del producto -->
+              <p>{{articuloseleccionado.descripcion}}</p>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- IMAGEN DEL PRODUCTO -->
-        <div class="modal-body">
-          <img class="img" src="{{articuloseleccionado.imagen}}" alt="{{articuloseleccionado.alt}}">
-        </div>
-
-        <!-- DESCRIPCION Y PRECIO DEL PRODUCTO -->
-        <div class="mb-3 text">
-          <h1 class="modal-title" id="exampleModalLabel"> <strong class="title">{{articuloseleccionado.nombre}}</strong>
-          </h1>
-          <strong>
-            <h2>
-              ${{articuloseleccionado.precio}} ARS
-
-            </h2>
-          <br>
-          <br>
-          <!--PARTE A EDITAR-->
-           <h2>Descripcion:</h2>
-
-          
-          {{articuloseleccionado.descripcion}}
-        </strong>
-
-        </div>
-
-        <div class="modal-footer">
-          <!-- ACA VA EL BOTON DEL CARRITO-->
-          <button type="button" class="btn" style="background-color: #000000;" data-dismiss="modal">Comprar
-            Ahora</button>
-
-          <button type="button" class="btn" data-dismiss="modal" style="background-color: rgb(0, 0, 0); color: white;"
-            (click)="serviciocrud.AgregarAlCarrito(articuloseleccionado)"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+      <!-- Pie del modal con botones de acción -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal"
+          (click)="serviciocrud.AgregarAlCarrito(articuloseleccionado)">Agregar al carrito
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart"
             viewBox="0 0 16 16">
             <path
               d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
           </svg>
-          </button>
-
-        </div>
+        </button>
       </div>
     </div>
   </div>
+</div>
 
-  <app-card></app-card>
+<app-card></app-card>
