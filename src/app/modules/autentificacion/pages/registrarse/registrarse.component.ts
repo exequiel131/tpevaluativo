@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 
 //paqueteria de alertas personalizadas
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-registrarse',
   templateUrl: './registrarse.component.html',

@@ -16,7 +16,7 @@ import Swal from 'sweetalert2'; // Alerta importada de una libreria.
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-  
+
 export class TableComponent {
   //creamos coleccion local de productos --> la definimos como array
   collectionarticulo: Articulos[] = [];
@@ -66,57 +66,57 @@ export class TableComponent {
         imagen: '',
         alt: this.articulo.value.alt!,
       }
-     // Enviamos nombre y url de la imagen; definimos carpeta de imágenes como "productos"
-     await this.servicioCrud.subirImagen(this.nombreImagen, this.imagen, "productos")
-     .then(resp => {
-       // encapsulamos respuesta y envíamos la información obtenida
-       this.servicioCrud.obtenerUrlImagen(resp)
-         .then(url => {
-           // ahora método crearProducto recibe datos del formulario y URL creada
-           this.servicioCrud.creararticulo(nuevoarticulo, url)
-             .then(articulo => {
-               alert("Ha agregado un nuevo producto con éxito.");
-               // Resetea el formulario y las casillas quedan vacías
-               this.articulo.reset();
-             })
-             .catch(error => {
-               alert("Ha ocurrido un error al cargar un producto.");
-               this.articulo.reset();
-             })
-         })
-     })
+      // Enviamos nombre y url de la imagen; definimos carpeta de imágenes como "productos"
+      await this.servicioCrud.subirImagen(this.nombreImagen, this.imagen, "productos")
+        .then(resp => {
+          // encapsulamos respuesta y envíamos la información obtenida
+          this.servicioCrud.obtenerUrlImagen(resp)
+            .then(url => {
+              // ahora método crearProducto recibe datos del formulario y URL creada
+              this.servicioCrud.creararticulo(nuevoarticulo, url)
+                .then(articulo => {
+                  alert("Ha agregado un nuevo producto con éxito.");
+                  // Resetea el formulario y las casillas quedan vacías
+                  this.articulo.reset();
+                })
+                .catch(error => {
+                  alert("Ha ocurrido un error al cargar un producto.");
+                  this.articulo.reset();
+                })
+            })
+        })
 
     }
 
 
   }
 
- // CARGAR IMÁGENES
- cargarImagen(event: any){
-  // Variable para obtener el archivo subido desde el input del HTML
-  let archivo = event.target.files[0];
-  // Variable para crear un nuevo objeto de tipo "archivo" o "file" y leerlo
-  let reader = new FileReader();
-  if(archivo != undefined){
-    /*
-      Llamamos a método readAsDataURL para leer toda la información recibida
-      Envíamos como parámetro al "archivo" porque será el encargador de tener la 
-      info ingresada por el usuario
-    */
-    reader.readAsDataURL(archivo);
-    // Definimos qué haremos con la información mediante función flecha
-    reader.onloadend = () => {
-      let url = reader.result;
-      // Condicionamos según una URL existente y no "nula"
-      if(url != null){
-        // Definimos nombre de la imagen con atributo "name" del input
-        this.nombreImagen = archivo.name;
-        // Definimos ruta de la imagen según la url recibida
-        this.imagen = url.toString();
+  // CARGAR IMÁGENES
+  cargarImagen(event: any) {
+    // Variable para obtener el archivo subido desde el input del HTML
+    let archivo = event.target.files[0];
+    // Variable para crear un nuevo objeto de tipo "archivo" o "file" y leerlo
+    let reader = new FileReader();
+    if (archivo != undefined) {
+      /*
+        Llamamos a método readAsDataURL para leer toda la información recibida
+        Envíamos como parámetro al "archivo" porque será el encargador de tener la 
+        info ingresada por el usuario
+      */
+      reader.readAsDataURL(archivo);
+      // Definimos qué haremos con la información mediante función flecha
+      reader.onloadend = () => {
+        let url = reader.result;
+        // Condicionamos según una URL existente y no "nula"
+        if (url != null) {
+          // Definimos nombre de la imagen con atributo "name" del input
+          this.nombreImagen = archivo.name;
+          // Definimos ruta de la imagen según la url recibida
+          this.imagen = url.toString();
+        }
       }
     }
   }
-}
   mostrarBorrar(articuloSeleccionado: Articulos) {
     this.ModalVisiblearticulo = true
 
@@ -125,14 +125,14 @@ export class TableComponent {
 
   Borrararticulo() {
     this.servicioCrud.eliminar(this.articuloSeleccionado.idarticulo, this.articuloSeleccionado.imagen)
-    
-    .then(respuesta => {
-      Swal.fire({
-        title: "bien!",
-        text: "se elimino el producto con exito",
-        icon: "success"
-      });
-    })
+
+      .then(respuesta => {
+        Swal.fire({
+          title: "bien!",
+          text: "se elimino el producto con exito",
+          icon: "success"
+        });
+      })
       .catch(error => {
         Swal.fire({
           title: "error!",
@@ -155,7 +155,7 @@ export class TableComponent {
       precio: articuloSeleccionado.precio,
       descripcion: articuloSeleccionado.descripcion,
       categoria: articuloSeleccionado.categoria,
-    //  imagen: articuloSeleccionado.imagen,
+      //  imagen: articuloSeleccionado.imagen,
       alt: articuloSeleccionado.alt
     })
   }
@@ -184,27 +184,27 @@ export class TableComponent {
       .catch(error => {
         Swal.fire({
           title: "error!",
-          text: "error añ editar el producto",
+          text: "error al editar el producto",
           icon: "error"
         });
         this.articulo.reset();
       })
-      // Verificamos si el usuario ingresa o no una nueva imagen
-    if(this.imagen){
+    // Verificamos si el usuario ingresa o no una nueva imagen
+    if (this.imagen) {
       this.servicioCrud.subirImagen(this.nombreImagen, this.imagen, "articulos")
-      .then(resp => {
-        this.servicioCrud.obtenerUrlImagen(resp)
-        .then(url =>{
-          datos.imagen = url; // Actualizamos URL de la imagen en los datos del formulario
-          this.actualizarProducto(datos); // Actualizamos los datos
-          this.articulo.reset(); // Vaciar las casillas del formulario
+        .then(resp => {
+          this.servicioCrud.obtenerUrlImagen(resp)
+            .then(url => {
+              datos.imagen = url; // Actualizamos URL de la imagen en los datos del formulario
+              this.actualizarProducto(datos); // Actualizamos los datos
+              this.articulo.reset(); // Vaciar las casillas del formulario
+            })
+            .catch(error => {
+              alert("Hubo un problema al subir la imagen :( \n" + error);
+              this.articulo.reset();
+            })
         })
-        .catch(error => {
-          alert("Hubo un problema al subir la imagen :( \n"+error);
-          this.articulo.reset();
-        })
-      })
-    }else{
+    } else {
       /*
         Actualizamos formulario con los datos recibidos del usuario, pero sin 
         modificar la imagen ya existente en Firestore y en Storage
@@ -212,15 +212,16 @@ export class TableComponent {
       this.actualizarProducto(datos);
     }
   }
+  
   // ACTUALIZAR la información ya existente de los productos
-  actualizarProducto(datos: Articulos){
+  actualizarProducto(datos: Articulos) {
     // Enviamos al método el id del producto seleccionado y los datos actualizados
     this.servicioCrud.modificarrticulo(this.articuloSeleccionado.idarticulo, datos)
       .then(articulo => {
-        alert("El articulo se ha modificado con éxito.");
+        console.log ("articulo"+articulo)
       })
       .catch(error => {
-        alert("Hubo un problema al modificar el articulo: \n" + error);
+        console.log("Hubo un problema al modificar el articulo: \n" + error);
       })
   }
 }

@@ -1,8 +1,68 @@
-footer{
-    background-color: black;
-    height: 175px;
-    background-image: url("../../../../../../src/assets/img/Diseño Logo/ec/Añadir un poquito de texto (5).png");
-} 
+
+/* From Uiverse.io by david-mohseni */ 
+/*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
+@media (min-width: 300px) and (max-width: 700px) {
+
+}
+/*MEDIA RESPONSIVO PARA PC  */
+
+@media (min-width: 701px){}
+ /* Asegúrate de que el body ocupe el 100% de la altura de la pantalla */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Haz que el contenido principal ocupe el espacio disponible */
+main {
+  flex: 1;
+}
+
+/* Ajustes del footer */
+footer {
+  background-color: black;
+  min-height: 250px;
+  background-image: url("../../../../../../src/assets/img/Carrousel/Añadir un poquito de texto (7).png");
+  background-size: 58%;
+  background-position: 58% 10%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+/* Estructura de columnas */
+
+
+.footer-column {
+  color: white;
+  margin-top: 50px;
+}
+.footer-column a{
+   color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* Columna central con el logo */
+.footer-center {
+  color: white;
+}
+
+
+
+
+.footer-center a {
+  color: lightgreen;
+  text-decoration: none;
+}
+
+.footer-center a:hover {
+  text-decoration: underline;
+}
+
+/* From Uiverse.io by david-mohseni */ 
 .wrapper {
     display: inline-flex;
     list-style: none;

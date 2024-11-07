@@ -1,15 +1,74 @@
-.Carrito-resumen{
-    margin: 50px;
-    text-align: center;
+/* MEDIA QUERY PARA PANTALLAS PEQUEÑAS */
+@media (min-width: 300px) and (max-width: 700px) {
+    .Carrito-resumen {
+        margin: 10px;
+        text-align: center;
+        margin-top: 150px;
+        margin-bottom: 150px;
+    }
+
+    /* Ajustar tamaño de imagen */
+    .Carrito-resumen img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Ajustar fuente y espaciado */
+    h1 {
+        font-size: 1.2em;
+        margin: 5px 0;
+    }
+
+    /* Ajustar botón y texto de total */
+    #total {
+        font-size: 1em;
+        margin: 10px;
+    }
+    
+    #ed1 {
+        font-size: 1em;
+        padding: 10px 15px;
+        margin: 15px auto;
+        display: block;
+        width: 90%; /* Ajusta el ancho para adaptarse mejor a pantallas pequeñas */
+    }
+
+    .btn {
+        background-color: #88c425;
+        color: black;
+    }
+  
+    /* Ajustar tabla */
+    mat-table {
+        font-size: 0.9em; /* Reduce tamaño de fuente de la tabla */
+    }
+    
+    mat-header-cell, mat-cell {
+        padding: 5px; /* Reduce padding para ahorrar espacio */
+    }
 }
-#ed1{
+
+
+/*MEDIA RESPONSIVO PARA PC  */
+
+@media (min-width: 701px) {
+    
+    .Carrito-resumen{
+        margin: 50px;
+        text-align: center;
+        margin-top: 150px;
+        margin-bottom: 150px;
+    }
+    #ed1{
+        margin: 20px;
+        text-align: center;
+    }
+    #total{
     margin: 20px;
-    text-align: center;
-}
-#total{
-margin: 20px;
-}
-.btn{
-    background-color: #88c425;
-    color: black;
+    }
+    .btn{
+        background-color: #88c425;
+        color: black;
+    }
+  
 }

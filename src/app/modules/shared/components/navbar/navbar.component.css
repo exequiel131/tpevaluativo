@@ -1,51 +1,210 @@
-.example-spacer {
-  flex: 25 auto;
-}
+/*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
+@media (min-width: 300px) and (max-width: 700px) {
 
-
-/*hace referencia a todo el navbar */
-mat-toolbar {
-  /*color de fondo de la barra */
-  background-color: rgb(23, 28, 34);
-  /* tamaño de la barra*/
-  height: 75px;
-  /*color iconos*/
-  color: rgb(0, 0, 0);
-
-}
-
-.buscador {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  background-color: rgb(255, 255, 255);
-  padding: 5px;
-  border: 1px solid black;
-  height: 50px;
-  border-radius: 5px;
-}
-
-.buscador input {
-  border: 0;
-  width: 250px;
-  font-size: small;
-  outline: none;
-
-}
-
-
-/*Responsivo para celulares*/
-@media (max-width: 480px) {
-
-  mat-toolbar {
-    background-color: rgb(23, 28, 34);
-    color: rgb(0, 0, 0);
-    height: 60px;
-  }
-
-  img {
-    width: 100%;
+  #menuinicio img {
+    width: 200px;
+    /* Ajusta el ancho del logo */
     height: auto;
+    /* Mantiene la proporción de la imagen */
   }
 
+  .example-spacer {
+    display: none;
+  }
+
+  #menuinicio {
+    width: 10px;
+  }
+
+  #bn1 {
+    color: #88c425;
+  }
+
+  #carrito {
+    color: #88c425;
+  }
+
+  #menuproducto {
+    color: #88c425;
+  }
+
+  /* Ajuste de la barra de herramientas */
+  mat-toolbar {
+    background-color: rgb(0, 0, 0);
+    height: 60px;
+    /* Reduce el tamaño para pantallas pequeñas */
+    color: white;
+    /* Color de texto para contraste */
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+
+  /* Buscador en pantallas pequeñas */
+  .buscador {
+    display: none;
+    /* Elimina el buscador en pantallas pequeñas */
+  }
+
+  .buscador input {
+    display: none;
+    /* Elimina el buscador en pantallas pequeñas */
+  }
+
+  /* Ajuste del switch de modo */
+  .switch {
+    width: 35px;
+    padding: 5px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 50px;
+    font-size: 0.6rem;
+    transition: all 0.3s;
+  }
+
+  /* Iconos dentro del switch */
+  .switch svg path {
+    fill: white;
+  }
+
+  /* Estado activo del switch */
+  #checkbox:checked+.switch {
+    background-color: #88c425;
+  }
+
+  /*
+  #menuinicio {
+
+    display: none;
+  }
+  
+  #menuproducto {
+
+    display: none;
+  }
+
+
+  */
+}
+
+/*FIN DE MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS CELULARES ETC*/
+
+
+
+/*MEDIA RESPONSIVO PARA PC  */
+
+@media (min-width: 701px) {
+
+  #bn1 {
+    color: #88c425;
+  }
+
+
+
+  #carrito {
+    color: #88c425;
+  }
+
+  #menuproducto {
+    color: #88c425;
+  }
+
+  .example-spacer {
+    flex: 25 auto;
+  }
+
+  /*hace referencia a todo el navbar */
+  mat-toolbar {
+    /*color de fondo de la barra */
+    background-color: #000000;
+    /*rgb(23,28,34);
+    /* tamaño de la barra*/
+    height: 85px;
+    /*color iconos*/
+    color: rgb(0, 0, 0);
+
+  }
+
+  /*css del buscador*/
+  .buscador {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    border: 1px solid black;
+    height: 50px;
+    border-radius: 5px;
+  }
+
+  .buscador input {
+    border: 0;
+    width: 250px;
+    font-size: small;
+    outline: none;
+
+  }
+
+
+  /*Responsivo para celulares*/
+  @media (max-width: 480px) {
+
+    mat-toolbar {
+      background-color: rgb(23, 28, 34);
+      color: rgb(0, 0, 0);
+      height: 60px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+  }
+
+  /*Responsivo para celulares*/
+  @media (max-width: 480px) {
+
+    mat-toolbar {
+      background-color: rgb(23, 28, 34);
+      color: rgb(0, 0, 0);
+      height: 60px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+  }
+}
+
+
+/* Media query para pantallas pequeñas (480px o menos) */
+@media (max-width: 480px) {
+  footer {
+    height: 150px;
+    background-size: cover;
+
+    .wrapper {
+      padding-top: 20px;
+    }
+
+    .wrapper .icon {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+      margin: 5px;
+    }
+
+    .wrapper .tooltip {
+      font-size: 12px;
+      padding: 4px 6px;
+    }
+
+    .wrapper .tooltip::before {
+      height: 6px;
+      width: 6px;
+    }
+  }
 }

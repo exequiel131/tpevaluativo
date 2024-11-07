@@ -1,23 +1,125 @@
-img{
-    width: 300px;
+
+
+
+
+@media (min-width: 701px) {
+/* Estilos para la tabla */
+
+h1{
+  font-size:40px;
+  text-align: center;
+  margin: 20px;
 }
 
-/* CSS DEL  BOTON AGREGAR  */
-
-.btn{
-    padding: 10px 20px; 
-    color: #ffffff; 
-    background-color: #88c425;
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-size: 1em; 
-    margin-bottom: 10px;
-    margin-top: 20px;
-    justify-content: center;
+.botona {
+  padding: 10px 20px; 
+  color: #ffffff; 
+  background-color: #88c425;
+  border-radius: 5px;  
+  cursor: pointer;  
+  font-size: 1em;  
+  margin-bottom: 10px;
+  margin-top: 20px;
+  justify-content: center;
 }
 
 .boton {
-  justify-content: center;
-  display: flex;
+justify-content: center;
+display: flex;
 }
 
+/* Estilos para la tabla */
+.tabla {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  border-radius: 30px;
+}
+
+.table {
+  width: 90%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Estilos para el encabezado */
+.table thead th {
+  background-color: #88c425;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 0.9em;
+  border-bottom: 2px solid #88c425; /* Borde inferior del encabezado */
+}
+
+/* Filas de la tabla */
+.table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Celdas de la tabla */
+.table th, .table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd; /* Borde interno de las celdas */
+}
+
+/* Estilos para la imagen */
+#imgTabla {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Botones de acción */
+#btn-edit, #btn-delete {
+  padding: 5px;
+  font-size: 0.9em;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#btn-edit {
+  background-color: #28a745;
+  color: #fff;
+  border: 1px solid #28a745;
+}
+
+#btn-edit:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+#btn-delete {
+  background-color: #dc3545;
+  color: #fff;
+  border: 1px solid #dc3545;
+}
+
+#btn-delete:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+/* Iconos de los botones */
+mat-icon {
+  vertical-align: middle;
+  color: inherit;
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CrudService } from '../admin/services/crud.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
@@ -9,7 +9,7 @@ import { CrudService } from '../admin/services/crud.service';
 export class CarritoComponent {
   constructor(public crudservice : CrudService){} 
 
-  displayedColumns:string[]=['nombre','cantidad','preciounitario','eliminar']
+  displayedColumns:string[]=['imagen','nombre','cantidad','preciounitario','eliminar']
 
   actualizarSubtotal(item:any){
     this.crudservice.AgregarAlCarrito(item)
@@ -24,9 +24,25 @@ export class CarritoComponent {
 
 
 
-
-
+//personalizacion de alerta proximamente modal para pagar los productos
   realizarCompra(){
-    alert('Su compra ha sido exitosa')
+    Swal.fire({
+      title: "Buen trabajo!",
+      text: "Se pudo realizar la compra con exito !!",
+      icon: "success"
+    }); 
   }
+  
+  // Métodos para incrementar y decrementar cantidad
+  incrementarCantidad(item: any) {
+    item.cantidad++;
+    this.actualizarSubtotal(item);
+  }
+
+  decrementarCantidad(item: any) {
+    if (item.cantidad > 0) {
+      item.cantidad--;
+      this.actualizarSubtotal(item);
+    }
+    }
 }

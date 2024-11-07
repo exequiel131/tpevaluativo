@@ -3,13 +3,21 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { map, Observable } from 'rxjs';
+
+//observables para obtener cambios
+import { Observable } from 'rxjs';
+
+//itera coleccion leyendo informacion actual
+import { map } from 'rxjs';
+
+import { Usuario } from 'src/app/models/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+//propiedad privada para guardar rol de usuario 
+  private rolusuario : string | null = null;
   //Referenciar auth de firebase en el servicio
   constructor(
     private auth: AngularFireAuth,
@@ -27,7 +35,7 @@ export class AuthService {
     //validar la iformacion del usario -> saber si existe en la coleccion 
     return this.auth.signInWithEmailAndPassword(email, password)
   }
-  //FUNCIO  N PARA CERRAR SESIÓN
+  //FUNCION PARA CERRAR SESIÓN
   cerrarSesion() {
     //  devuelve una promesa vacía -> qiota token 
     return this.auth.signOut();
@@ -72,5 +80,19 @@ export class AuthService {
     return this.servicioFirestore.collection('usuarios', ref => ref.where('email', '==', email)).get().toPromise();
 
 
-  }
+
+  }
+
+
+//envia el rol obtenido 
+Setusuario(rol : string){
+this.rolusuario = rol ;
+
+}
+
+//obtener el rol y asignarlo a rol de la variable local
+getUsuarioRol():string | null {
+  return this.rolusuario;
+}
+
 }

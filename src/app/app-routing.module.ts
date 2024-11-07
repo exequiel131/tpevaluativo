@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { InicioComponent } from './modules/inicio/pages/inicio/inicio.component';
 
 import { NosotrosComponent } from './modules/nosotros/nosotros.component';
 
 import { ResetPasswordComponent } from './modules/autentificacion/pages/reset-password/reset-password.component';
 
-//rutas perezosas
+//guardian de la vista del administrador
+import { rutaprotegidaGuard } from './guards/rutaprotegida.guard';
 
 const routes: Routes = [
 
@@ -18,7 +20,9 @@ const routes: Routes = [
 
   { path: "", loadChildren: () => import('./modules/autentificacion/autentificacion.module').then(m =>m.AutentificacionModule) },
 
-  { path: "", loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) },
+  { path: "", loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) ,
+    //definimos al guardian que proteja la rut ade admin y que espere un rol de tipo "admin"
+  canActivate: [rutaprotegidaGuard],data : {role : 'admin'} },
 
   { path: "",loadChildren: ()=> import('./modules/carrito/carrito.module').then(m => m.CarritoModule)},
 
