@@ -111,6 +111,17 @@ display: flex;
   border-color: #bd2130;
 }
 
+.btn{
+  padding: 10px 20px; /* Espacio interno del botón para que no esté pegado al texto */
+  color: #ffffff; /* Color del texto del botón */
+  background-color: #88c425;
+  border-radius: 5px; /* Opcional: Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor a una mano cuando se pasa el ratón sobre el botón */
+  font-size: 1em; /* Tamaño de la fuente */
+  margin-bottom: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
 /* Iconos de los botones */
 mat-icon {
   vertical-align: middle;
