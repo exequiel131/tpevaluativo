@@ -11,6 +11,10 @@ h1{
   margin: 20px;
 }
 
+img{
+  width: 300px;
+}
+
 .botona {
   padding: 10px 20px; 
   color: #ffffff; 
