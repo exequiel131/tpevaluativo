@@ -117,9 +117,12 @@ mat-icon {
   color: inherit;
 }
 
+
+
 .acciones {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 }
