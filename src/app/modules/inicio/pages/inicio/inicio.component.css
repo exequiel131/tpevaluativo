@@ -1,7 +1,6 @@
 
 /*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
 @media (min-width: 300px) and (max-width: 700px) {
-/*MEDIA PARA CELULARES*/ 
   .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -36,13 +35,18 @@
   }
 }
 
-/*FIN DE MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS CELULARES ETC/
 
 
 
 /*MEDIA RESPONSIVO PARA PC  */
 
 @media (min-width: 701px) {
+
+  #carousel img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 
   .card-container {
     display: flex;

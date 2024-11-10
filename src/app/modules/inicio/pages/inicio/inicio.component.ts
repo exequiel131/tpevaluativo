@@ -1,15 +1,3 @@
-/*import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
-})
-export class InicioComponent {
-
-}
-
-*/
 import { Component } from '@angular/core';
 import { Articulos } from 'src/app/models/articulos';
 import { CrudService } from 'src/app/modules/admin/services/crud.service';

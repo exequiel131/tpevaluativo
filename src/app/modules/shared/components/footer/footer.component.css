@@ -1,5 +1,4 @@
 
-/* From Uiverse.io by david-mohseni */ 
 /*MEDIA RESPONSIVO PARA PANTALLAS PEQUEÑAS  */
 @media (min-width: 300px) and (max-width: 700px) {
 
@@ -24,7 +23,7 @@ main {
 footer {
   background-color: black;
   min-height: 250px;
-  background-image: url("../../../../../../src/assets/img/Carrousel/Añadir un poquito de texto (7).png");
+  background-image: url("../../../../../../src/assets/img/Carrousel/background-footer.png");
   background-size: 58%;
   background-position: 58% 10%;
   background-repeat: no-repeat;
