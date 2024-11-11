@@ -57,13 +57,24 @@ export class InicioComponent {
     console.log('Imagen clickeada:', info); // Añadir esta línea para depuración
 
   }
-
-  cerrarver() {
-
-    this.modalvisible = false;
-
-    window.location.href = "/inicio"
+  actualizarSubtotal(item:any){
+    this.serviciocrud.AgregarAlCarrito(item)
   }
+
+  // Métodos para incrementar y decrementar cantidad en el carrito
+incrementarCantidad(item: any) {
+  if (item.cantidad < 20) {
+    item.cantidad++;
+    this.actualizarSubtotal(item);
+  }
+}
+
+decrementarCantidad(item: any) {
+  if (item.cantidad > 1) {
+    item.cantidad--;
+    this.actualizarSubtotal(item);
+  }
+}
 }
   
 

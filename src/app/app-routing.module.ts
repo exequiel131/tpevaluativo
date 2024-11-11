@@ -5,12 +5,16 @@ import { InicioComponent } from './modules/inicio/pages/inicio/inicio.component'
 
 //guardian de la vista del administrador
 import { rutaprotegidaGuard } from './guards/rutaprotegida.guard';
+import { GuiatallesComponent } from './guiatalles/guiatalles.component';
 
 //rutas perezosas
 
 const routes: Routes = [
 
+
   { path: "", component: InicioComponent },
+
+  {path:"guiatalles", component: GuiatallesComponent},
   
   { path: "", loadChildren: () => import('./modules/inicio/inicio.module').then(m => m.InicioModule) },
 

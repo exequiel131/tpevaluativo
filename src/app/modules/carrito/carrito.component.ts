@@ -35,12 +35,14 @@ export class CarritoComponent {
   
   // Métodos para incrementar y decrementar cantidad
   incrementarCantidad(item: any) {
+    if (item.cantidad < 20){ 
     item.cantidad++;
     this.actualizarSubtotal(item);
   }
+  }
 
   decrementarCantidad(item: any) {
-    if (item.cantidad > 0) {
+    if (item.cantidad > 1) {
       item.cantidad--;
       this.actualizarSubtotal(item);
     }
