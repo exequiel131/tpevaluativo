@@ -28,7 +28,6 @@ export class RegistroComponent {
 
   //input de la contraseña para ver los caracteres o no 
   hide = true;
-  // ################################################################################# Importaciones de interfaz ''
   //importar la interfaz de usuario -> inicializar
   usuario: Usuario = {
     uid: '',//-> inicializamos con comillas simples porque es string,si fuera nambuer se inicializa con 0
@@ -38,7 +37,6 @@ export class RegistroComponent {
     rol: 'vis',
     password: ''
   }
-  //##################################################################################### fin de la importacion
 
   constructor(
     public servicioAuth: AuthService,
@@ -57,11 +55,11 @@ export class RegistroComponent {
     const email = this.usuario.email.trim();
     const password = this.usuario.password.trim();
 
-    // Validación de email con una expresión regular
+    // Validación de varios caracteres de email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       Swal.fire({
-        title: "Oh no!",
+        title: "¡Oh no!",
         text: "El formato del correo electrónico es incorrecto.",
         icon: "error"
       });
@@ -72,13 +70,6 @@ export class RegistroComponent {
        console.log("Email a registrar:", email);
        console.log("Password a registrar:", password);
 
-
-    /*Registro con servicio de AUTH
-    const credenciales = {
-      email: email,
-      password: password
-    };*/
-
     try {
         // Llamada al servicio de registro de Firebase
         const res = await this.servicioAuth.registrar(email, password);
@@ -86,8 +77,8 @@ export class RegistroComponent {
 
       // Registro exitoso
       Swal.fire({
-        title: "Buen Trabajo!",
-        text: "Se pudo registrar con éxito!",
+        title: "¡Buen trabajo!",
+        text: "Se pudo registrar con éxito.",
         icon: "success"
       });
 
@@ -110,7 +101,7 @@ export class RegistroComponent {
 
     } catch (error) {
       Swal.fire({
-        title: "Oh no!",
+        title: "¡Oh no!",
         text: "Ocurrió un error al registrar un nuevo usuario :( \n" + error,
         icon: "error"
       });

@@ -31,7 +31,7 @@ export class CardCalzadoComponent {
    this.serviciocrud.obtenerarticulo().subscribe(articulo => {
 
      this.ArticulosCollection = articulo;
-     // Mostrará la colección de esa categoría hasta el momento
+     // Mostrará la colección de esa categoría hasta el momentos
 
      this.mostrarArticuloCalzado();
    })
@@ -59,10 +59,5 @@ export class CardCalzadoComponent {
 
    this.articuloseleccionado = info;
  }
- cerrarver() {
 
-  this.modalvisible = false;
-
-  window.location.href = "/calzado"
-}
 }

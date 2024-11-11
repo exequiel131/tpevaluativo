@@ -145,6 +145,8 @@ CalcularTotal() {
 // Función para agregar o actualizar la cantidad de un producto
 
 AgregarAlCarrito(item: any) {
+  
+ try{
   const index = this.carritoscoleccion.findIndex(
     (element) => element.nombre === item.nombre
   );
@@ -168,10 +170,22 @@ AgregarAlCarrito(item: any) {
   this.CalcularTotal();
 
   Swal.fire({
-    title: "Buen Trabajo!",
-    text: "se pudo agregar el producto al carrito!",
+    title: "¡Buen trabajo!",
+    text: "Se pudo agregar el producto al carrito.",
     icon: "success"
   });   
+ }catch(error){
+
+  Swal.fire({
+    title: "¡Ha ocurrido un error!",
+    text: "No se puedo agregar el producto.",
+    icon: "error"
+  });   
+ }
+
+
+
+
 }
 
 

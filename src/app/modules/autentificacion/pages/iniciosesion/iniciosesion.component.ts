@@ -46,8 +46,8 @@ export class IniciosesionComponent {
 
       if (!usuarioBD || usuarioBD.empty) {
         Swal.fire({
-          title: "oh no!",
-          text: "Correo electrónico no está registrado",
+          title: "¡Oh no!",
+          text: "Correo electrónico no está registrad.",
           icon: "error"
         });
         this.limpiar();
@@ -56,23 +56,12 @@ export class IniciosesionComponent {
 
       const usuarioDoc = usuarioBD.docs[0];
       const usuarioData = usuarioDoc.data() as Usuario;
-      /*
-      const hashedPassword = CryptoJS.SHA256(credenciales.password).toString();
-
-      if (hashedPassword !== usuarioData.password) {
-        Swal.fire({
-          title: "oh no!",
-          text: "Contraseña incorrecta",
-          icon: "error"
-        });
-        this.inicio.password = '';
-        return;
-      }*/
+  
 
       await this.servicioAuth.iniciarSesion(credenciales.email, credenciales.password);
       Swal.fire({
-        title: "Buen trabajo!",
-        text: "Se pudo ingresar con éxito!",
+        title: "¡Buen trabajo!",
+        text: "Se pudo ingresar con éxito.",
         icon: "success"
       });
       this.servicioRutas.navigate(['/inicio']);

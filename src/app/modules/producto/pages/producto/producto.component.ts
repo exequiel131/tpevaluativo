@@ -33,15 +33,15 @@ articuloanadido(articulo : Articulos ){
     this.articulocarrousel.push(articulo);
 
     Swal.fire({
-      title: "Buen Trabajo!",
-      text: " ha añadido el producto con exito ",
-      icon: "info"
+      title: "¡Buen trabajo!",
+      text: " Ha añadido el producto con éxito. ",
+      icon: "success"
     });    
   }
   catch(error){
     Swal.fire({
-      title: "oh no!",
-      text: " ha ocurrido un error\n"+error,
+      title: "¡Oh no!",
+      text: " Ha ocurrido un error\n"+error,
       icon: "error"
     });   
   };
