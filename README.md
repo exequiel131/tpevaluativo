@@ -1,12 +1,12 @@
-#SPORTS TECH 
+# SPORTS TECH 
 
 >[!NOTE]
 >Aplicacíon desarrollada para las olimpiadas de pogramación 2024
- Cet N°30
+ CET N°30
 >[!CAUTION]
 >Todos los derechos reservados
 
-#Integrantes 
+# Integrantes 
 Exequiel Lleubul 
 _exequiellimpayante@gmail.com_
 _exequiel131_
