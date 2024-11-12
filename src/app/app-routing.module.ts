@@ -9,6 +9,7 @@ import { ResetPasswordComponent } from './modules/autentificacion/pages/reset-pa
 
 //guardian de la vista del administrador
 import { rutaprotegidaGuard } from './guards/rutaprotegida.guard';
+import { TallesComponent } from './modules/talles/talles.component';
 
 const routes: Routes = [
 
@@ -33,7 +34,9 @@ const routes: Routes = [
 
   { path: 'reset-password', component: ResetPasswordComponent },
 
-  { path: '', redirectTo: '/inicio-sesion', pathMatch: 'full' }
+  { path: '', redirectTo: '/inicio-sesion', pathMatch: 'full' },
+  
+  { path: 'talles', component: TallesComponent }
 
 
 ];

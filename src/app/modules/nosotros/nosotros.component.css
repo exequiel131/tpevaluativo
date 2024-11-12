@@ -31,9 +31,26 @@ img{
     margin-right: 30px;
 }
 
-/* Responsive design para pantallas pequeñas */
+
+
+/* Responsive para pantallas pequeñas */
 @media (max-width: 480px) {
-    .about-section {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    .seccion-nosotros {
+        grid-template-columns: 1fr; 
+        gap: 10px; 
+        padding: 10px; 
+    }
+
+    .img-nosotros img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .texto-info {
+        padding: 5px;
+    }
+
+    img {
+        margin-right: 0; 
     }
 }

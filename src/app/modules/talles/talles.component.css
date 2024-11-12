@@ -1,0 +1,21 @@
+img{
+    width: 40%;
+    margin-left: 30%;
+   
+}
+
+#ultima{
+    margin-bottom: 10%;
+}
+
+@media (max-width: 480px) {
+    img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #ultima {
+        margin-bottom: 10%;
+    }
+
+}

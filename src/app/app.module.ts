@@ -13,9 +13,11 @@ import {AngularFireModule}  from '@angular/fire/compat';
 import {AngularFireAuthModule}  from '@angular/fire/compat/auth';
 import {AngularFireStorageModule}  from '@angular/fire/compat/storage';
 import { ResetPasswordComponent } from './modules/autentificacion/pages/reset-password/reset-password.component';
+import { TallesComponent } from './modules/talles/talles.component';
 @NgModule({
   declarations: [
     AppComponent,
+    TallesComponent,
     //ResetPasswordComponent
   
   
