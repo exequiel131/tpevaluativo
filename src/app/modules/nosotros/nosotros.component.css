@@ -24,10 +24,15 @@
     width: 60%;
     height: auto;
     border-radius: 10px; /* Bordes redondeados */
+    
+}
+
+img{
+    margin-right: 30px;
 }
 
 /* Responsive design para pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .about-section {
         grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
     }

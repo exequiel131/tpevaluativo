@@ -73,7 +73,7 @@ footer {
   }
   
   .wrapper .icon {
-    position: relative;
+    position: fixed;
     background: #fff;
     border-radius: 50%;
     margin: 10px;
